@@ -21,6 +21,21 @@ Es una base funcional minima, no un juego terminado: el arte es de relleno.
 - **Guardado**: F5 guarda, F9 carga (`%LOCALAPPDATA%\EVERGRAVE\save.txt`, solo
   Windows).
 
+## El aspecto pixel-art (importado de AN0MALY)
+
+Tres piezas, las mismas que AN0MALY: el `SubViewport` (360 filas, escala
+entera), el post-proceso `Assets/Shaders/PostProcess.hlsl` (copia del de AN0MALY:
+12 niveles por canal, dither de Bayer 8x8 calculado por texel de la imagen
+interna, saturacion/contraste/negro) y `environment.postProcess` en la escena.
+Los mandos estan en `Assets/Materials/PostProcess.strmat`; aqui el contraste es
+1.15 (en AN0MALY 1.45 aplasta a negro el lado de noche de la Tierra).
+
+**Resolucion del panel Juego**: usar 1280x720 / 1920x1080 / 2560x1440 (x2, x3,
+x4 exactos de 360). En "Libre" la escala se REDONDEA y lo que sobra se recorta
+(regla de `PixelLayout.h`): con un panel de 610 px de alto la escala sale 2, la
+imagen mide 720 y se pierden ~55 px arriba y abajo, que es donde estan las barras
+del HUD.
+
 ## Estructura (`Assets/Scripts/`)
 
 ```
