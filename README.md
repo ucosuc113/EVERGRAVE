@@ -6,7 +6,7 @@ you look at earth from space (almost top down, slightly tilted). it spins, it or
 
 ## where it's at
 
-super early. it's a prototype: the earth is two flat colors and the sun is a yellow ball. the tech tree has 10 techs and the balance is basically nonexistent, you can finish the whole thing in like a minute and a half. i know.
+super early. it's a prototype: the earth is two flat colors and the sun is a yellow ball. the tech tree has 14 techs and the balance is basically nonexistent, you can finish the whole thing in under two minutes. i know.
 
 what works:
 

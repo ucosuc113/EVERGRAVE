@@ -89,6 +89,38 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               {"gas_lasers"},
               {{R, 1500}},
               {{K::YieldMultiplier, 1.5}}});
+
+    tree.Add({"solar_panels",
+              "Solar Panels",
+              "Panels on the ground turn sunlight into a steady trickle of points.",
+              {{R, 32.400000000000006}},
+              {"solar_collection"},
+              {},
+              {{K::PassiveAdd, 1}}});
+
+    tree.Add({"heat_exchangers",
+              "Heat Exchangers",
+              "Recover waste heat from the grid and put it back to work.",
+              {{R, 220}},
+              {"power_grid"},
+              {},
+              {{K::YieldMultiplier, 1.1}}});
+
+    tree.Add({"thermal_storage",
+              "Thermal Storage",
+              "Keep heat in molten salt so the output never dips.",
+              {{R, 350}},
+              {"capacitor_banks"},
+              {{R, 400}},
+              {{K::PassiveAdd, 5}}});
+
+    tree.Add({"beam_focusing",
+              "Beam Focusing",
+              "Lenses squeeze the beam into a tighter spot, so each pulse hits harder.",
+              {{R, 280}},
+              {"ruby_laser"},
+              {},
+              {{K::ClickPowerAdd, 20, "laser_pulse"}}});
 }
 
 inline void RegisterGeneratedInteractions(InteractionSet& set) {
@@ -101,7 +133,7 @@ inline void RegisterGeneratedInteractions(InteractionSet& set) {
 }
 
 // Cuantas tecnologias e interacciones salieron de la hoja: una prueba compara contra esto.
-inline constexpr int kGeneratedTechCount = 10;
+inline constexpr int kGeneratedTechCount = 14;
 inline constexpr int kGeneratedInteractionCount = 3;
 
 } // namespace evergrave
