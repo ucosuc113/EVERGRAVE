@@ -1,0 +1,16 @@
+{
+  "name": "Star",
+  "type": "unlit",
+  "surface": "opaque",
+  "albedo": [
+    0.9,
+    0.93,
+    1.0,
+    1.0
+  ],
+  "emissive": [
+    0.9,
+    0.93,
+    1.0
+  ]
+}

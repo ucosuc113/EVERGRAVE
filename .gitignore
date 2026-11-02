@@ -1,0 +1,6 @@
+# Lo que S.T.R.AC.E regenera: no va a git.
+Intermediate/
+Build/
+Rescate/
+.strace-editor.lock
+imgui.ini

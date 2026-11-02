@@ -1,0 +1,16 @@
+{
+  "name": "Sun",
+  "type": "unlit",
+  "surface": "opaque",
+  "albedo": [
+    1.0,
+    0.8,
+    0.25,
+    1.0
+  ],
+  "emissive": [
+    1.0,
+    0.8,
+    0.25
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Earth",
+  "albedo": [
+    1,
+    1,
+    1,
+    1
+  ],
+  "specular": [
+    0,
+    0,
+    0
+  ],
+  "shininess": 16.0,
+  "emissive": [
+    0,
+    0,
+    0
+  ],
+  "shader": "Assets/Shaders/Earth.hlsl",
+  "userParams": [
+    [
+      0.06,
+      3.7,
+      0,
+      0
+    ]
+  ]
+}
