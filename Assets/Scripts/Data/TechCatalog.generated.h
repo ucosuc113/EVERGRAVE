@@ -1,31 +1,12 @@
+// GENERADO por Tools/export_catalog.py desde Design/EVERGRAVE_Balance.xlsx. NO EDITAR A MANO:
+// el siguiente export lo pisa. Se cambia en la hoja (Techs / Interactions) y se vuelve a exportar.
 #pragma once
 
-// EL CATALOGO DE TECNOLOGIAS: solo datos.
-//
-// Para agregar una tecnologia se escribe un `tree.Add({...})` aqui. No se toca
-// el arbol, ni GameState, ni la interfaz: el panel dibuja lo que haya en
-// `tree.All()`, ordenado por profundidad de requisitos.
-//
-// Reglas del registro (TechTree::Add las hace cumplir):
-//  - el id es unico y estable (se guarda en disco: renombrarlo rompe guardados);
-//  - un requisito tiene que estar registrado ANTES, asi que se escribe en orden;
-//  - el texto es ASCII (la fuente del motor no tiene acentos).
-//
-// Este primer tramo es energia temprana y laseres: solo lo que el prototipo
-// necesita para probar el arbol. Las eras siguientes (instalaciones
-// industriales, escala estelar...) entran como mas filas, con requisitos hacia
-// estas. No hay narrativa aqui a proposito: nombres y descripciones son
-// tecnicos.
-//
-// Los costos estan puestos para que el primer tramo se juegue en pocos
-// minutos: ~1 punto por clic al inicio, y cada tecnologia de produccion cambia
-// el ritmo de la siguiente.
-
-#include "../Core/Tech.h"
+#include "../Core/GameState.h"
 
 namespace evergrave {
 
-inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
+inline void RegisterGeneratedCatalog(TechTree& tree) {
     using K = EffectKind;
     const ResourceId R = ResourceId::Research;
 
@@ -35,7 +16,7 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 10}},
               {},
               {},
-              {{K::ClickPowerAdd, 1.0}}});
+              {{K::ClickPowerAdd, 1}}});
 
     tree.Add({"steam_generators",
               "Steam Generators",
@@ -45,7 +26,6 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {},
               {{K::PassiveAdd, 0.5}}});
 
-    // Abre el clic sobre el Sol: una interaccion nueva, no solo un numero mayor.
     tree.Add({"solar_collection",
               "Solar Collectors",
               "Instruments aimed at the Sun. Unlocks clicking the Sun to collect solar energy.",
@@ -60,7 +40,7 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 40}},
               {"instrumentation"},
               {},
-              {{K::YieldMultiplier, 1.10}}});
+              {{K::YieldMultiplier, 1.1}}});
 
     tree.Add({"power_grid",
               "Power Grid",
@@ -68,7 +48,7 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 120}},
               {"steam_generators"},
               {{R, 60}},
-              {{K::PassiveAdd, 3.0}}});
+              {{K::PassiveAdd, 3}}});
 
     tree.Add({"stimulated_emission",
               "Stimulated Emission",
@@ -76,7 +56,7 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 80}},
               {"photon_theory"},
               {},
-              {{K::ClickPowerAdd, 3.0}}});
+              {{K::ClickPowerAdd, 3}}});
 
     tree.Add({"capacitor_banks",
               "Capacitor Banks",
@@ -92,7 +72,7 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 150}},
               {"stimulated_emission"},
               {{R, 100}},
-              {{K::PassiveAdd, 2.0}, {K::UnlockInteraction, 0, "laser_pulse"}}});
+              {{K::PassiveAdd, 2}, {K::UnlockInteraction, 0, "laser_pulse"}}});
 
     tree.Add({"gas_lasers",
               "Gas Lasers",
@@ -100,7 +80,7 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 400}},
               {"ruby_laser", "capacitor_banks"},
               {{R, 500}},
-              {{K::PassiveAdd, 10.0}, {K::YieldMultiplier, 1.10}, {K::ClickPowerAdd, 40, "laser_pulse"}}});
+              {{K::PassiveAdd, 10}, {K::YieldMultiplier, 1.1}, {K::ClickPowerAdd, 40, "laser_pulse"}}});
 
     tree.Add({"laser_arrays",
               "Industrial Laser Arrays",
@@ -108,7 +88,20 @@ inline void RegisterEarlyEnergyCatalog(TechTree& tree) {
               {{R, 900}},
               {"gas_lasers"},
               {{R, 1500}},
-              {{K::YieldMultiplier, 1.50}}});
+              {{K::YieldMultiplier, 1.5}}});
 }
+
+inline void RegisterGeneratedInteractions(InteractionSet& set) {
+    set.Add({"gather", "Gather Data", "Click the Earth to collect research points.",
+             InteractionTarget::Earth, 1, 0, true});
+    set.Add({"solar_collector", "Solar Collection", "Click the Sun to collect solar energy. Slow to recharge, but worth more than a click on the Earth.",
+             InteractionTarget::Sun, 8, 5, false});
+    set.Add({"laser_pulse", "Laser Pulse", "Fire a high-power laser pulse from the HUD. Long recharge, large yield.",
+             InteractionTarget::Button, 60, 12, false});
+}
+
+// Cuantas tecnologias e interacciones salieron de la hoja: una prueba compara contra esto.
+inline constexpr int kGeneratedTechCount = 10;
+inline constexpr int kGeneratedInteractionCount = 3;
 
 } // namespace evergrave

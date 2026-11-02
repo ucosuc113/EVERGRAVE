@@ -3,7 +3,7 @@
 // EL ARBOL DE TECNOLOGIAS: definiciones (datos) y estado (que se investigo).
 //
 // Una tecnologia es una fila de datos, no codigo. Agregar una es escribir una
-// `TechDef` en Data/TechCatalog.h; ni este archivo ni la interfaz cambian. Lo
+// fila en la hoja Design/EVERGRAVE_Balance.xlsx (que genera Data/TechCatalog.generated.h); ni este archivo ni la interfaz cambian. Lo
 // que una tecnologia HACE no esta aqui: lleva una lista de `Effect`, y quien
 // los suma es GameState (Core/GameState.h). Asi el arbol decide solo "se puede
 // comprar / se compro", y un efecto nuevo es un valor de `EffectKind`, no una

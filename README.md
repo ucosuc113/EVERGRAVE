@@ -41,17 +41,50 @@ se recorta; la Tierra queda centrada y lejos de los bordes. Resoluciones exactas
 
 ```
 Core/        el dominio, SIN motor: Resources, Tech, Interactions, GameState, SaveData
-Data/        TechCatalog (tecnologias) y GameContent (interacciones): solo datos
+Data/        TechCatalog.generated.h (SALE DE LA HOJA, no se edita) y GameContent
 Services/    Session (el GameState unico + estado de UI), Controls, UseFeedback
 View/        Hud, TechPanel, SpaceWorld + TechLayout/Format/UiKit (sin motor, probables)
 Direction/   GameRoot: el reloj de la partida
 EvergraveCheck.cpp   pruebas que necesitan un frame
 ```
 
-**Agregar una tecnologia**: un `tree.Add({...})` en `Data/TechCatalog.h`.
-**Agregar una interaccion**: una fila en `Data/GameContent.h`, y si hay que
-ganarsela, un efecto `UnlockInteraction` en una tecnologia. El panel, el HUD y el
-mundo no cambian. `GameState::ContentProblems()` delata un nombre mal escrito.
+## La hoja de balance (`Design/EVERGRAVE_Balance.xlsx`)
+
+Es la fuente de verdad del arbol y de las interacciones. Se edita en Excel y se
+exporta a C++; el balance se disena en la hoja y no a ojo en el codigo.
+
+| Hoja | Para que |
+|---|---|
+| Leeme | Como se usa, leyenda de colores, supuestos, que es canon y que es relleno |
+| Resumen | Por era: tiempo total, espera media contra el objetivo, compras SLOW/FAST |
+| Params | Costo inicial, salto entre eras, clics por segundo, umbrales |
+| Eras | Las 8 etapas del brief: costo base, razon de costo por tier, objetivo por compra |
+| Techs | Una fila por tecnologia (hasta 200): era, rama, tier, requisitos, condicion, costo manual o sugerido, hasta 3 efectos, estado, `Valido` |
+| Interactions | Lo que el jugador puede hacer; `Desbloqueada por` y `Alcanzable` se calculan |
+| Simulation | Una partida comprando en orden: cuanto espera cada compra y si se sale del objetivo de su era |
+| Lists | Valores de los desplegables |
+
+Azul = entrada, negro = formula. **Agregar una tecnologia**: una fila nueva en
+Techs (los requisitos, SIEMPRE en filas de arriba), `Estado = Implemented`.
+**Agregar una interaccion**: una fila en Interactions y, si hay que ganarsela, un
+efecto `UnlockInteraction` en una tecnologia.
+
+```bash
+pip install openpyxl                      # una vez
+python Tools/export_catalog.py            # hoja -> Assets/Scripts/Data/TechCatalog.generated.h
+python Tools/export_catalog.py --check    # falla si el .h no coincide con la hoja
+```
+
+El exportador valida (id repetido, requisito que no esta arriba, efecto u objetivo
+inexistente, interaccion que nunca se desbloquea) y no escribe nada si hay un
+problema. Solo exporta las filas `Implemented`: una `Needs feature` (un efecto que
+el juego aun no tiene) se guarda en la hoja sin romper nada.
+
+La simulacion cuenta solo clics en la Tierra mas produccion pasiva (no el Sol ni
+el pulso laser) y supone N clics por segundo (Params): es una hipotesis, no un
+dato. Con las 10 tecnologias de hoy el arbol entero se completa en ~1.5 minutos y
+casi todo sale FAST: ese es el desbalance que la hoja deja ver. El costo
+"sugerido" y el "manual" difieren hasta 1000x en la era 2 por la misma razon.
 
 ## Pruebas
 
