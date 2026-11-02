@@ -1,20 +1,20 @@
 {
   "environment": {
     "ambientColor": [
-      0.16,
-      0.18,
-      0.3
+      0.1599999964237213,
+      0.18000000715255737,
+      0.30000001192092896
     ],
     "ambientEnergy": 1.0,
     "ambientGround": [
-      0.1,
-      0.11,
-      0.2
+      0.10000000149011612,
+      0.10999999940395355,
+      0.20000000298023224
     ],
     "background": [
-      0.004,
-      0.005,
-      0.014
+      0.004000000189989805,
+      0.004999999888241291,
+      0.014000000432133675
     ],
     "exposure": 1.0,
     "hemisphere": true,
@@ -35,25 +35,25 @@
       "faceCulling": true,
       "name": "Game",
       "position": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "primitive": "Empty",
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0,
+        1.0,
+        1.0
       ],
-      "staticForLighting": false,
       "scripts": [
         "GameRoot"
-      ]
+      ],
+      "staticForLighting": false
     },
     {
       "active": true,
@@ -61,25 +61,25 @@
       "faceCulling": true,
       "name": "Hud",
       "position": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "primitive": "Empty",
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0,
+        1.0,
+        1.0
       ],
-      "staticForLighting": false,
       "scripts": [
         "Hud"
-      ]
+      ],
+      "staticForLighting": false
     },
     {
       "active": true,
@@ -87,25 +87,25 @@
       "faceCulling": true,
       "name": "TechPanel",
       "position": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "primitive": "Empty",
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0,
+        1.0,
+        1.0
       ],
-      "staticForLighting": false,
       "scripts": [
         "TechPanel"
-      ]
+      ],
+      "staticForLighting": false
     },
     {
       "active": true,
@@ -117,1220 +117,1220 @@
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star000",
               "position": [
-                43.683639057460724,
-                -28.18675762669402,
-                60.804986417164
+                43.68363952636719,
+                -28.186758041381836,
+                60.80498504638672
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star001",
               "position": [
-                -40.42385612304284,
-                -68.41019413319316,
-                -9.271310306658743
+                -40.42385482788086,
+                -68.41019439697266,
+                -9.271309852600098
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star002",
               "position": [
-                66.53517412434057,
-                13.246080944536818,
-                -42.3982540189388
+                66.53517150878906,
+                13.246081352233887,
+                -42.39825439453125
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star003",
               "position": [
-                -27.792042469009584,
-                -74.00069464928242,
-                12.308516028523997
+                -27.792041778564453,
+                -74.00069427490234,
+                12.308516502380371
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star004",
               "position": [
-                -64.90965802073666,
-                -41.493919979675994,
-                -21.563647658762733
+                -64.90966033935547,
+                -41.493919372558594,
+                -21.563648223876953
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star005",
               "position": [
-                43.12927495921443,
-                52.29633994752609,
-                42.48480280741887
+                43.129276275634766,
+                52.29634094238281,
+                42.48480224609375
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star006",
               "position": [
-                -66.95738207826713,
-                20.900146517077935,
-                -38.46937562256018
+                -66.95738220214844,
+                20.900146484375,
+                -38.46937561035156
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star007",
               "position": [
-                -62.9643388687193,
-                12.336471778799787,
-                47.78392506770409
+                -62.96434020996094,
+                12.336471557617188,
+                47.7839241027832
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star008",
               "position": [
-                21.242248511469725,
-                -72.546771101159,
-                -26.186501884998005
+                21.24224853515625,
+                -72.54676818847656,
+                -26.18650245666504
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star009",
               "position": [
-                -76.38132691779175,
-                -12.93775302856556,
-                -19.962651247999723
+                -76.3813247680664,
+                -12.937752723693848,
+                -19.962650299072266
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star010",
               "position": [
-                29.827935002346578,
-                -30.6429081436905,
-                -67.61143744954055
+                29.82793426513672,
+                -30.642908096313477,
+                -67.61143493652344
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star011",
               "position": [
-                -43.85737158505294,
-                -63.511086009025384,
-                -21.044545887349784
+                -43.85737228393555,
+                -63.511085510253906,
+                -21.044546127319336
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star012",
               "position": [
-                -73.89648351772114,
-                -20.416393163883004,
-                -22.857834847004245
+                -73.896484375,
+                -20.416393280029297,
+                -22.85783576965332
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star013",
               "position": [
-                -58.16905240069894,
-                10.298926901341865,
-                -53.94713567452454
+                -58.16905212402344,
+                10.298927307128906,
+                -53.94713592529297
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star014",
               "position": [
-                -67.02217335032528,
-                28.863995709085746,
-                32.78563757356
+                -67.02217102050781,
+                28.863996505737305,
+                32.78563690185547
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star015",
               "position": [
-                70.75340051441835,
-                -5.50370146565216,
-                -36.92784296196139
+                70.75340270996094,
+                -5.503701686859131,
+                -36.92784118652344
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star016",
               "position": [
-                20.176813118773033,
-                -32.03728050181083,
-                -70.47346217136206
+                20.17681312561035,
+                -32.03728103637695,
+                -70.47346496582031
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star017",
               "position": [
-                -13.619689889490786,
-                -66.90319827267683,
-                41.69491705473216
+                -13.61968994140625,
+                -66.9031982421875,
+                41.694915771484375
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star018",
               "position": [
-                -6.811729767702653,
-                60.02199929174863,
-                -52.44959426528599
+                -6.811729907989502,
+                60.02199935913086,
+                -52.44959259033203
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star019",
               "position": [
-                69.9636849501086,
-                17.433443045824575,
-                34.65772427280732
+                69.96368408203125,
+                17.433443069458008,
+                34.65772247314453
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star020",
               "position": [
-                3.5397816590417728,
-                -13.100348514363649,
-                -78.84066726384627
+                3.5397815704345703,
+                -13.100348472595215,
+                -78.84066772460938
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star021",
               "position": [
-                -35.19292636482916,
-                69.32323394890201,
-                18.8612610592588
+                -35.19292449951172,
+                69.32323455810547,
+                18.86126136779785
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star022",
               "position": [
-                -60.86149396346613,
-                42.331338594050095,
-                -30.065533844767504
+                -60.86149215698242,
+                42.331336975097656,
+                -30.065534591674805
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star023",
               "position": [
-                -44.62283592786272,
-                -25.580422049408718,
-                61.27352218967969
+                -44.62283706665039,
+                -25.580421447753906,
+                61.273521423339844
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star024",
               "position": [
-                -76.00106982375262,
-                12.783232685198751,
-                21.45754757098642
+                -76.00106811523438,
+                12.783232688903809,
+                21.457548141479492
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star025",
               "position": [
-                -36.09295740463284,
-                71.14897521726999,
-                5.926360714609001
+                -36.09295654296875,
+                71.14897155761719,
+                5.926360607147217
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star026",
               "position": [
-                -11.462052550850952,
-                -70.29289158444485,
-                -36.43529530577479
+                -11.462052345275879,
+                -70.29289245605469,
+                -36.43529510498047
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star027",
               "position": [
-                5.785512035785651,
-                78.89535031466146,
-                -11.918538048377728
+                5.7855119705200195,
+                78.89534759521484,
+                -11.918538093566895
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star028",
               "position": [
-                54.69107068568657,
-                34.66044710372857,
-                -46.984467580498
+                54.691070556640625,
+                34.66044616699219,
+                -46.984466552734375
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star029",
               "position": [
-                -23.076002353894456,
-                -76.38993151110583,
-                5.663610075880817
+                -23.07600212097168,
+                -76.38993072509766,
+                5.663609981536865
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star030",
               "position": [
-                -77.94542084617514,
-                17.7471269572923,
-                3.090445578617384
+                -77.94541931152344,
+                17.747127532958984,
+                3.0904455184936523
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star031",
               "position": [
-                46.41997135078485,
-                42.91727815560332,
-                49.02339742925705
+                46.41997146606445,
+                42.91727828979492,
+                49.02339553833008
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star032",
               "position": [
-                67.85890309841177,
-                -16.336371432602768,
-                -39.09337845078628
+                67.85890197753906,
+                -16.33637237548828,
+                -39.093379974365234
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star033",
               "position": [
-                -41.34979644106675,
-                -67.10699180797782,
-                13.669161816524856
+                -41.349796295166016,
+                -67.10699462890625,
+                13.669161796569824
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star034",
               "position": [
-                46.7417378838212,
-                -35.5457390744879,
-                54.3296454364335
+                46.741737365722656,
+                -35.545738220214844,
+                54.329647064208984
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star035",
               "position": [
-                -9.742642131808676,
-                58.23751515176242,
-                53.97659449464877
+                -9.742642402648926,
+                58.23751449584961,
+                53.976593017578125
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star036",
               "position": [
-                -7.58387957921977,
-                77.83473296018977,
-                -16.8593925022179
+                -7.583879470825195,
+                77.83473205566406,
+                -16.859392166137695
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star037",
               "position": [
-                18.771134722140154,
-                73.2369926342386,
-                26.15315298650901
+                18.771135330200195,
+                73.23699188232422,
+                26.153152465820313
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star038",
               "position": [
-                -31.17109360052209,
-                -55.7922587013759,
-                -48.12054439370191
+                -31.171092987060547,
+                -55.792259216308594,
+                -48.12054443359375
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star039",
               "position": [
-                -67.75062020211664,
-                -2.405963145382941,
-                -42.47428402659196
+                -67.75061798095703,
+                -2.405963182449341,
+                -42.47428512573242
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.35,
-                0.35,
-                0.35
+                0.3499999940395355,
+                0.3499999940395355,
+                0.3499999940395355
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star040",
               "position": [
-                43.88125361904303,
-                -34.89108442772198,
-                57.070551147494626
+                43.88125228881836,
+                -34.891082763671875,
+                57.070552825927734
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star041",
               "position": [
-                -70.60479516666945,
-                -20.91942833684394,
-                -31.262444202785876
+                -70.60479736328125,
+                -20.9194278717041,
+                -31.26244354248047
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star042",
               "position": [
-                -73.61631110712645,
-                30.47898514175646,
-                -7.188198919573623
+                -73.6163101196289,
+                30.478984832763672,
+                -7.188199043273926
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star043",
               "position": [
-                -4.87855159672831,
-                24.794634194612595,
-                -75.90405687098291
+                -4.878551483154297,
+                24.794633865356445,
+                -75.90406036376953
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.45,
-                0.45,
-                0.45
+                0.44999998807907104,
+                0.44999998807907104,
+                0.44999998807907104
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star044",
               "position": [
-                9.003883367881656,
-                63.925281609272346,
-                -47.24921645353297
+                9.003883361816406,
+                63.9252815246582,
+                -47.24921798706055
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.6,
-                0.6,
-                0.6
+                0.6000000238418579,
+                0.6000000238418579,
+                0.6000000238418579
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star045",
               "position": [
-                -62.908401903920414,
-                -17.219374897397017,
-                46.325220971277794
+                -62.90840148925781,
+                -17.219375610351563,
+                46.32522201538086
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star046",
               "position": [
-                -64.80758883072671,
-                -2.9563490935688463,
-                46.8106444089848
+                -64.80758666992188,
+                -2.9563491344451904,
+                46.810646057128906
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star047",
               "position": [
-                10.273912806434788,
-                -69.22438146511602,
-                38.761214202058675
+                10.27391242980957,
+                -69.22438049316406,
+                38.76121520996094
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star048",
               "position": [
-                -40.35488475547373,
-                -62.411471199925366,
-                -29.602221859740872
+                -40.35488510131836,
+                -62.41147232055664,
+                -29.602222442626953
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Star.strmat",
               "name": "Star049",
               "position": [
-                1.4204884091553982,
-                -79.96267489578294,
-                1.9881740846263467
+                1.4204883575439453,
+                -79.96267700195313,
+                1.9881740808486938
               ],
               "primitive": "Cube",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                0.28,
-                0.28,
-                0.28
+                0.2800000011920929,
+                0.2800000011920929,
+                0.2800000011920929
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Star.strmat"
+              "staticForLighting": false
             }
           ],
           "faceCulling": true,
           "name": "Stars",
           "position": [
-            0,
-            0,
-            0
+            0.0,
+            0.0,
+            0.0
           ],
           "primitive": "Empty",
           "rotation": [
-            0,
-            0,
-            0
+            0.0,
+            0.0,
+            0.0
           ],
           "scale": [
-            1,
-            1,
-            1
+            1.0,
+            1.0,
+            1.0
           ],
           "staticForLighting": false
         },
@@ -1341,63 +1341,63 @@
               "active": true,
               "children": [],
               "faceCulling": true,
+              "material": "Assets/Materials/Sun.strmat",
+              "mesh": "Assets/Meshes/sphere.strmesh",
               "name": "Sun",
               "position": [
-                0,
-                0,
-                0
+                -0.38902851939201355,
+                1.4554539918899536,
+                0.14683577418327332
               ],
               "primitive": "Empty",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                1.1,
-                1.1,
-                1.1
+                0.699999988079071,
+                0.699999988079071,
+                0.699999988079071
               ],
-              "staticForLighting": false,
-              "material": "Assets/Materials/Sun.strmat",
-              "mesh": "Assets/Meshes/sphere.strmesh"
+              "staticForLighting": false
             },
             {
               "active": true,
               "children": [],
               "faceCulling": true,
-              "name": "Sunlight",
-              "position": [
-                0,
-                0,
-                0
-              ],
-              "primitive": "Empty",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "scale": [
-                1,
-                1,
-                1
-              ],
-              "staticForLighting": false,
               "light": {
                 "attenuation": 1.0,
                 "castsShadows": false,
                 "color": [
                   1.0,
-                  0.86,
-                  0.66
+                  0.8600000143051147,
+                  0.6600000262260437
                 ],
-                "intensity": 7.0,
-                "range": 90.0,
+                "intensity": 12.050000190734863,
+                "range": 95.0,
                 "spotAngle": 45.0,
                 "static": false,
                 "type": "Point"
-              }
+              },
+              "name": "Sunlight",
+              "position": [
+                -0.38902851939201355,
+                1.4554539918899536,
+                0.14683577418327332
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
             },
             {
               "active": true,
@@ -1409,45 +1409,45 @@
                       "active": true,
                       "children": [],
                       "faceCulling": true,
+                      "material": "Assets/Materials/Earth.strmat",
+                      "mesh": "Assets/Meshes/sphere.strmesh",
                       "name": "Earth",
                       "position": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0
                       ],
                       "primitive": "Empty",
                       "rotation": [
-                        0,
-                        0,
-                        0
+                        0.0,
+                        0.0,
+                        0.0
                       ],
                       "scale": [
-                        1.8,
-                        1.8,
-                        1.8
+                        1.7999999523162842,
+                        1.7999999523162842,
+                        1.7999999523162842
                       ],
-                      "staticForLighting": false,
-                      "material": "Assets/Materials/Earth.strmat",
-                      "mesh": "Assets/Meshes/sphere.strmesh"
+                      "staticForLighting": false
                     }
                   ],
                   "faceCulling": true,
                   "name": "Tilt",
                   "position": [
-                    0,
-                    0,
-                    0
+                    0.0,
+                    0.0,
+                    0.0
                   ],
                   "primitive": "Empty",
                   "rotation": [
-                    0,
-                    0,
-                    23.4
+                    0.0,
+                    0.0,
+                    23.399999618530273
                   ],
                   "scale": [
-                    1,
-                    1,
-                    1
+                    1.0,
+                    1.0,
+                    1.0
                   ],
                   "staticForLighting": false
                 }
@@ -1461,66 +1461,66 @@
               ],
               "primitive": "Empty",
               "rotation": [
-                0,
-                0,
-                0
+                0.0,
+                0.0,
+                0.0
               ],
               "scale": [
-                1,
-                1,
-                1
+                1.0,
+                1.0,
+                1.0
               ],
               "staticForLighting": false
             },
             {
               "active": true,
-              "children": [],
-              "faceCulling": true,
-              "name": "Camara",
-              "position": [
-                -6.0,
-                8.97831870716605,
-                -7.103130316216581
-              ],
-              "primitive": "Empty",
-              "rotation": [
-                62,
-                0,
-                0
-              ],
-              "scale": [
-                1,
-                1,
-                1
-              ],
-              "staticForLighting": false,
               "camera": {
                 "aperture": 0.0,
                 "far": 300.0,
                 "focusDistance": 13.0,
                 "fovY": 40.0,
-                "near": 0.1,
+                "near": 0.10000000149011612,
                 "orthoHalfHeight": 10.0
-              }
+              },
+              "children": [],
+              "faceCulling": true,
+              "name": "Camara",
+              "position": [
+                -6.0,
+                8.97831916809082,
+                -7.103130340576172
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                62.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
             }
           ],
           "faceCulling": true,
           "name": "OrbitPivot",
           "position": [
-            0,
-            0,
-            0
+            0.0,
+            0.0,
+            0.0
           ],
           "primitive": "Empty",
           "rotation": [
-            0,
-            0,
-            0
+            0.0,
+            0.0,
+            0.0
           ],
           "scale": [
-            1,
-            1,
-            1
+            1.0,
+            1.0,
+            1.0
           ],
           "staticForLighting": false
         }
@@ -1528,48 +1528,29 @@
       "faceCulling": true,
       "name": "Space",
       "position": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "primitive": "Empty",
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0,
+        1.0,
+        1.0
       ],
-      "staticForLighting": false,
       "scripts": [
         "SpaceWorld"
-      ]
+      ],
+      "staticForLighting": false
     },
     {
       "active": true,
       "children": [],
-      "faceCulling": true,
-      "name": "PixelViewport",
-      "position": [
-        0,
-        0,
-        0
-      ],
-      "primitive": "Empty",
-      "rotation": [
-        0,
-        0,
-        0
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "staticForLighting": false,
       "components": [
         {
           "baseHeight": 360,
@@ -1577,12 +1558,31 @@
           "bloom": false,
           "bloomIntensity": 0.5,
           "bloomRadius": 1.0,
-          "bloomThreshold": 0.72,
+          "bloomThreshold": 0.7200000286102295,
           "fillWidth": true,
           "pixelate": true,
           "type": "SubViewport"
         }
-      ]
+      ],
+      "faceCulling": true,
+      "name": "PixelViewport",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "primitive": "Empty",
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "staticForLighting": false
     },
     {
       "active": true,
@@ -1590,25 +1590,25 @@
       "faceCulling": true,
       "name": "Pruebas",
       "position": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "primitive": "Empty",
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "scale": [
-        1,
-        1,
-        1
+        1.0,
+        1.0,
+        1.0
       ],
-      "staticForLighting": false,
       "scripts": [
         "EvergraveCheck"
-      ]
+      ],
+      "staticForLighting": false
     }
   ]
 }
