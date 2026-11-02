@@ -1,43 +1,13 @@
-# ---------------------------------------------------------------------------
-# Lo que S.T.R.AC.E regenera solo: nunca va a git
-# ---------------------------------------------------------------------------
-# Caches del Editor, multi-play, scripts compilados, sombras horneadas.
+# stuff strace regenerates on its own
 Intermediate/
-# Scripts.dll de Play y lo que entrega Build Settings (Windows, Android, Web).
 Build/
-# Copias de rescate que escribe la ventana de cuelgue.
 Rescate/
-# Candado de "proyecto abierto por otro Editor".
 .strace-editor.lock
-# Disposicion de paneles del Editor (la escribe en el directorio actual).
 imgui.ini
 
-# ---------------------------------------------------------------------------
-# Herramientas y restos de trabajo: no son del juego
-# ---------------------------------------------------------------------------
-# Configuracion y permisos locales de Claude Code.
+# local-only: not part of the game
+Tools/
+Tests/
+Design/
+.wakatime-project
 .claude/
-CLAUDE.local.md
-__pycache__/
-*.pyc
-# Salidas de verificacion de la hoja de balance.
-calc_out/
-*.tmp
-*.log
-
-# Excel y LibreOffice: archivos de bloqueo mientras la hoja esta abierta.
-~$*
-.~lock.*#
-
-# Sistema
-Thumbs.db
-desktop.ini
-.DS_Store
-
-# ---------------------------------------------------------------------------
-# NO se ignora a proposito
-#   .wakatime-project         identifica el proyecto para Catime/Hackatime
-#   Design/*.xlsx             la hoja de balance es la fuente del catalogo
-#   Assets/Meshes/*.strmesh   el motor los lee tal cual (se regeneran con MeshTool desde el .gltf)
-#   Assets/Scripts/Data/TechCatalog.generated.h   lo exporta la hoja; va al repo para que compile sin Python
-# ---------------------------------------------------------------------------
