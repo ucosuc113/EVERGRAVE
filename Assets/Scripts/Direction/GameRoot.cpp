@@ -123,7 +123,10 @@ public:
         game.Tick(dt);
 
         InputActions& in = InputService::Actions();
-        if (in.Pressed("ev_gather")) UseWithFeedback(kGatherId, UiService::Width() * 0.5f, UiService::Height() * 0.5f);
+        if (in.Pressed("ev_gather")) {
+            const UiRect vis = UiService::VisibleRect();
+            UseWithFeedback(kGatherId, vis.x + vis.width * 0.5f, vis.y + vis.height * 0.5f);
+        }
         if (in.Pressed("ev_save")) SaveGame();
         if (in.Pressed("ev_load")) LoadGame();
     }

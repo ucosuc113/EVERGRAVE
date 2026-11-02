@@ -69,12 +69,15 @@ public:
         if (!state.treeOpen) return;
 
         UiDrawList& ui = UiService::Frame();
-        const float W = UiService::Width(), H = UiService::Height();
+        // El panel va entre las barras del HUD, que estan ancladas al area
+        // visible (ver Hud.cpp): con recorte del pixelado, la imagen entera
+        // pondria el panel donde la pantalla no llega.
+        const UiRect vis = UiService::VisibleRect();
         const Pointer p = ReadPointer();
         const TechTree& tree = game.tree();
 
         // --- Geometria: el panel entre las dos barras del HUD ---
-        const UiRect panel = kit::Rect(8, kBarH + 4, W - 16, H - 2 * kBarH - 8);
+        const UiRect panel = kit::Rect(vis.x + 8, vis.y + kBarH + 4, vis.width - 16, vis.height - 2 * kBarH - 8);
         const UiRect canvas = kit::Rect(panel.x + 8, panel.y + 22, panel.width - 24 - kDetailsW, panel.height - 30);
         const UiRect details = kit::Rect(panel.Right() - kDetailsW - 8, panel.y + 22, kDetailsW, panel.height - 30);
 

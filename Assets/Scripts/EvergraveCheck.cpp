@@ -121,6 +121,13 @@ private:
         const SubViewport* sv = pv ? GetComponent<SubViewport>(*pv) : nullptr;
         Expect(sv && sv->pixelate && sv->baseHeight == 360, L"PixelViewport: 360 filas con reescalado entero", sv ? Num(sv->baseHeight) : L"sin componente");
         Expect(std::fabs(UiService::Height() - 360.0f) < 0.5f, L"la UI se dibuja a 360 filas internas", Num(UiService::Height()));
+
+        // El area visible: no vacia, dentro de la imagen, y los HUD se anclan a ella.
+        const UiRect vis = UiService::VisibleRect();
+        Expect(vis.width > 0 && vis.height > 0 && vis.x >= 0 && vis.y >= 0 && vis.Right() <= UiService::Width() + 0.5f &&
+                   vis.Bottom() <= UiService::Height() + 0.5f,
+               L"UiService::VisibleRect cabe dentro de la imagen y no esta vacia",
+               Num(vis.x) + L"," + Num(vis.y) + L" " + Num(vis.width) + L"x" + Num(vis.height));
         if (!earth || !sun || !cam || !cam->camera) return;
 
         // Casi cenital pero no perpendicular. Se mide en el MUNDO: la camara cuelga de un pivote que gira.

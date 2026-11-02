@@ -30,11 +30,12 @@ interna, saturacion/contraste/negro) y `environment.postProcess` en la escena.
 Los mandos estan en `Assets/Materials/PostProcess.strmat`; aqui el contraste es
 1.15 (en AN0MALY 1.45 aplasta a negro el lado de noche de la Tierra).
 
-**Resolucion del panel Juego**: usar 1280x720 / 1920x1080 / 2560x1440 (x2, x3,
-x4 exactos de 360). En "Libre" la escala se REDONDEA y lo que sobra se recorta
-(regla de `PixelLayout.h`): con un panel de 610 px de alto la escala sale 2, la
-imagen mide 720 y se pierden ~55 px arriba y abajo, que es donde estan las barras
-del HUD.
+**El recorte y el HUD**: con 360 filas la escala se redondea y, en ventanas como
+un panel de 610 px (escala 2), la imagen se recorta ~55 px por lado. El HUD, el
+panel del arbol y los avisos se anclan a `UiService::VisibleRect()` (el area que
+siempre se ve entera, ver CLAUDE.md del motor), asi que no se pierden. El mundo si
+se recorta; la Tierra queda centrada y lejos de los bordes. Resoluciones exactas
+(sin recorte): 1280x720, 1920x1080, 2560x1440.
 
 ## Estructura (`Assets/Scripts/`)
 

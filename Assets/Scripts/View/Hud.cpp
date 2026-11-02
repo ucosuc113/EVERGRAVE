@@ -31,27 +31,34 @@ class Hud : public IScript {
 public:
     void OnUpdate(float dt) override {
         UiDrawList& ui = UiService::Frame();
-        const float W = UiService::Width(), H = UiService::Height();
+        const float W = UiService::Width();
+        // El HUD se ancla al AREA VISIBLE, no a los bordes de la imagen: con el
+        // pixelado, una ventana donde la escala se redondea hacia arriba recorta
+        // la imagen y las barras de los bordes se perderian. (VisibleRect es la
+        // imagen entera cuando no hay recorte.)
+        const UiRect vis = UiService::VisibleRect();
+        const float L = vis.x, R = vis.Right(), T = vis.y, B = vis.Bottom(), cx = vis.x + vis.width * 0.5f;
         const Pointer p = ReadPointer();
         GameState& game = Session();
         UiState& state = Ui();
 
         // --- Barra de arriba: saldo, produccion, boton del arbol ---
-        const UiRect top = kit::Rect(0, 0, W, kBarH);
+        // El fondo de la barra ocupa todo el ancho; su contenido, el visible.
+        const UiRect top = kit::Rect(0, T, W, kBarH);
         ui.AddRect(top, kit::Bar());
-        ui.AddRect(kit::Rect(0, kBarH - 1, W, 1), kit::Line());
+        ui.AddRect(kit::Rect(0, T + kBarH - 1, W, 1), kit::Line());
 
         const std::string balance = FormatAmount(game.wallet().Get(ResourceId::Research));
-        ui.AddText(8, 7, balance, kit::Text(), 2);
-        const float tx = 8.0f + kit::TextW(balance, 2) + 8.0f;
-        ui.AddText(tx, 6, InfoOf(ResourceId::Research).name, kit::Dim(), 1);
-        ui.AddText(tx, 16, FormatRate(game.PassiveRate()) + "   gather +" + FormatAmount(game.GatherAmount()), kit::TextSoft(), 1);
+        ui.AddText(L + 8, T + 7, balance, kit::Text(), 2);
+        const float tx = L + 8.0f + kit::TextW(balance, 2) + 8.0f;
+        ui.AddText(tx, T + 6, InfoOf(ResourceId::Research).name, kit::Dim(), 1);
+        ui.AddText(tx, T + 16, FormatRate(game.PassiveRate()) + "   gather +" + FormatAmount(game.GatherAmount()), kit::TextSoft(), 1);
 
-        const UiRect treeBtn = kit::Rect(W - 128.0f, 4, 120, 20);
+        const UiRect treeBtn = kit::Rect(R - 128.0f, T + 4, 120, 20);
         if (kit::Button(ui, treeBtn, state.treeOpen ? "CLOSE TREE [T]" : "TECH TREE [T]", true, p)) state.treeOpen = !state.treeOpen;
 
         // --- Barra de abajo: recolectar, atajos, progreso ---
-        const float by = H - kBarH;
+        const float by = B - kBarH;
         ui.AddRect(kit::Rect(0, by, W, kBarH), kit::Bar());
         ui.AddRect(kit::Rect(0, by, W, 1), kit::Line());
 
@@ -64,10 +71,10 @@ public:
 
         if (buttons.empty()) {
             const std::string hint = "CLICK THE EARTH TO GATHER DATA";
-            ui.AddText(std::floor((W - kit::TextW(hint)) * 0.5f), by + 10, hint, kit::TextSoft(), 1);
+            ui.AddText(std::floor(cx - kit::TextW(hint) * 0.5f), by + 10, hint, kit::TextSoft(), 1);
         } else {
             const float bw = 150.0f, gap = 8.0f;
-            float x = std::floor((W - (buttons.size() * bw + (buttons.size() - 1) * gap)) * 0.5f);
+            float x = std::floor(cx - (buttons.size() * bw + (buttons.size() - 1) * gap) * 0.5f);
             for (const InteractionDef* d : buttons) {
                 const double left = game.CooldownLeft(d->id);
                 const UiRect r = kit::Rect(x, by + 4, bw, 20);
@@ -81,15 +88,15 @@ public:
             }
         }
 
-        ui.AddText(8, by + 10, "F5 SAVE  F9 LOAD", kit::Dim(), 1);
+        ui.AddText(L + 8, by + 10, "F5 SAVE  F9 LOAD", kit::Dim(), 1);
         const std::string progress = "TECH " + std::to_string(game.tree().ResearchedCount()) + "/" + std::to_string(game.tree().All().size());
-        ui.AddText(W - 8.0f - kit::TextW(progress), by + 10, progress, kit::Dim(), 1);
+        ui.AddText(R - 8.0f - kit::TextW(progress), by + 10, progress, kit::Dim(), 1);
 
         // --- Aviso ---
         if (state.toastTime > 0.0f && !state.toast.empty()) {
             const float a = state.toastTime < 0.5f ? state.toastTime / 0.5f : 1.0f;
             const float w = kit::TextW(state.toast) + 16.0f;
-            const UiRect r = kit::Rect(std::floor((W - w) * 0.5f), by - 22.0f, w, 16);
+            const UiRect r = kit::Rect(std::floor(cx - w * 0.5f), by - 22.0f, w, 16);
             ui.AddRect(r, kit::Bar().WithAlpha(0.9f * a));
             ui.AddRectOutline(r, kit::Red().WithAlpha(a), 1.0f);
             ui.AddTextCentered(r, state.toast, kit::Text().WithAlpha(a), 1);
@@ -107,7 +114,7 @@ public:
         }
 
         // El mundo no tiene que reaccionar a un clic que cae sobre una barra.
-        if (p.Over(0, 0, W, kBarH) || p.Over(0, by, W, kBarH)) state.pointerOverUi = true;
+        if (p.Over(0, T, W, kBarH) || p.Over(0, by, W, kBarH)) state.pointerOverUi = true;
     }
 };
 

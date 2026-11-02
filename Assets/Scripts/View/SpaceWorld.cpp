@@ -151,8 +151,12 @@ private:
         UiDrawList& ui = UiService::Frame();
         const std::string text = buf;
         const float w = kit::TextW(text) + 10.0f;
-        const float rx = std::min(x + 12.0f, UiService::Width() - w - 4.0f);
-        const UiRect r = kit::Rect(std::floor(rx), std::floor(y + 14.0f), w, 14);
+        // Dentro del area visible: con el recorte del pixelado, el borde de la
+        // imagen puede estar fuera de la pantalla.
+        const UiRect vis = UiService::VisibleRect();
+        const float rx = std::min(x + 12.0f, vis.Right() - w - 4.0f);
+        const float ry = std::min(y + 14.0f, vis.Bottom() - 18.0f);
+        const UiRect r = kit::Rect(std::floor(rx), std::floor(ry), w, 14);
         ui.AddRect(r, kit::Bar().WithAlpha(0.92f));
         ui.AddRectOutline(r, open && left <= 0.0 ? kit::Red() : kit::Line(), 1.0f);
         ui.AddTextCentered(r, text, open && left <= 0.0 ? kit::Text() : kit::Dim(), 1);
