@@ -23,6 +23,7 @@
 #include <cstdlib>
 #include <string>
 #include <string_view>
+#include <unordered_map>
 #include <vector>
 
 namespace evergrave {
@@ -46,6 +47,12 @@ inline std::string SerializeSave(const GameState& g) {
     std::snprintf(buf, sizeof buf, "uses=%llu\n", static_cast<unsigned long long>(g.UseCount()));
     out += buf;
     for (const TechId& id : g.tree().ResearchedIds()) out += "tech=" + id + "\n";
+    // Una linea por tipo que se tenga: `unit=<id>:<cuantas>`. Un guardado viejo no las
+    // trae y carga igual (sin instalaciones); uno nuevo en un lector viejo se las salta.
+    for (const InstallationDef& d : g.installations().All()) {
+        const int n = g.Owned(d.id);
+        if (n > 0) out += "unit=" + d.id + ":" + std::to_string(n) + "\n";
+    }
     return out;
 }
 
@@ -58,6 +65,7 @@ enum class LoadResult {
 struct LoadReport {
     LoadResult result = LoadResult::Ok;
     int droppedTechs = 0; // investigadas del guardado que ya no existen o no son coherentes
+    int droppedUnits = 0; // tipos de instalacion del guardado que ya no existen
 };
 
 namespace save_detail {
@@ -82,6 +90,7 @@ inline LoadReport DeserializeSave(GameState& g, std::string_view text) {
     bool haveVersion = false;
     double elapsed = 0.0, uses = 0.0;
     std::vector<TechId> techs;
+    std::unordered_map<InstallationId, int> units;
 
     std::size_t pos = 0;
     while (pos < text.size()) {
@@ -104,6 +113,12 @@ inline LoadReport DeserializeSave(GameState& g, std::string_view text) {
         } else if (key == "tech") {
             if (val.empty()) { rep.result = LoadResult::BadFormat; return rep; }
             techs.push_back(val);
+        } else if (key == "unit") {
+            // `id:cuantas`. Una linea mal formada rechaza el guardado entero, como el resto.
+            const std::size_t colon = val.rfind(':');
+            if (colon == std::string::npos || colon == 0) { rep.result = LoadResult::BadFormat; return rep; }
+            if (!save_detail::ParseDouble(val.substr(colon + 1), n) || n < 0.0 || n > 1e9) { rep.result = LoadResult::BadFormat; return rep; }
+            units[val.substr(0, colon)] = static_cast<int>(n);
         } else if (key == "elapsed" || key == "uses") {
             if (!save_detail::ParseDouble(val, n)) { rep.result = LoadResult::BadFormat; return rep; }
             (key == "elapsed" ? elapsed : uses) = n;
@@ -125,6 +140,7 @@ inline LoadReport DeserializeSave(GameState& g, std::string_view text) {
     for (std::size_t i = 0; i < kResourceCount; ++i)
         g.MutableWallet().Restore(static_cast<ResourceId>(i), amount[i], lifetime[i]);
     rep.droppedTechs = g.MutableTree().RestoreResearched(techs);
+    rep.droppedUnits = g.RestoreInstallations(units);
     g.RestoreProgress(elapsed, uses > 0.0 ? static_cast<std::uint64_t>(uses) : 0);
     return rep;
 }

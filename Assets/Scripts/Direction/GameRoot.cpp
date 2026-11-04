@@ -102,6 +102,29 @@ void LoadGame() {
     }
 }
 
+// Para pruebas: con EVERGRAVE_SAVE=<ruta> la partida arranca cargada de ese archivo (el mismo
+// formato que F5), en vez de vacia. Es como se mira el final del juego sin jugar treinta horas:
+// un guardado con todo investigado y mil unidades de cada tipo. Sin la variable no hace nada.
+// Con EVERGRAVE_CAMYAW / EVERGRAVE_CAMPITCH=<grados> la camara arranca con ese angulo (para mirar un lado concreto).
+void LoadTestSave() {
+#ifdef _WIN32
+    char* buf = nullptr;
+    size_t len = 0;
+    if (_dupenv_s(&buf, &len, "EVERGRAVE_SAVE") != 0 || !buf) return;
+    const fs::path path = buf;
+    std::free(buf);
+    std::ifstream f{path, std::ios::binary};
+    if (!f) {
+        Log::Warn(L"EVERGRAVE: EVERGRAVE_SAVE apunta a un archivo que no se puede abrir: " + path.wstring());
+        return;
+    }
+    std::stringstream ss;
+    ss << f.rdbuf();
+    const LoadReport rep = DeserializeSave(Session(), ss.str());
+    Log::Info(L"EVERGRAVE: partida de prueba cargada de " + path.wstring() + (rep.result == LoadResult::Ok ? L"" : L" (FALLO)"));
+#endif
+}
+
 } // namespace
 
 class GameRoot : public IScript {
@@ -109,6 +132,22 @@ public:
     void OnStart() override {
         ResetSession();
         ResetUi();
+        LoadTestSave();
+#ifdef _WIN32
+        {
+            char* yaw = nullptr;
+            size_t n = 0;
+            if (_dupenv_s(&yaw, &n, "EVERGRAVE_CAMYAW") == 0 && yaw) {
+                Ui().camYaw = static_cast<float>(std::atof(yaw));
+                std::free(yaw);
+            }
+            char* pitch = nullptr;
+            if (_dupenv_s(&pitch, &n, "EVERGRAVE_CAMPITCH") == 0 && pitch) {
+                Ui().camPitch = static_cast<float>(std::atof(pitch));
+                std::free(pitch);
+            }
+        }
+#endif
         BindControls();
         Cursor::SetMode(CursorMode::Visible);
         Log::Info(L"EVERGRAVE: partida nueva (" + std::to_wstring(Session().tree().All().size()) + L" tecnologias)");
@@ -116,7 +155,9 @@ public:
 
     void OnUpdate(float dt) override {
         UiState& ui = Ui();
+        ui.pointerOverUiLast = ui.pointerOverUi;
         ui.pointerOverUi = false;
+        ui.worldClick = false;
         if (ui.toastTime > 0.0f) ui.toastTime -= dt;
 
         GameState& game = Session();

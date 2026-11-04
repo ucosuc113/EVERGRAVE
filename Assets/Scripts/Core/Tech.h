@@ -39,6 +39,7 @@ enum class EffectKind : int {
     PassiveAdd,      // suma `value` por segundo, sin hacer nada
     YieldMultiplier, // multiplica TODO lo que se gana por `value` (1.25 = +25%)
     UnlockInteraction, // habilita la interaccion `target` (Core/Interactions.h)
+    UnlockBody,        // abre el cuerpo celeste `target` ("moon", "sun") o el mapa ("map"): Core/Bodies.h
 };
 
 // `target` nombra a que interaccion se refiere el efecto: para UnlockInteraction
@@ -66,6 +67,12 @@ struct TechDef {
     std::vector<TechId> prerequisites;
     std::vector<UnlockCondition> conditions;
     std::vector<Effect> effects;
+    // Solo para dibujar: en que carril del mapa va y en que era. Al FINAL y con
+    // valor por defecto, para que una definicion escrita a mano (las pruebas) siga
+    // compilando sin nombrarlos. Ninguna regla del arbol los mira.
+    std::string branch;
+    int era = 1;
+    int tier = 1; // escalon dentro de la era: de el sale la fila del mapa
 };
 
 enum class TechState {
@@ -111,6 +118,30 @@ public:
     }
 
     bool IsResearched(const TechId& id) const { return m_researched.count(id) != 0; }
+
+    // Que muestra el mapa: la investigada, las que no piden nada, y la que esta a UN
+    // paso -tiene un requisito investigado y TODOS los demas ya se ven-. Esa ultima
+    // condicion importa: sin ella, una tecnologia con dos requisitos aparecia en
+    // cuanto se tenia el primero, sola y lejos, colgada de una flecha de diez filas
+    // hacia un requisito que ni existia todavia para la persona. Lo demas no se ve:
+    // el arbol se va abriendo a medida que se investiga. Solo presentacion: lo que
+    // se puede comprar lo sigue decidiendo StateOf/Check.
+    //
+    // Se calcula en una pasada en el orden del catalogo (los requisitos van siempre
+    // antes), asi que pedirlo una vez por frame cuesta lo mismo que recorrer el arbol.
+    std::unordered_set<TechId> RevealedIds() const {
+        std::unordered_set<TechId> out;
+        for (const TechDef& d : m_defs) {
+            bool oneDone = false, allSeen = true;
+            for (const TechId& p : d.prerequisites) {
+                oneDone = oneDone || IsResearched(p);
+                allSeen = allSeen && out.count(p) != 0;
+            }
+            if (IsResearched(d.id) || d.prerequisites.empty() || (oneDone && allSeen)) out.insert(d.id);
+        }
+        return out;
+    }
+    bool IsRevealed(const TechId& id) const { return RevealedIds().count(id) != 0; }
     int ResearchedCount() const { return static_cast<int>(m_researched.size()); }
 
     Blockers BlockersOf(const TechId& id, const Wallet& wallet) const {

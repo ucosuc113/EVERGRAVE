@@ -20,6 +20,11 @@ inline void BindControls() {
         in.BindKey(name, key);
     };
     bindKey("ev_tree", Key::T);
+    bindKey("ev_shop", Key::B);
+    bindKey("ev_view_earth", Key::Digit1);
+    bindKey("ev_view_moon", Key::Digit2);
+    bindKey("ev_view_sun", Key::Digit3);
+    bindKey("ev_map", Key::M);
     bindKey("ev_gather", Key::Space);
     bindKey("ev_save", Key::F5);
     bindKey("ev_load", Key::F9);

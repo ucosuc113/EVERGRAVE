@@ -14,6 +14,8 @@
 #include "Engine/UI/UiDrawList.h"
 #include "Engine/UI/UiService.h"
 
+#include <algorithm>
+#include <cmath>
 #include <string>
 #include <string_view>
 
@@ -59,6 +61,24 @@ inline float Wrapped(UiDrawList& ui, float x, float y, float width, const std::s
         y += static_cast<float>(kGlyphLineHeight);
     }
     return y;
+}
+
+// Una gema: un cuadrado de lado par con las esquinas cortadas. Es lo que hace que un nodo o
+// un icono no parezca un boton de formulario; el arbol y la tienda dibujan las mismas.
+inline void Gem(UiDrawList& ui, float cx, float cy, float size, const UiColor& fill, const UiColor& edge) {
+    const float w = std::max(6.0f, std::floor(size * 0.5f) * 2.0f);
+    const float x = cx - w * 0.5f, y = cy - w * 0.5f;
+    ui.AddRect(Rect(x + 2, y, w - 4, w), fill);
+    ui.AddRect(Rect(x, y + 2, w, w - 4), fill);
+    ui.AddRect(Rect(x + 1, y + 1, w - 2, w - 2), fill);
+    ui.AddRect(Rect(x + 2, y, w - 4, 1), edge);
+    ui.AddRect(Rect(x + 2, y + w - 1, w - 4, 1), edge);
+    ui.AddRect(Rect(x, y + 2, 1, w - 4), edge);
+    ui.AddRect(Rect(x + w - 1, y + 2, 1, w - 4), edge);
+    ui.AddRect(Rect(x + 1, y + 1, 1, 1), edge);
+    ui.AddRect(Rect(x + w - 2, y + 1, 1, 1), edge);
+    ui.AddRect(Rect(x + 1, y + w - 2, 1, 1), edge);
+    ui.AddRect(Rect(x + w - 2, y + w - 2, 1, 1), edge);
 }
 
 inline float TextW(std::string_view t, int scale = 1) { return static_cast<float>(MeasureTextWidth(t, scale)); }

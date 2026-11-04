@@ -1,0 +1,6 @@
+{
+  "name": "Moon",
+  "albedo": [0.46, 0.46, 0.50, 1.0],
+  "specular": [0, 0, 0],
+  "shininess": 8.0
+}

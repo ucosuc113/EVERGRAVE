@@ -24,6 +24,6 @@
 namespace evergrave {
 
 // Una partida nueva con todo el contenido registrado.
-inline GameState NewGame() { return GameState(RegisterGeneratedCatalog, RegisterGeneratedInteractions); }
+inline GameState NewGame() { return GameState(RegisterGeneratedCatalog, RegisterGeneratedInteractions, RegisterGeneratedInstallations); }
 
 } // namespace evergrave

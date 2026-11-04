@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 // LA SESION: el unico GameState de la partida y el estado de la interfaz que los
 // scripts comparten.
@@ -20,6 +20,7 @@
 #include "../Data/GameContent.h"
 
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 namespace evergrave {
@@ -37,6 +38,36 @@ struct UiState {
     bool treeOpen = false;
     TechId selected;         // vacio = nada elegido
     float scrollY = 0.0f;    // desplazamiento del arbol
+
+    // LA VISTA: en que cuerpo se mira y si se esta en el mapa del sistema. Empieza en la Tierra y
+    // ahi se queda hasta que se abra el mapa. Presentacion: no se guarda ni el juego lo lee.
+    BodyId view = BodyId::Earth;
+    bool mapView = false;
+    float camYaw = 55.0f;       // grados respecto a la direccion al Sol: 0 = del lado del dia
+    float camPitch = 35.0f;     // grados sobre el plano del sistema
+    float camZoom = 1.0f;
+    float camIdle = 0.0f;       // segundos sin tocar la camara: pasado un rato, gira sola
+    bool camDragging = false;   // hay un arrastre en curso sobre el mundo
+    float camDragDist = 0.0f;   // cuanto se movio el puntero: poco = fue un clic, no un arrastre
+    bool worldClick = false;    // este frame hubo un clic limpio (sin arrastre) sobre el mundo
+    bool pointerOverUiLast = false; // el valor de pointerOverUi del frame anterior (el de este aun no se calculo)
+
+    // La tienda. Presentacion: nada de esto se guarda. Empieza ABIERTA: es lo primero que se ve.
+    bool shopOpen = true;
+    int shopBuyMode = 0;       // 0 = x1, 1 = x10, 2 = x100, 3 = el maximo que alcance
+    float shopScroll = 0.0f;
+    float shopFlash = 0.0f;    // un destello corto cuando se compra o no alcanza
+    std::string shopFlashId;
+
+    // El mapa de tecnologias. Todo presentacion: nada de esto se guarda ni toca el Core.
+    bool treeNeedsCenter = true;  // al abrir, el mapa se centra en la ultima tecnologia que se ve
+    bool treeDrag = false;        // hay un arrastre en curso dentro del lienzo
+    float treeDragDist = 0.0f;    // cuanto se movio el puntero: poco = fue un clic, no un arrastre
+    float treeClock = 0.0f;       // segundos con el mapa abierto: el pulso de lo que se puede comprar
+    bool treeSeeded = false;      // ya se vio el mapa una vez en esta partida
+    // Cuanto va de la aparicion de cada nodo revelado, de 0 (recien aparece) a 1.
+    // Los que ya estaban al abrir por primera vez entran en 1: no se animan.
+    std::unordered_map<TechId, float> treeReveal;
     bool pointerOverUi = false; // lo recalcula cada frame quien dibuja; el mundo lo lee
 
     // Numeros que suben y se apagan donde se hizo clic ("+8.0"). Solo
@@ -58,6 +89,30 @@ inline UiState& Ui() {
 }
 
 inline void ResetUi() { Ui() = UiState{}; }
+
+// Cambiar de cuerpo o de vista. Devuelven si se pudo: la Tierra siempre, y lo demas solo si
+// una tecnologia ya lo abrio (el Core decide, no la interfaz).
+inline void ResetCameraFor(BodyId b) {
+    UiState& u = Ui();
+    // Tierra: 55 (el lado iluminado, el Sol a un lado); Luna: 135 desde la Tierra (la Tierra de lado en cuadro).
+    u.camYaw = b == BodyId::Sun ? 0.0f : b == BodyId::Moon ? 135.0f : 55.0f;
+    u.camPitch = 35.0f;
+    u.camZoom = 1.0f;
+    u.camIdle = 0.0f;
+}
+inline bool GoToBody(BodyId b) {
+    if (!Session().IsBodyUnlocked(b)) return false;
+    UiState& u = Ui();
+    if (u.view != b || u.mapView) ResetCameraFor(b);
+    u.view = b;
+    u.mapView = false;
+    return true;
+}
+inline bool GoToMap() {
+    if (!Session().IsMapUnlocked()) return false;
+    Ui().mapView = true;
+    return true;
+}
 
 inline void Toast(const std::string& text, float seconds = 2.5f) {
     Ui().toast = text;

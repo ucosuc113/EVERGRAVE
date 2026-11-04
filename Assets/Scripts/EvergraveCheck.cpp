@@ -61,7 +61,8 @@ bool Enabled() {
 
 constexpr const char* kEarth = "Space/OrbitPivot/EarthAnchor/Tilt/Earth";
 constexpr const char* kSun = "Space/OrbitPivot/Sun";
-constexpr const char* kPivot = "Space/OrbitPivot";
+constexpr const char* kAnchor = "Space/OrbitPivot/EarthAnchor";
+constexpr const char* kMoon = "Space/OrbitPivot/EarthAnchor/Moon";
 
 // Proyecta un punto del mundo a pixeles de juego con la matriz de la camara.
 bool ToScreen(const GameObject& cam, const DirectX::XMFLOAT3& wp, float& px, float& py, DirectX::XMMATRIX& viewProj) {
@@ -114,7 +115,8 @@ private:
         const GameObject* cam = FindActiveCamera(roots);
         Expect(earth && !earth->meshPath.empty(), L"la escena tiene la Tierra, con malla propia");
         Expect(sun != nullptr, L"la escena tiene el Sol");
-        Expect(sunlight && sunlight->light && sunlight->light->type == LightType::Point, L"el Sol ilumina (luz puntual)");
+        // La luz del Sol es direccional y SpaceWorld la apunta cada frame del Sol a la Tierra (orbitas de verdad).
+        Expect(sunlight && sunlight->light && sunlight->light->type == LightType::Directional, L"el Sol ilumina (luz direccional)");
         Expect(cam && cam->camera, L"hay una camara activa");
 
         GameObject* pv = FindByPath(SceneService::MutableRoots(), "PixelViewport");
@@ -130,10 +132,11 @@ private:
                Num(vis.x) + L"," + Num(vis.y) + L" " + Num(vis.width) + L"x" + Num(vis.height));
         if (!earth || !sun || !cam || !cam->camera) return;
 
-        // Casi cenital pero no perpendicular. Se mide en el MUNDO: la camara cuelga de un pivote que gira.
+        // Mira desde arriba, inclinada. La camara la mueve CameraRig (por defecto 35 grados sobre el plano del sistema;
+        // el mapa, 75), asi que se mide en el MUNDO y con un margen.
         const DirectX::XMFLOAT3 fwd = ComputeWorldForward(*cam);
         const float pitch = std::asin(-fwd.y) * 180.0f / 3.14159265f;
-        Expect(pitch > 50.0f && pitch < 80.0f, L"la camara mira casi desde arriba, algo inclinada", Num(pitch) + L" grados");
+        Expect(pitch > 15.0f && pitch < 80.0f, L"la camara mira desde arriba, inclinada", Num(pitch) + L" grados");
 
         float px = 0, py = 0;
         DirectX::XMMATRIX vp;
@@ -142,11 +145,35 @@ private:
                L"la Tierra esta en el centro de la imagen", Num(px) + L"," + Num(py));
 
         ExpectPickable(*cam, *earth, kEarth, L"la Tierra");
-        ExpectPickable(*cam, *sun, kSun, L"el Sol");
+
+        // El sistema: el Sol al centro, la Tierra a 30 unidades de el y la Luna a 8 de la Tierra. En la vista de la Tierra el
+        // Sol casi nunca esta en cuadro (se ve desde la vista del Sol o el mapa), asi que se comprueba DONDE esta, no si se ve.
+        const DirectX::XMFLOAT3 sp = ComputeWorldPosition(*sun), ep = ComputeWorldPosition(*earth);
+        // Mirando la Tierra el Sol se ve LEJOS (SpaceWorld lo aleja): tiene que estar sobre la linea de la Tierra al centro del
+        // sistema, mas alla de el, y bastante mas lejos que los 30 de su sitio real.
+        {
+            const float len = std::sqrt(ep.x * ep.x + ep.z * ep.z);
+            const float along = ((sp.x - ep.x) * (-ep.x) + (sp.z - ep.z) * (-ep.z)) / len;           // cuanto se aleja de la Tierra hacia el centro
+            const float off = std::fabs((sp.x - ep.x) * (-ep.z) + (sp.z - ep.z) * ep.x) / len;      // cuanto se desvia de esa linea
+            Expect(off < 0.5f && along > 100.0f, L"mirando la Tierra el Sol se ve lejos, sobre la linea al centro del sistema",
+                   Num(along) + L" lejos, " + Num(off) + L" de desvio");
+        }
+        Expect(std::fabs(std::sqrt(ep.x * ep.x + ep.z * ep.z) - 30.0f) < 0.5f, L"la Tierra orbita a 30 unidades del Sol", Num(std::sqrt(ep.x * ep.x + ep.z * ep.z)));
+        const GameObject* moon = FindByPath(roots, kMoon);
+        Expect(moon && !moon->meshPath.empty(), L"la escena tiene la Luna, con malla propia");
+        if (moon) {
+            const DirectX::XMFLOAT3 mp = ComputeWorldPosition(*moon);
+            const float d = std::sqrt((mp.x - ep.x) * (mp.x - ep.x) + (mp.z - ep.z) * (mp.z - ep.z));
+            Expect(std::fabs(d - 8.0f) < 0.2f, L"la Luna orbita a 8 unidades de la Tierra", Num(d));
+        }
+        Expect(!Session().IsMapUnlocked() && !Session().IsBodyUnlocked(BodyId::Moon) && Ui().view == BodyId::Earth && !Ui().mapView,
+               L"la partida empieza en la Tierra, con el mapa y la Luna cerrados");
 
         m_earthSpin0 = earth->transform.rotation[1];
-        const GameObject* pivot = FindByPath(roots, kPivot);
-        m_orbit0 = pivot ? pivot->transform.rotation[1] : 0.0f;
+        const GameObject* anchor = FindByPath(roots, kAnchor);
+        const GameObject* moon0 = FindByPath(roots, kMoon);
+        m_orbit0 = anchor ? std::atan2(anchor->transform.position[2], anchor->transform.position[0]) * 180.0f / 3.14159265f : 0.0f;
+        m_month0 = moon0 ? std::atan2(moon0->transform.position[2], moon0->transform.position[0]) * 180.0f / 3.14159265f : 0.0f;
     }
 
     // El Sol bloqueado no rinde y dice que investigar; la Tierra si rinde.
@@ -184,9 +211,13 @@ private:
         Expect(std::fabs(gained - g.PassiveRate() * sessionDt) < 1e-6, L"lo producido es tasa x tiempo", Num(gained) + L" vs " + Num(g.PassiveRate() * sessionDt));
 
         const GameObject* earth = FindByPath(SceneService::Roots(), kEarth);
-        const GameObject* pivot = FindByPath(SceneService::Roots(), kPivot);
+        const GameObject* anchor = FindByPath(SceneService::Roots(), kAnchor);
+        const GameObject* moon = FindByPath(SceneService::Roots(), kMoon);
         Expect(earth && std::fabs(earth->transform.rotation[1] - m_earthSpin0) > 1.0f, L"la Tierra rota", earth ? Num(earth->transform.rotation[1] - m_earthSpin0) : L"-");
-        Expect(pivot && std::fabs(pivot->transform.rotation[1] - m_orbit0) > 0.3f, L"la Tierra orbita (el pivote gira)", pivot ? Num(pivot->transform.rotation[1] - m_orbit0) : L"-");
+        const float orbit = anchor ? std::atan2(anchor->transform.position[2], anchor->transform.position[0]) * 180.0f / 3.14159265f : 0.0f;
+        Expect(anchor && std::fabs(orbit - m_orbit0) > 0.3f, L"la Tierra orbita alrededor del Sol", Num(orbit - m_orbit0));
+        const float month = moon ? std::atan2(moon->transform.position[2], moon->transform.position[0]) * 180.0f / 3.14159265f : 0.0f;
+        Expect(moon && std::fabs(month - m_month0) > 2.0f, L"la Luna orbita alrededor de la Tierra", Num(month - m_month0));
         ResetSession();
         ResetUi();
         Log::Info(L"[evg] fin de las pruebas con frame");
@@ -194,7 +225,7 @@ private:
 
     int m_frame = 0;
     int m_stage = 0;
-    float m_earthSpin0 = 0.0f, m_orbit0 = 0.0f;
+    float m_earthSpin0 = 0.0f, m_orbit0 = 0.0f, m_month0 = 0.0f;
     double m_t0 = 0.0, m_sessionT0 = 0.0, m_balance0 = 0.0;
 };
 

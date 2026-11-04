@@ -54,8 +54,64 @@ public:
         ui.AddText(tx, T + 6, InfoOf(ResourceId::Research).name, kit::Dim(), 1);
         ui.AddText(tx, T + 16, FormatRate(game.PassiveRate()) + "   gather +" + FormatAmount(game.GatherAmount()), kit::TextSoft(), 1);
 
+        const UiRect shopBtn = kit::Rect(R - 128.0f - 96.0f, T + 4, 88, 20);
+        if (kit::Button(ui, shopBtn, state.shopOpen ? "HIDE SHOP [B]" : "SHOP [B]", true, p)) state.shopOpen = !state.shopOpen;
         const UiRect treeBtn = kit::Rect(R - 128.0f, T + 4, 120, 20);
         if (kit::Button(ui, treeBtn, state.treeOpen ? "CLOSE TREE [T]" : "TECH TREE [T]", true, p)) state.treeOpen = !state.treeOpen;
+
+        // --- El selector de vista: de un vistazo, donde se esta y a donde se puede ir ---
+        // Tierra, Luna, Sol y Mapa, y el Dyson al final (reservado: aun no existe). Los cerrados se ven
+        // desde el primer segundo, apagados: la persona sabe que hay mas, y al pasar el puntero, que
+        // tecnologia lo abre.
+        {
+            struct Slot { const char* label; BodyId body; bool isMap; };
+            const Slot slots[] = {{"EARTH", BodyId::Earth, false}, {"MOON", BodyId::Moon, false}, {"SUN", BodyId::Sun, false},
+                                  {"MAP", BodyId::Earth, true}, {"DYSON", BodyId::Dyson, false}};
+            const float bw = 50.0f, gap = 3.0f;
+            const float total = 5 * bw + 4 * gap;
+            float x = std::floor(cx - total * 0.5f);
+            const float y = T + kBarH + 4.0f;
+            const Slot* hoverSlot = nullptr;
+            float hoverX = 0.0f;
+            for (const Slot& s : slots) {
+                const UiRect r = kit::Rect(x, y, bw, 16);
+                const bool open = s.isMap ? game.IsMapUnlocked() : game.IsBodyUnlocked(s.body);
+                const bool selected = s.isMap ? state.mapView : (!state.mapView && state.view == s.body);
+                const bool hot = p.Over(r.x, r.y, r.width, r.height);
+                ui.AddRect(r, selected ? kit::RedDark() : kit::Field());
+                ui.AddRectOutline(r, selected ? kit::Red() : hot && open ? kit::Text() : open ? kit::Line() : kit::Faint().WithAlpha(0.6f), 1.0f);
+                ui.AddTextCentered(r, s.label, open ? (selected ? kit::Text() : kit::TextSoft()) : kit::Faint(), 1);
+                if (hot) {
+                    state.pointerOverUi = true;
+                    hoverSlot = &s;
+                    hoverX = r.x;
+                    if (open && p.clicked) {
+                        if (s.isMap) {
+                            if (state.mapView) GoToBody(state.view);
+                            else GoToMap();
+                        } else {
+                            GoToBody(s.body);
+                        }
+                    }
+                }
+                x += bw + gap;
+            }
+            if (hoverSlot) {
+                const bool open = hoverSlot->isMap ? game.IsMapUnlocked() : game.IsBodyUnlocked(hoverSlot->body);
+                std::string msg;
+                if (open) msg = hoverSlot->isMap ? "Zoom out to the whole system" : std::string("Go to the ") + hoverSlot->label;
+                else {
+                    const std::string key = hoverSlot->isMap ? kMapKey : InfoOf(hoverSlot->body).key;
+                    const std::string who = UnlockerName(game.tree(), key);
+                    msg = who.empty() ? "Not designed yet" : "Research " + who + " to unlock";
+                }
+                const float w = kit::TextW(msg) + 12.0f;
+                const UiRect tip = kit::Rect(std::floor(std::clamp(hoverX + bw * 0.5f - w * 0.5f, L + 4.0f, R - w - 4.0f)), y + 20.0f, w, 14);
+                ui.AddRect(tip, UiColor::Bytes(4, 4, 7, 245));
+                ui.AddRectOutline(tip, kit::Faint(), 1.0f);
+                ui.AddTextCentered(tip, msg, open ? kit::Text() : kit::Dim(), 1);
+            }
+        }
 
         // --- Barra de abajo: recolectar, atajos, progreso ---
         const float by = B - kBarH;
