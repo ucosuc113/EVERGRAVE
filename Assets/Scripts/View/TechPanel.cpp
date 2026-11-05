@@ -150,6 +150,7 @@ const TechMap& MapOf(const TechTree& tree) {
 class TechPanel : public IScript {
 public:
     void OnUpdate(float dt) override {
+        if (Ui().menu) return; // el menu principal esta abierto
         UiState& state = Ui();
         GameState& game = Session();
         InputActions& in = InputService::Actions();

@@ -58,6 +58,10 @@ constexpr float kDragSlop = 4.0f;
 constexpr float kIdleBeforeSpin = 2.5f;   // segundos
 constexpr float kSpinDegPerSec = 1.4f;
 constexpr float kMapDist = 96.0f, kMapPitch = 75.0f;
+// EL ENCUADRE DEL MENU: la Tierra sube desde el borde de abajo y solo se ve su mitad de arriba. La camara mira a un
+// punto ENCIMA del centro de la Tierra (`kMenuLift`), asi el planeta queda debajo del cuadro; casi de lado
+// (`kMenuPitch`) para que se vea el limbo y no el polo; y del lado del dia, con el terminador a la derecha (el Sol entra por la izquierda).
+constexpr float kMenuDist = 5.3f, kMenuPitch = 9.0f, kMenuYaw = -38.0f, kMenuLift = 2.1f;
 constexpr float kPickRadius = 18.0f;      // pixeles de juego: el blanco de un cuerpo en el mapa
 
 // La diferencia mas corta entre dos angulos, en grados.
@@ -103,14 +107,19 @@ public:
             else if (!GoToMap()) Toast("The system map is not open yet", 1.6f);
         }
 
-        HandleMouse(state, in, dt);
+        if (!state.menu) HandleMouse(state, in, dt);
 
         // --- A donde mira la camara ---
         // El Sol "de verdad" esta siempre en el centro del sistema; el que se ve se aleja (SpaceWorld) cuando se mira la
         // Tierra o la Luna, asi que para apuntar la camara y marcar el mapa se usa el punto fijo.
         const XMFLOAT3 earth = ComputeWorldPosition(*m_earth), moon = ComputeWorldPosition(*m_moon), sun(0, 0, 0);
         Pose target;
-        if (state.mapView) {
+        if (state.menu) {
+            target.center = XMFLOAT3(earth.x, earth.y + kMenuLift, earth.z);
+            target.dist = kMenuDist;
+            target.pitch = kMenuPitch;
+            target.yaw = std::atan2(-earth.x, -earth.z) / kRad + kMenuYaw;
+        } else if (state.mapView) {
             target.center = XMFLOAT3(0, 0, 0);
             target.dist = kMapDist;
             target.pitch = kMapPitch;

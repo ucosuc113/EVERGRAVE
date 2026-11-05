@@ -169,8 +169,9 @@ private:
         GameState& game = Session();
         InputActions& in = InputService::Actions();
 
-        // En el mapa un clic elige cuerpo (lo maneja CameraRig), y mientras se arrastra no se apunta.
-        if (Ui().mapView || Ui().camDragging) return;
+        // En el mapa un clic elige cuerpo (lo maneja CameraRig), y mientras se arrastra no se apunta. Con el
+        // menu principal abierto el mundo no se toca.
+        if (Ui().menu || Ui().mapView || Ui().camDragging) return;
         InteractionTarget target;
         if (!Pick(target)) return;
         const auto unlocked = [&](const InteractionId& id) { return game.IsUnlocked(id); };

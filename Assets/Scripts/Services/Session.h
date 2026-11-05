@@ -35,6 +35,14 @@ inline GameState& Session() {
 inline void ResetSession() { Session() = NewGame(); }
 
 struct UiState {
+    // EL MENU PRINCIPAL (Menu/ en la escena, View/MainMenu.cpp). Mientras esta abierto el juego espera
+    // detras: no corre la produccion, el HUD y los paneles no dibujan y el mundo no recibe clics. Empieza
+    // en false para que una prueba que reinicia la interfaz (ResetUi) no lo vuelva a abrir; lo abre
+    // GameRoot al empezar el Play.
+    bool menu = false;
+    bool hasSave = false;   // hay una partida guardada que continuar (GameRoot lo mira al empezar)
+    int menuRequest = 0;    // lo que el menu le pide a GameRoot, que es quien sabe guardar y cargar: 0 nada, 1 continuar, 2 nueva
+
     bool treeOpen = false;
     TechId selected;         // vacio = nada elegido
     float scrollY = 0.0f;    // desplazamiento del arbol

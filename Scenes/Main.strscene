@@ -59,6 +59,749 @@
     },
     {
       "active": true,
+      "children": [
+        {
+          "active": true,
+          "children": [
+            {
+              "active": true,
+              "children": [],
+              "components": [
+                {
+                  "anchor": [
+                    1,
+                    0
+                  ],
+                  "pos": [
+                    0,
+                    40
+                  ],
+                  "size": [
+                    300,
+                    41
+                  ],
+                  "type": "UiTransform"
+                },
+                {
+                  "brightness": 0.86,
+                  "opacity": 0.65,
+                  "path": "Assets/UI/evergrave.png",
+                  "preserveAspect": true,
+                  "type": "UiImage"
+                }
+              ],
+              "faceCulling": true,
+              "name": "Titulo",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
+            },
+            {
+              "active": true,
+              "children": [],
+              "components": [
+                {
+                  "anchor": [
+                    1,
+                    0
+                  ],
+                  "pos": [
+                    0,
+                    91
+                  ],
+                  "size": [
+                    150,
+                    19
+                  ],
+                  "type": "UiTransform"
+                },
+                {
+                  "brightness": 0.6,
+                  "opacity": 0.65,
+                  "path": "Assets/UI/anomaless.png",
+                  "preserveAspect": true,
+                  "type": "UiImage"
+                }
+              ],
+              "faceCulling": true,
+              "name": "AN0MALESS",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
+            },
+            {
+              "active": true,
+              "children": [
+                {
+                  "active": true,
+                  "children": [],
+                  "components": [
+                    {
+                      "anchor": [
+                        0,
+                        1
+                      ],
+                      "pos": [
+                        -8,
+                        0
+                      ],
+                      "size": [
+                        4,
+                        4
+                      ],
+                      "type": "UiTransform"
+                    },
+                    {
+                      "border": 0.0,
+                      "borderColor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "color": [
+                        0.8392,
+                        0.1569,
+                        0.1569,
+                        1.0
+                      ],
+                      "type": "UiPanel"
+                    }
+                  ],
+                  "faceCulling": true,
+                  "name": "Marcador",
+                  "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "staticForLighting": false
+                }
+              ],
+              "components": [
+                {
+                  "anchor": [
+                    1,
+                    0
+                  ],
+                  "pos": [
+                    -150,
+                    141
+                  ],
+                  "size": [
+                    54,
+                    12
+                  ],
+                  "type": "UiTransform"
+                },
+                {
+                  "border": 0.0,
+                  "borderColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "disabledColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "hoverColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "interactable": true,
+                  "pressedColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "type": "UiButton"
+                },
+                {
+                  "align": [
+                    1,
+                    1
+                  ],
+                  "color": [
+                    0.5412,
+                    0.5412,
+                    0.5961,
+                    1.0
+                  ],
+                  "scale": 1,
+                  "text": "CONTINUAR",
+                  "type": "UiLabel",
+                  "wrap": false
+                }
+              ],
+              "faceCulling": true,
+              "name": "Continuar",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
+            },
+            {
+              "active": true,
+              "children": [
+                {
+                  "active": true,
+                  "children": [],
+                  "components": [
+                    {
+                      "anchor": [
+                        0,
+                        1
+                      ],
+                      "pos": [
+                        -8,
+                        0
+                      ],
+                      "size": [
+                        4,
+                        4
+                      ],
+                      "type": "UiTransform"
+                    },
+                    {
+                      "border": 0.0,
+                      "borderColor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "color": [
+                        0.8392,
+                        0.1569,
+                        0.1569,
+                        1.0
+                      ],
+                      "type": "UiPanel"
+                    }
+                  ],
+                  "faceCulling": true,
+                  "name": "Marcador",
+                  "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "staticForLighting": false
+                }
+              ],
+              "components": [
+                {
+                  "anchor": [
+                    1,
+                    0
+                  ],
+                  "pos": [
+                    -50,
+                    141
+                  ],
+                  "size": [
+                    30,
+                    12
+                  ],
+                  "type": "UiTransform"
+                },
+                {
+                  "border": 0.0,
+                  "borderColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "disabledColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "hoverColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "interactable": true,
+                  "pressedColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "type": "UiButton"
+                },
+                {
+                  "align": [
+                    1,
+                    1
+                  ],
+                  "color": [
+                    0.5412,
+                    0.5412,
+                    0.5961,
+                    1.0
+                  ],
+                  "scale": 1,
+                  "text": "NUEVA",
+                  "type": "UiLabel",
+                  "wrap": false
+                }
+              ],
+              "faceCulling": true,
+              "name": "Nueva",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
+            },
+            {
+              "active": true,
+              "children": [
+                {
+                  "active": true,
+                  "children": [],
+                  "components": [
+                    {
+                      "anchor": [
+                        0,
+                        1
+                      ],
+                      "pos": [
+                        -8,
+                        0
+                      ],
+                      "size": [
+                        4,
+                        4
+                      ],
+                      "type": "UiTransform"
+                    },
+                    {
+                      "border": 0.0,
+                      "borderColor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "color": [
+                        0.8392,
+                        0.1569,
+                        0.1569,
+                        1.0
+                      ],
+                      "type": "UiPanel"
+                    }
+                  ],
+                  "faceCulling": true,
+                  "name": "Marcador",
+                  "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "staticForLighting": false
+                }
+              ],
+              "components": [
+                {
+                  "anchor": [
+                    1,
+                    0
+                  ],
+                  "pos": [
+                    50,
+                    141
+                  ],
+                  "size": [
+                    42,
+                    12
+                  ],
+                  "type": "UiTransform"
+                },
+                {
+                  "border": 0.0,
+                  "borderColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "disabledColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "hoverColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "interactable": false,
+                  "pressedColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "type": "UiButton"
+                },
+                {
+                  "align": [
+                    1,
+                    1
+                  ],
+                  "color": [
+                    0.5412,
+                    0.5412,
+                    0.5961,
+                    1.0
+                  ],
+                  "scale": 1,
+                  "text": "AJUSTES",
+                  "type": "UiLabel",
+                  "wrap": false
+                }
+              ],
+              "faceCulling": true,
+              "name": "Ajustes",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
+            },
+            {
+              "active": true,
+              "children": [
+                {
+                  "active": true,
+                  "children": [],
+                  "components": [
+                    {
+                      "anchor": [
+                        0,
+                        1
+                      ],
+                      "pos": [
+                        -8,
+                        0
+                      ],
+                      "size": [
+                        4,
+                        4
+                      ],
+                      "type": "UiTransform"
+                    },
+                    {
+                      "border": 0.0,
+                      "borderColor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        1.0
+                      ],
+                      "color": [
+                        0.8392,
+                        0.1569,
+                        0.1569,
+                        1.0
+                      ],
+                      "type": "UiPanel"
+                    }
+                  ],
+                  "faceCulling": true,
+                  "name": "Marcador",
+                  "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "staticForLighting": false
+                }
+              ],
+              "components": [
+                {
+                  "anchor": [
+                    1,
+                    0
+                  ],
+                  "pos": [
+                    150,
+                    141
+                  ],
+                  "size": [
+                    30,
+                    12
+                  ],
+                  "type": "UiTransform"
+                },
+                {
+                  "border": 0.0,
+                  "borderColor": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "color": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "disabledColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "hoverColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "interactable": true,
+                  "pressedColor": [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "type": "UiButton"
+                },
+                {
+                  "align": [
+                    1,
+                    1
+                  ],
+                  "color": [
+                    0.5412,
+                    0.5412,
+                    0.5961,
+                    1.0
+                  ],
+                  "scale": 1,
+                  "text": "SALIR",
+                  "type": "UiLabel",
+                  "wrap": false
+                }
+              ],
+              "faceCulling": true,
+              "name": "Salir",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "staticForLighting": false
+            }
+          ],
+          "components": [
+            {
+              "referenceHeight": 360.0,
+              "type": "UiCanvas"
+            }
+          ],
+          "faceCulling": true,
+          "name": "Canvas",
+          "position": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "primitive": "Empty",
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "staticForLighting": false
+        }
+      ],
+      "faceCulling": true,
+      "name": "Menu",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "primitive": "Empty",
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scripts": [
+        "MainMenu"
+      ],
+      "staticForLighting": false
+    },
+    {
+      "active": true,
       "children": [],
       "faceCulling": true,
       "name": "Hud",
@@ -1476,6 +2219,319 @@
                     0.5,
                     0.5,
                     0.5
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [
+                    {
+                      "active": true,
+                      "children": [
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatBody.strmat",
+                          "name": "Cuerpo",
+                          "position": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.16,
+                            0.12,
+                            0.12
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatPanel.strmat",
+                          "name": "PanelIzq",
+                          "position": [
+                            -0.27,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.34,
+                            0.02,
+                            0.14
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatPanel.strmat",
+                          "name": "PanelDer",
+                          "position": [
+                            0.27,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.34,
+                            0.02,
+                            0.14
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatLight.strmat",
+                          "name": "Luz",
+                          "position": [
+                            0,
+                            0.09,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.03,
+                            0.03,
+                            0.03
+                          ],
+                          "staticForLighting": false
+                        }
+                      ],
+                      "faceCulling": true,
+                      "name": "Sonda",
+                      "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "primitive": "Empty",
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        0.35,
+                        0.35,
+                        0.35
+                      ],
+                      "staticForLighting": false
+                    },
+                    {
+                      "active": true,
+                      "children": [
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatBody.strmat",
+                          "name": "Modulo",
+                          "position": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.14,
+                            0.14,
+                            0.3
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatBody.strmat",
+                          "name": "Viga",
+                          "position": [
+                            0,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.95,
+                            0.03,
+                            0.03
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatGold.strmat",
+                          "name": "PanelIzq",
+                          "position": [
+                            -0.38,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.28,
+                            0.02,
+                            0.36
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatGold.strmat",
+                          "name": "PanelDer",
+                          "position": [
+                            0.38,
+                            0,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.28,
+                            0.02,
+                            0.36
+                          ],
+                          "staticForLighting": false
+                        },
+                        {
+                          "active": true,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/SatLight.strmat",
+                          "name": "Luz",
+                          "position": [
+                            0,
+                            0.11,
+                            0
+                          ],
+                          "primitive": "Cube",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            0.03,
+                            0.03,
+                            0.03
+                          ],
+                          "staticForLighting": false
+                        }
+                      ],
+                      "faceCulling": true,
+                      "name": "Estacion",
+                      "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "primitive": "Empty",
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        0.3,
+                        0.3,
+                        0.3
+                      ],
+                      "staticForLighting": false
+                    },
+                    {
+                      "active": true,
+                      "children": [],
+                      "faceCulling": true,
+                      "material": "Assets/Materials/Moon.strmat",
+                      "mesh": "Assets/Meshes/sphere.strmesh",
+                      "name": "Luna",
+                      "position": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "primitive": "Empty",
+                      "rotation": [
+                        0.0,
+                        0.0,
+                        0.0
+                      ],
+                      "scale": [
+                        0.2,
+                        0.2,
+                        0.2
+                      ],
+                      "staticForLighting": false
+                    }
+                  ],
+                  "faceCulling": true,
+                  "name": "Satelites",
+                  "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.0,
+                    1.0,
+                    1.0
                   ],
                   "staticForLighting": false
                 }

@@ -153,6 +153,7 @@ public:
     void OnUpdate(float dt) override {
         m_time += dt;
         const GameState& game = Session();
+        if (Ui().menu) return; // con el menu abierto no se dibujan las instalaciones
         if (!m_earth || !m_moon || !m_sun || game.TotalOwned() <= 0) return;
         // En el mapa no se dibujan: lo construido se ve de cerca, en el cuerpo al que pertenece.
         if (Ui().mapView) return;

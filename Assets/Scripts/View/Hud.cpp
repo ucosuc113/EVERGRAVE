@@ -30,6 +30,7 @@ constexpr float kBarH = 28.0f;
 class Hud : public IScript {
 public:
     void OnUpdate(float dt) override {
+        if (Ui().menu) return; // el menu principal esta abierto: el HUD espera detras
         UiDrawList& ui = UiService::Frame();
         const float W = UiService::Width();
         // El HUD se ancla al AREA VISIBLE, no a los bordes de la imagen: con el

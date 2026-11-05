@@ -10,6 +10,7 @@ super early. it's a prototype: the earth is two flat colors and the sun is a yel
 
 what works:
 
+- main menu (the game starts on it): the title and the AN∅MALESS tag are `UiImage`s in the hierarchy (`Menu/Canvas`), the options are `UiButton`s, and the earth rises from the bottom with three satellites orbiting it. the only code is `View/MainMenu.cpp` (which option is picked, what it does, the satellites). continue needs a save, settings is greyed out for now. arrows / A D / mouse to pick, enter / space / click to accept. set `EVERGRAVE_SKIP_MENU=1` to start straight in the game (the checks do that on their own)
 - click the earth (or hit space) -> points
 - tech tree (T): a map with one lane per branch that opens up as you research (drag or scroll to move, hover for name and cost, click for details)
 - shop (B): buildings you buy again and again (weather stations, satellites, steam plants...), each a bit pricier than the last. they unlock from the tech tree, produce points on their own, and show up around the earth (satellites orbit it, lights appear on the night side). owning 10, 25, 50... of one multiplies what it makes

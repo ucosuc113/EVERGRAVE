@@ -81,12 +81,12 @@ void SaveGame() {
     Log::Info(L"EVERGRAVE: partida guardada en " + path.wstring());
 }
 
-void LoadGame() {
+bool LoadGame() {
     const fs::path path = SavePath();
     std::ifstream f{path, std::ios::binary};
     if (path.empty() || !f) {
         Toast("No saved game found");
-        return;
+        return false;
     }
     std::stringstream ss;
     ss << f.rdbuf();
@@ -100,6 +100,28 @@ void LoadGame() {
         case LoadResult::WrongVersion: Toast("Save is from another version"); break;
         case LoadResult::BadFormat: Toast("Save file is damaged"); break;
     }
+    return rep.result == LoadResult::Ok;
+}
+
+bool HasSavedGame() {
+    const fs::path path = SavePath();
+    std::error_code ec;
+    return !path.empty() && fs::exists(path, ec);
+}
+
+// El menu principal NO se abre en una corrida de prueba (EVERGRAVE_CHECK=1), ni cuando se pide una partida de
+// prueba (EVERGRAVE_SAVE) ni con EVERGRAVE_SKIP_MENU=1: las pruebas y las capturas del juego empiezan jugando.
+bool MenuWanted() {
+#ifdef _WIN32
+    for (const char* name : {"EVERGRAVE_CHECK", "EVERGRAVE_SAVE", "EVERGRAVE_SKIP_MENU"}) {
+        char* buf = nullptr;
+        size_t len = 0;
+        const bool set = _dupenv_s(&buf, &len, name) == 0 && buf && buf[0] != '\0' && buf[0] != '0';
+        std::free(buf);
+        if (set) return false;
+    }
+#endif
+    return true;
 }
 
 // Para pruebas: con EVERGRAVE_SAVE=<ruta> la partida arranca cargada de ese archivo (el mismo
@@ -149,6 +171,8 @@ public:
         }
 #endif
         BindControls();
+        Ui().hasSave = HasSavedGame();
+        Ui().menu = MenuWanted();
         Cursor::SetMode(CursorMode::Visible);
         Log::Info(L"EVERGRAVE: partida nueva (" + std::to_wstring(Session().tree().All().size()) + L" tecnologias)");
     }
@@ -159,6 +183,20 @@ public:
         ui.pointerOverUi = false;
         ui.worldClick = false;
         if (ui.toastTime > 0.0f) ui.toastTime -= dt;
+
+        // El menu pide y esto responde: guardar y cargar son de aqui. Mientras esta abierto la partida espera.
+        if (ui.menu) {
+            if (ui.menuRequest == 1) {
+                if (LoadGame()) ui.menu = false;
+            } else if (ui.menuRequest == 2) {
+                ResetSession();
+                ui.menu = false;
+            }
+            ui.menuRequest = 0;
+            if (ui.menu) return;
+            // Al cerrarse el menu la camara vuela del encuadre del menu al del juego (CameraRig).
+            ResetCameraFor(BodyId::Earth);
+        }
 
         GameState& game = Session();
         game.Tick(dt);

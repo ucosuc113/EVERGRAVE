@@ -31,6 +31,15 @@ inline void BindControls() {
     bindKey("ev_close", Key::Escape);
     bindKey("ev_scroll_up", Key::Up);
     bindKey("ev_scroll_down", Key::Down);
+    // El menu principal: dos teclas para cada lado y dos para aceptar. Esc no cierra nada alli: es un menu, no un panel.
+    bindKey("ev_menu_prev", Key::Left);
+    in.BindKey("ev_menu_prev", Key::A);
+    in.BindKey("ev_menu_prev", Key::Up);
+    bindKey("ev_menu_next", Key::Right);
+    in.BindKey("ev_menu_next", Key::D);
+    in.BindKey("ev_menu_next", Key::Down);
+    bindKey("ev_menu_ok", Key::Enter);
+    in.BindKey("ev_menu_ok", Key::Space);
     in.ClearAction("ev_click");
     in.BindMouseButton("ev_click", MouseButton::Left);
 }
