@@ -101,9 +101,26 @@ float4 PSMain(PSInput input) : SV_TARGET {
         }
     }
 
+    // VOLUMEN AUNQUE ESTE LLENA. Con el Sol a la espalda de la camara toda la cara cae en la banda mas clara y la
+    // Tierra se lee como un disco plano. Dos escalones de oscuro hacia el borde, segun cuanto MIRA A LA CAMARA (no al
+    // Sol): el disco se curva aunque no haya terminador. Debajo de la atmosfera, que lo aclara de nuevo en el filo.
+    const float mu = saturate(dot(N, V));
+    if (lvl >= 1) col *= mu < 0.32 ? 0.84 : mu < 0.58 ? 0.93 : 1.0;
+
     // El borde de la atmosfera: mas fuerte del lado del dia.
-    const float rim = 1.0 - saturate(dot(N, V));
+    const float rim = 1.0 - mu;
     const float k = rim > 0.72 ? 0.50 : rim > 0.45 ? 0.24 : 0.0;
     col = lvl >= 1 ? lerp(col, float3(0.51, 0.73, 1.0), k) : lerp(col, float3(0.09, 0.17, 0.34), k * 0.6);
+
+    // DE FONDO, MAS OSCURA Y FRIA. Cuando se mira la Luna, la Tierra esta detras y es mas grande: con el mismo brillo
+    // compiten y se funden. UserParams[1].x (0..1) lo escribe SpaceWorld segun la vista, con suavizado: la profundidad
+    // se lee por el valor, como en un paisaje (lo lejano mas apagado y azul).
+    const float back = saturate(UserParams[1].x);
+    col = lerp(col, col * float3(0.50, 0.56, 0.68) + float3(0.0, 0.006, 0.02), back);
+
+    // EL CONTORNO: un pixel oscuro en la silueta, como en el pixel art de siempre. Sin el, la Luna delante y la Tierra
+    // detras se funden en una mancha cuando se tapan. El ancho sale de `fwidth`: en el borde mu cae de golpe, asi que
+    // la franja es de un pixel a cualquier tamano (y en un disco de pocos pixeles no se come el planeta).
+    if (mu < fwidth(mu) * 1.2) col = float3(0.015, 0.02, 0.045);
     return float4(col, 1.0);
 }

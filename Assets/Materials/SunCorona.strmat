@@ -1,0 +1,15 @@
+{
+  "name": "SunCorona",
+  "type": "shader",
+  "shader": "Assets/Shaders/SunCorona.hlsl",
+  "blend": "additive",
+  "albedo": [
+    1.0,
+    0.7,
+    0.3,
+    1.0
+  ],
+  "userParams": [
+    [1.6, 1.0, 0.45, 3.0]
+  ]
+}

@@ -73,18 +73,18 @@
                     0
                   ],
                   "pos": [
-                    0,
-                    40
+                    0.0,
+                    40.0
                   ],
                   "size": [
-                    300,
-                    41
+                    300.0,
+                    41.0
                   ],
                   "type": "UiTransform"
                 },
                 {
-                  "brightness": 0.86,
-                  "opacity": 0.65,
+                  "brightness": 0.8600000143051147,
+                  "opacity": 0.6499999761581421,
                   "path": "Assets/UI/evergrave.png",
                   "preserveAspect": true,
                   "type": "UiImage"
@@ -120,18 +120,18 @@
                     0
                   ],
                   "pos": [
-                    0,
-                    91
+                    0.0,
+                    91.0
                   ],
                   "size": [
-                    150,
-                    19
+                    150.0,
+                    19.0
                   ],
                   "type": "UiTransform"
                 },
                 {
-                  "brightness": 0.6,
-                  "opacity": 0.65,
+                  "brightness": 0.6000000238418579,
+                  "opacity": 0.6499999761581421,
                   "path": "Assets/UI/anomaless.png",
                   "preserveAspect": true,
                   "type": "UiImage"
@@ -170,12 +170,12 @@
                         1
                       ],
                       "pos": [
-                        -8,
-                        0
+                        -8.0,
+                        0.0
                       ],
                       "size": [
-                        4,
-                        4
+                        4.0,
+                        4.0
                       ],
                       "type": "UiTransform"
                     },
@@ -188,9 +188,9 @@
                         1.0
                       ],
                       "color": [
-                        0.8392,
-                        0.1569,
-                        0.1569,
+                        0.8392000198364258,
+                        0.15690000355243683,
+                        0.15690000355243683,
                         1.0
                       ],
                       "type": "UiPanel"
@@ -224,12 +224,12 @@
                     0
                   ],
                   "pos": [
-                    -150,
-                    141
+                    -150.0,
+                    141.0
                   ],
                   "size": [
-                    54,
-                    12
+                    54.0,
+                    12.0
                   ],
                   "type": "UiTransform"
                 },
@@ -274,9 +274,9 @@
                     1
                   ],
                   "color": [
-                    0.5412,
-                    0.5412,
-                    0.5961,
+                    0.5411999821662903,
+                    0.5411999821662903,
+                    0.5960999727249146,
                     1.0
                   ],
                   "scale": 1,
@@ -318,12 +318,12 @@
                         1
                       ],
                       "pos": [
-                        -8,
-                        0
+                        -8.0,
+                        0.0
                       ],
                       "size": [
-                        4,
-                        4
+                        4.0,
+                        4.0
                       ],
                       "type": "UiTransform"
                     },
@@ -336,9 +336,9 @@
                         1.0
                       ],
                       "color": [
-                        0.8392,
-                        0.1569,
-                        0.1569,
+                        0.8392000198364258,
+                        0.15690000355243683,
+                        0.15690000355243683,
                         1.0
                       ],
                       "type": "UiPanel"
@@ -372,12 +372,12 @@
                     0
                   ],
                   "pos": [
-                    -50,
-                    141
+                    -50.0,
+                    141.0
                   ],
                   "size": [
-                    30,
-                    12
+                    30.0,
+                    12.0
                   ],
                   "type": "UiTransform"
                 },
@@ -422,9 +422,9 @@
                     1
                   ],
                   "color": [
-                    0.5412,
-                    0.5412,
-                    0.5961,
+                    0.5411999821662903,
+                    0.5411999821662903,
+                    0.5960999727249146,
                     1.0
                   ],
                   "scale": 1,
@@ -466,12 +466,12 @@
                         1
                       ],
                       "pos": [
-                        -8,
-                        0
+                        -8.0,
+                        0.0
                       ],
                       "size": [
-                        4,
-                        4
+                        4.0,
+                        4.0
                       ],
                       "type": "UiTransform"
                     },
@@ -484,9 +484,9 @@
                         1.0
                       ],
                       "color": [
-                        0.8392,
-                        0.1569,
-                        0.1569,
+                        0.8392000198364258,
+                        0.15690000355243683,
+                        0.15690000355243683,
                         1.0
                       ],
                       "type": "UiPanel"
@@ -520,12 +520,12 @@
                     0
                   ],
                   "pos": [
-                    50,
-                    141
+                    50.0,
+                    141.0
                   ],
                   "size": [
-                    42,
-                    12
+                    42.0,
+                    12.0
                   ],
                   "type": "UiTransform"
                 },
@@ -570,9 +570,9 @@
                     1
                   ],
                   "color": [
-                    0.5412,
-                    0.5412,
-                    0.5961,
+                    0.5411999821662903,
+                    0.5411999821662903,
+                    0.5960999727249146,
                     1.0
                   ],
                   "scale": 1,
@@ -614,12 +614,12 @@
                         1
                       ],
                       "pos": [
-                        -8,
-                        0
+                        -8.0,
+                        0.0
                       ],
                       "size": [
-                        4,
-                        4
+                        4.0,
+                        4.0
                       ],
                       "type": "UiTransform"
                     },
@@ -632,9 +632,9 @@
                         1.0
                       ],
                       "color": [
-                        0.8392,
-                        0.1569,
-                        0.1569,
+                        0.8392000198364258,
+                        0.15690000355243683,
+                        0.15690000355243683,
                         1.0
                       ],
                       "type": "UiPanel"
@@ -668,12 +668,12 @@
                     0
                   ],
                   "pos": [
-                    150,
-                    141
+                    150.0,
+                    141.0
                   ],
                   "size": [
-                    30,
-                    12
+                    30.0,
+                    12.0
                   ],
                   "type": "UiTransform"
                 },
@@ -718,9 +718,9 @@
                     1
                   ],
                   "color": [
-                    0.5412,
-                    0.5412,
-                    0.5961,
+                    0.5411999821662903,
+                    0.5411999821662903,
+                    0.5960999727249146,
                     1.0
                   ],
                   "scale": 1,
@@ -861,1201 +861,27 @@
           "children": [
             {
               "active": true,
+              "castShadows": false,
               "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star000",
+              "faceCulling": false,
+              "material": "Assets/Materials/Sky.strmat",
+              "mesh": "Assets/Meshes/sphere.strmesh",
+              "name": "Sky",
               "position": [
-                43.68363952636719,
-                -28.186758041381836,
-                60.80498504638672
+                0.0,
+                0.0,
+                0.0
               ],
-              "primitive": "Cube",
+              "primitive": "Empty",
               "rotation": [
                 0.0,
                 0.0,
                 0.0
               ],
               "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star001",
-              "position": [
-                -40.42385482788086,
-                -68.41019439697266,
-                -9.271309852600098
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star002",
-              "position": [
-                66.53517150878906,
-                13.246081352233887,
-                -42.39825439453125
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star003",
-              "position": [
-                -27.792041778564453,
-                -74.00069427490234,
-                12.308516502380371
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star004",
-              "position": [
-                -64.90966033935547,
-                -41.493919372558594,
-                -21.563648223876953
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star005",
-              "position": [
-                43.129276275634766,
-                52.29634094238281,
-                42.48480224609375
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star006",
-              "position": [
-                -66.95738220214844,
-                20.900146484375,
-                -38.46937561035156
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star007",
-              "position": [
-                -62.96434020996094,
-                12.336471557617188,
-                47.7839241027832
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star008",
-              "position": [
-                21.24224853515625,
-                -72.54676818847656,
-                -26.18650245666504
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star009",
-              "position": [
-                -76.3813247680664,
-                -12.937752723693848,
-                -19.962650299072266
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star010",
-              "position": [
-                29.82793426513672,
-                -30.642908096313477,
-                -67.61143493652344
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star011",
-              "position": [
-                -43.85737228393555,
-                -63.511085510253906,
-                -21.044546127319336
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star012",
-              "position": [
-                -73.896484375,
-                -20.416393280029297,
-                -22.85783576965332
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star013",
-              "position": [
-                -58.16905212402344,
-                10.298927307128906,
-                -53.94713592529297
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star014",
-              "position": [
-                -67.02217102050781,
-                28.863996505737305,
-                32.78563690185547
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star015",
-              "position": [
-                70.75340270996094,
-                -5.503701686859131,
-                -36.92784118652344
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star016",
-              "position": [
-                20.17681312561035,
-                -32.03728103637695,
-                -70.47346496582031
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star017",
-              "position": [
-                -13.61968994140625,
-                -66.9031982421875,
-                41.694915771484375
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star018",
-              "position": [
-                -6.811729907989502,
-                60.02199935913086,
-                -52.44959259033203
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star019",
-              "position": [
-                69.96368408203125,
-                17.433443069458008,
-                34.65772247314453
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star020",
-              "position": [
-                3.5397815704345703,
-                -13.100348472595215,
-                -78.84066772460938
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star021",
-              "position": [
-                -35.19292449951172,
-                69.32323455810547,
-                18.86126136779785
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star022",
-              "position": [
-                -60.86149215698242,
-                42.331336975097656,
-                -30.065534591674805
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star023",
-              "position": [
-                -44.62283706665039,
-                -25.580421447753906,
-                61.273521423339844
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star024",
-              "position": [
-                -76.00106811523438,
-                12.783232688903809,
-                21.457548141479492
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star025",
-              "position": [
-                -36.09295654296875,
-                71.14897155761719,
-                5.926360607147217
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star026",
-              "position": [
-                -11.462052345275879,
-                -70.29289245605469,
-                -36.43529510498047
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star027",
-              "position": [
-                5.7855119705200195,
-                78.89534759521484,
-                -11.918538093566895
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star028",
-              "position": [
-                54.691070556640625,
-                34.66044616699219,
-                -46.984466552734375
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star029",
-              "position": [
-                -23.07600212097168,
-                -76.38993072509766,
-                5.663609981536865
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star030",
-              "position": [
-                -77.94541931152344,
-                17.747127532958984,
-                3.0904455184936523
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star031",
-              "position": [
-                46.41997146606445,
-                42.91727828979492,
-                49.02339553833008
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star032",
-              "position": [
-                67.85890197753906,
-                -16.33637237548828,
-                -39.093379974365234
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star033",
-              "position": [
-                -41.349796295166016,
-                -67.10699462890625,
-                13.669161796569824
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star034",
-              "position": [
-                46.741737365722656,
-                -35.545738220214844,
-                54.329647064208984
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star035",
-              "position": [
-                -9.742642402648926,
-                58.23751449584961,
-                53.976593017578125
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star036",
-              "position": [
-                -7.583879470825195,
-                77.83473205566406,
-                -16.859392166137695
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star037",
-              "position": [
-                18.771135330200195,
-                73.23699188232422,
-                26.153152465820313
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star038",
-              "position": [
-                -31.171092987060547,
-                -55.792259216308594,
-                -48.12054443359375
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star039",
-              "position": [
-                -67.75061798095703,
-                -2.405963182449341,
-                -42.47428512573242
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.3499999940395355,
-                0.3499999940395355,
-                0.3499999940395355
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star040",
-              "position": [
-                43.88125228881836,
-                -34.891082763671875,
-                57.070552825927734
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star041",
-              "position": [
-                -70.60479736328125,
-                -20.9194278717041,
-                -31.26244354248047
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star042",
-              "position": [
-                -73.6163101196289,
-                30.478984832763672,
-                -7.188199043273926
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star043",
-              "position": [
-                -4.878551483154297,
-                24.794633865356445,
-                -75.90406036376953
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.44999998807907104,
-                0.44999998807907104,
-                0.44999998807907104
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star044",
-              "position": [
-                9.003883361816406,
-                63.9252815246582,
-                -47.24921798706055
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.6000000238418579,
-                0.6000000238418579,
-                0.6000000238418579
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star045",
-              "position": [
-                -62.90840148925781,
-                -17.219375610351563,
-                46.32522201538086
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star046",
-              "position": [
-                -64.80758666992188,
-                -2.9563491344451904,
-                46.810646057128906
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star047",
-              "position": [
-                10.27391242980957,
-                -69.22438049316406,
-                38.76121520996094
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star048",
-              "position": [
-                -40.35488510131836,
-                -62.41147232055664,
-                -29.602222442626953
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
-              ],
-              "staticForLighting": false
-            },
-            {
-              "active": true,
-              "children": [],
-              "faceCulling": true,
-              "material": "Assets/Materials/Star.strmat",
-              "name": "Star049",
-              "position": [
-                1.4204883575439453,
-                -79.96267700195313,
-                1.9881740808486938
-              ],
-              "primitive": "Cube",
-              "rotation": [
-                0.0,
-                0.0,
-                0.0
-              ],
-              "scale": [
-                0.2800000011920929,
-                0.2800000011920929,
-                0.2800000011920929
+                96.0,
+                96.0,
+                96.0
               ],
               "staticForLighting": false
             }
@@ -2085,7 +911,34 @@
           "children": [
             {
               "active": true,
-              "children": [],
+              "children": [
+                {
+                  "active": true,
+                  "castShadows": false,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/SunCorona.strmat",
+                  "mesh": "Assets/Meshes/sphere.strmesh",
+                  "name": "Corona",
+                  "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  "scale": [
+                    1.600000023841858,
+                    1.600000023841858,
+                    1.600000023841858
+                  ],
+                  "staticForLighting": false
+                }
+              ],
               "faceCulling": true,
               "material": "Assets/Materials/Sun.strmat",
               "mesh": "Assets/Meshes/sphere.strmesh",
@@ -2105,6 +958,2533 @@
                 5.0,
                 5.0,
                 5.0
+              ],
+              "staticForLighting": false
+            },
+            {
+              "active": true,
+              "children": [
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid000",
+                  "position": [
+                    10.697600364685059,
+                    -0.3910999894142151,
+                    15.924699783325195
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    32.974300384521484,
+                    263.8330993652344,
+                    288.5845031738281
+                  ],
+                  "scale": [
+                    0.4424999952316284,
+                    0.5530999898910522,
+                    0.628000020980835
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid001",
+                  "position": [
+                    7.288599967956543,
+                    -0.12939999997615814,
+                    14.211099624633789
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    354.698486328125,
+                    303.0585021972656,
+                    343.2651062011719
+                  ],
+                  "scale": [
+                    0.9334999918937683,
+                    0.9623000025749207,
+                    0.7081999778747559
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid002",
+                  "position": [
+                    0.9560999870300293,
+                    -0.22699999809265137,
+                    19.15220069885254
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    89.12969970703125,
+                    84.71890258789063,
+                    122.74089813232422
+                  ],
+                  "scale": [
+                    0.772599995136261,
+                    0.5181999802589417,
+                    0.832099974155426
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid003",
+                  "position": [
+                    -10.774499893188477,
+                    -0.29420000314712524,
+                    -14.319299697875977
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    313.6816101074219,
+                    191.0102996826172,
+                    146.22340393066406
+                  ],
+                  "scale": [
+                    0.8016999959945679,
+                    0.6888999938964844,
+                    0.7857999801635742
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid004",
+                  "position": [
+                    16.840599060058594,
+                    -0.07500000298023224,
+                    1.8312000036239624
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    322.176513671875,
+                    297.8511047363281,
+                    148.8238983154297
+                  ],
+                  "scale": [
+                    0.16699999570846558,
+                    0.20100000500679016,
+                    0.24070000648498535
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid005",
+                  "position": [
+                    -11.552200317382813,
+                    -0.6353999972343445,
+                    14.769100189208984
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    126.57119750976563,
+                    210.1614990234375,
+                    273.04010009765625
+                  ],
+                  "scale": [
+                    0.21960000693798065,
+                    0.1695999950170517,
+                    0.16539999842643738
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid006",
+                  "position": [
+                    13.293999671936035,
+                    -0.28349998593330383,
+                    -9.530799865722656
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    358.2109069824219,
+                    332.0375061035156,
+                    289.4219970703125
+                  ],
+                  "scale": [
+                    0.3343000113964081,
+                    0.3109000027179718,
+                    0.260699987411499
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid007",
+                  "position": [
+                    -21.371700286865234,
+                    0.36809998750686646,
+                    2.9342000484466553
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    120.9832992553711,
+                    195.85130310058594,
+                    155.28489685058594
+                  ],
+                  "scale": [
+                    0.5249999761581421,
+                    0.364300012588501,
+                    0.5073999762535095
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid008",
+                  "position": [
+                    -8.63479995727539,
+                    -0.6966999769210815,
+                    15.110699653625488
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    214.41549682617188,
+                    7.65310001373291,
+                    120.2384033203125
+                  ],
+                  "scale": [
+                    0.24639999866485596,
+                    0.34060001373291016,
+                    0.29589998722076416
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid009",
+                  "position": [
+                    -15.646100044250488,
+                    -0.5418000221252441,
+                    -6.546899795532227
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    178.43130493164063,
+                    292.5220947265625,
+                    157.74130249023438
+                  ],
+                  "scale": [
+                    0.24220000207424164,
+                    0.20000000298023224,
+                    0.23960000276565552
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid010",
+                  "position": [
+                    -9.027700424194336,
+                    0.23829999566078186,
+                    -15.103699684143066
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    243.14259338378906,
+                    61.88880157470703,
+                    310.98779296875
+                  ],
+                  "scale": [
+                    0.18979999423027039,
+                    0.3028999865055084,
+                    0.3222000002861023
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid011",
+                  "position": [
+                    14.706700325012207,
+                    0.22499999403953552,
+                    3.6422998905181885
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    334.37908935546875,
+                    303.3518981933594,
+                    85.97370147705078
+                  ],
+                  "scale": [
+                    0.5860999822616577,
+                    0.37450000643730164,
+                    0.43810001015663147
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid012",
+                  "position": [
+                    16.343599319458008,
+                    -0.019999999552965164,
+                    -0.3804999887943268
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    292.6206970214844,
+                    220.87570190429688,
+                    162.8820037841797
+                  ],
+                  "scale": [
+                    0.22470000386238098,
+                    0.17180000245571136,
+                    0.24650000035762787
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid013",
+                  "position": [
+                    -9.7746000289917,
+                    -0.6348000168800354,
+                    -14.23740005493164
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    261.49700927734375,
+                    161.67599487304688,
+                    137.4512939453125
+                  ],
+                  "scale": [
+                    0.2500999867916107,
+                    0.2948000133037567,
+                    0.22849999368190765
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid014",
+                  "position": [
+                    16.48900032043457,
+                    -0.36489999294281006,
+                    -3.9486000537872314
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    200.09429931640625,
+                    55.09270095825195,
+                    137.52149963378906
+                  ],
+                  "scale": [
+                    0.3075000047683716,
+                    0.28459998965263367,
+                    0.5210000276565552
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid015",
+                  "position": [
+                    -0.24729999899864197,
+                    -0.6013000011444092,
+                    15.019399642944336
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    228.36729431152344,
+                    154.35679626464844,
+                    88.84089660644531
+                  ],
+                  "scale": [
+                    0.2565999925136566,
+                    0.18880000710487366,
+                    0.22849999368190765
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid016",
+                  "position": [
+                    -18.710800170898438,
+                    -0.3303999900817871,
+                    -3.4165000915527344
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    353.6398010253906,
+                    199.8197021484375,
+                    258.9646911621094
+                  ],
+                  "scale": [
+                    0.32440000772476196,
+                    0.31859999895095825,
+                    0.31369999051094055
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid017",
+                  "position": [
+                    10.81470012664795,
+                    -0.13740000128746033,
+                    -14.67870044708252
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    7.061100006103516,
+                    339.04229736328125,
+                    253.0196075439453
+                  ],
+                  "scale": [
+                    0.25929999351501465,
+                    0.16459999978542328,
+                    0.179299995303154
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid018",
+                  "position": [
+                    -12.814800262451172,
+                    0.585099995136261,
+                    -8.74530029296875
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    192.24819946289063,
+                    189.7957000732422,
+                    245.88670349121094
+                  ],
+                  "scale": [
+                    0.33000001311302185,
+                    0.30230000615119934,
+                    0.24899999797344208
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid019",
+                  "position": [
+                    17.718799591064453,
+                    0.035999998450279236,
+                    -2.634399890899658
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    175.57960510253906,
+                    8.365900039672852,
+                    29.159900665283203
+                  ],
+                  "scale": [
+                    0.25940001010894775,
+                    0.2076999992132187,
+                    0.1624000072479248
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid020",
+                  "position": [
+                    -11.80679988861084,
+                    -0.164900004863739,
+                    -10.602999687194824
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    78.4032974243164,
+                    228.04249572753906,
+                    310.69281005859375
+                  ],
+                  "scale": [
+                    0.21070000529289246,
+                    0.1932000070810318,
+                    0.24140000343322754
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid021",
+                  "position": [
+                    -1.6806999444961548,
+                    -0.3962000012397766,
+                    17.360200881958008
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    152.96229553222656,
+                    191.7053985595703,
+                    190.2884979248047
+                  ],
+                  "scale": [
+                    0.23420000076293945,
+                    0.19539999961853027,
+                    0.16500000655651093
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid022",
+                  "position": [
+                    -6.699100017547607,
+                    -0.4869999885559082,
+                    14.866999626159668
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    230.76119995117188,
+                    156.4158935546875,
+                    267.3788146972656
+                  ],
+                  "scale": [
+                    0.22769999504089355,
+                    0.22470000386238098,
+                    0.25940001010894775
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid023",
+                  "position": [
+                    -14.65369987487793,
+                    -0.42910000681877136,
+                    -11.481300354003906
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    256.781494140625,
+                    279.0726013183594,
+                    152.39500427246094
+                  ],
+                  "scale": [
+                    0.5579000115394592,
+                    0.5314000248908997,
+                    0.4016000032424927
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid024",
+                  "position": [
+                    -18.605899810791016,
+                    -0.1809999942779541,
+                    -10.724200248718262
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    302.159912109375,
+                    14.549799919128418,
+                    219.32339477539063
+                  ],
+                  "scale": [
+                    0.40299999713897705,
+                    0.33070001006126404,
+                    0.296999990940094
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid025",
+                  "position": [
+                    16.090499877929688,
+                    -0.2700999975204468,
+                    9.668100357055664
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    219.30740356445313,
+                    44.260501861572266,
+                    11.991800308227539
+                  ],
+                  "scale": [
+                    0.4381999969482422,
+                    0.6025999784469604,
+                    0.6068000197410583
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid026",
+                  "position": [
+                    11.98449993133545,
+                    0.014000000432133675,
+                    13.954400062561035
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    288.2394104003906,
+                    356.981689453125,
+                    51.4744987487793
+                  ],
+                  "scale": [
+                    0.3255999982357025,
+                    0.32850000262260437,
+                    0.2549999952316284
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid027",
+                  "position": [
+                    7.3480000495910645,
+                    0.4406000077724457,
+                    -13.931699752807617
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    273.5791015625,
+                    190.101806640625,
+                    3.3515000343322754
+                  ],
+                  "scale": [
+                    0.5454999804496765,
+                    0.5699999928474426,
+                    0.6452999711036682
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid028",
+                  "position": [
+                    -5.260000228881836,
+                    0.14569999277591705,
+                    14.160099983215332
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    167.7230987548828,
+                    233.05169677734375,
+                    21.231800079345703
+                  ],
+                  "scale": [
+                    0.3278000056743622,
+                    0.30399999022483826,
+                    0.22830000519752502
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid029",
+                  "position": [
+                    6.209000110626221,
+                    0.3497999906539917,
+                    -17.84440040588379
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    33.693199157714844,
+                    359.6322021484375,
+                    211.41009521484375
+                  ],
+                  "scale": [
+                    0.25369998812675476,
+                    0.30230000615119934,
+                    0.2126999944448471
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid030",
+                  "position": [
+                    -5.5854997634887695,
+                    0.40560001134872437,
+                    -19.828399658203125
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    277.26458740234375,
+                    146.72410583496094,
+                    128.80589294433594
+                  ],
+                  "scale": [
+                    0.3149000108242035,
+                    0.266400009393692,
+                    0.34209999442100525
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid031",
+                  "position": [
+                    -13.323599815368652,
+                    -0.3384999930858612,
+                    5.702899932861328
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    30.103599548339844,
+                    57.07809829711914,
+                    358.7572021484375
+                  ],
+                  "scale": [
+                    0.15449999272823334,
+                    0.25130000710487366,
+                    0.2354000061750412
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid032",
+                  "position": [
+                    6.202600002288818,
+                    -0.3684999942779541,
+                    16.72960090637207
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    159.16000366210938,
+                    182.8594970703125,
+                    236.28070068359375
+                  ],
+                  "scale": [
+                    0.30720001459121704,
+                    0.2669000029563904,
+                    0.2653999924659729
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid033",
+                  "position": [
+                    16.684600830078125,
+                    -0.008299999870359898,
+                    -4.5258002281188965
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    110.61479949951172,
+                    349.7926025390625,
+                    74.44580078125
+                  ],
+                  "scale": [
+                    0.2680000066757202,
+                    0.43689998984336853,
+                    0.4302000105381012
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid034",
+                  "position": [
+                    -2.0541999340057373,
+                    0.396699994802475,
+                    -20.29050064086914
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    301.3038024902344,
+                    352.0252990722656,
+                    54.03929901123047
+                  ],
+                  "scale": [
+                    0.25589999556541443,
+                    0.1657000035047531,
+                    0.289900004863739
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid035",
+                  "position": [
+                    -13.69909954071045,
+                    -0.49630001187324524,
+                    -6.8979997634887695
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    152.94180297851563,
+                    326.4941101074219,
+                    61.958900451660156
+                  ],
+                  "scale": [
+                    0.16599999368190765,
+                    0.2892000079154968,
+                    0.18979999423027039
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid036",
+                  "position": [
+                    1.5295000076293945,
+                    -1.0472999811172485,
+                    -18.02120018005371
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    140.74139404296875,
+                    32.64690017700195,
+                    164.75120544433594
+                  ],
+                  "scale": [
+                    0.25049999356269836,
+                    0.24240000545978546,
+                    0.311599999666214
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid037",
+                  "position": [
+                    -2.304800033569336,
+                    -0.3314000070095062,
+                    -17.010400772094727
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    333.10528564453125,
+                    243.65069580078125,
+                    200.42449951171875
+                  ],
+                  "scale": [
+                    0.3702999949455261,
+                    0.28029999136924744,
+                    0.32359999418258667
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid038",
+                  "position": [
+                    12.184100151062012,
+                    -0.053700000047683716,
+                    -10.738800048828125
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    228.44400024414063,
+                    87.57890319824219,
+                    216.40719604492188
+                  ],
+                  "scale": [
+                    0.39079999923706055,
+                    0.36820000410079956,
+                    0.26190000772476196
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid039",
+                  "position": [
+                    -15.907999992370605,
+                    -0.155799999833107,
+                    -0.2793000042438507
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    299.1606140136719,
+                    219.19459533691406,
+                    238.21510314941406
+                  ],
+                  "scale": [
+                    0.31859999895095825,
+                    0.4422000050544739,
+                    0.48159998655319214
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid040",
+                  "position": [
+                    -20.257999420166016,
+                    0.5422000288963318,
+                    2.0748000144958496
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    260.85528564453125,
+                    226.8542938232422,
+                    21.027999877929688
+                  ],
+                  "scale": [
+                    0.3465000092983246,
+                    0.3089999854564667,
+                    0.4875999987125397
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid041",
+                  "position": [
+                    1.351699948310852,
+                    0.13379999995231628,
+                    17.174400329589844
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    97.2345962524414,
+                    228.5131072998047,
+                    329.6676940917969
+                  ],
+                  "scale": [
+                    0.515999972820282,
+                    0.4812000095844269,
+                    0.2946999967098236
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid042",
+                  "position": [
+                    -15.838299751281738,
+                    -0.004399999976158142,
+                    14.13479995727539
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    75.31390380859375,
+                    197.56689453125,
+                    106.03040313720703
+                  ],
+                  "scale": [
+                    0.21250000596046448,
+                    0.22220000624656677,
+                    0.22990000247955322
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid043",
+                  "position": [
+                    -17.4685001373291,
+                    0.1550000011920929,
+                    10.477700233459473
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    233.73399353027344,
+                    290.1264953613281,
+                    70.5833969116211
+                  ],
+                  "scale": [
+                    0.2904999852180481,
+                    0.2371000051498413,
+                    0.24169999361038208
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid044",
+                  "position": [
+                    -7.324100017547607,
+                    0.2676999866962433,
+                    -16.185100555419922
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    62.23210144042969,
+                    334.2466125488281,
+                    60.7140998840332
+                  ],
+                  "scale": [
+                    0.1800999939441681,
+                    0.20880000293254852,
+                    0.24220000207424164
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid045",
+                  "position": [
+                    3.4330999851226807,
+                    0.26899999380111694,
+                    -15.01729965209961
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    26.324499130249023,
+                    133.34170532226563,
+                    250.34210205078125
+                  ],
+                  "scale": [
+                    0.20579999685287476,
+                    0.15860000252723694,
+                    0.1648000031709671
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid046",
+                  "position": [
+                    -5.676599979400635,
+                    0.21490000188350677,
+                    19.499799728393555
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    139.6676025390625,
+                    171.3459930419922,
+                    176.4113006591797
+                  ],
+                  "scale": [
+                    0.2831999957561493,
+                    0.4032000005245209,
+                    0.31940001249313354
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid047",
+                  "position": [
+                    0.1826000064611435,
+                    -0.37770000100135803,
+                    -15.17300033569336
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    281.0452880859375,
+                    134.22360229492188,
+                    243.44949340820313
+                  ],
+                  "scale": [
+                    0.23810000717639923,
+                    0.1923000067472458,
+                    0.28060001134872437
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid048",
+                  "position": [
+                    -8.364500045776367,
+                    0.24770000576972961,
+                    -16.87929916381836
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    47.54759979248047,
+                    31.06839942932129,
+                    219.7904052734375
+                  ],
+                  "scale": [
+                    0.3598000109195709,
+                    0.6349999904632568,
+                    0.398499995470047
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid049",
+                  "position": [
+                    17.898300170898438,
+                    0.018799999728798866,
+                    0.17649999260902405
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    224.9582061767578,
+                    29.169099807739258,
+                    19.12350082397461
+                  ],
+                  "scale": [
+                    0.3700999915599823,
+                    0.6093000173568726,
+                    0.3970000147819519
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid050",
+                  "position": [
+                    7.040500164031982,
+                    0.1889999955892563,
+                    17.09589958190918
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    287.46209716796875,
+                    323.126708984375,
+                    359.6973876953125
+                  ],
+                  "scale": [
+                    0.4027999937534332,
+                    0.36390000581741333,
+                    0.251800000667572
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid051",
+                  "position": [
+                    15.478400230407715,
+                    0.4514999985694885,
+                    9.987099647521973
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    68.5166015625,
+                    153.45350646972656,
+                    256.373291015625
+                  ],
+                  "scale": [
+                    0.18850000202655792,
+                    0.22499999403953552,
+                    0.27489998936653137
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid052",
+                  "position": [
+                    -12.368499755859375,
+                    0.11540000140666962,
+                    -12.738100051879883
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    298.0887145996094,
+                    356.5472106933594,
+                    323.0934143066406
+                  ],
+                  "scale": [
+                    0.25859999656677246,
+                    0.30469998717308044,
+                    0.21860000491142273
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid053",
+                  "position": [
+                    15.483799934387207,
+                    -0.023000000044703484,
+                    13.571700096130371
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    186.54229736328125,
+                    355.61920166015625,
+                    160.81100463867188
+                  ],
+                  "scale": [
+                    0.20589999854564667,
+                    0.2142000049352646,
+                    0.17890000343322754
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid054",
+                  "position": [
+                    -12.821200370788574,
+                    -0.09099999815225601,
+                    14.353699684143066
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    191.32699584960938,
+                    18.028099060058594,
+                    345.8186950683594
+                  ],
+                  "scale": [
+                    0.27489998936653137,
+                    0.18289999663829803,
+                    0.2222999930381775
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid055",
+                  "position": [
+                    17.604799270629883,
+                    -0.11720000207424164,
+                    -1.9122999906539917
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    45.83430099487305,
+                    101.2260971069336,
+                    243.70010375976563
+                  ],
+                  "scale": [
+                    0.19130000472068787,
+                    0.2298000007867813,
+                    0.2777000069618225
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid056",
+                  "position": [
+                    16.61009979248047,
+                    0.503000020980835,
+                    -7.174600124359131
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    3.9739999771118164,
+                    152.40769958496094,
+                    304.8872985839844
+                  ],
+                  "scale": [
+                    0.1867000013589859,
+                    0.14550000429153442,
+                    0.18449999392032623
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid057",
+                  "position": [
+                    -17.888399124145508,
+                    0.36160001158714294,
+                    -3.9249000549316406
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    237.90029907226563,
+                    124.86360168457031,
+                    126.27780151367188
+                  ],
+                  "scale": [
+                    0.275299996137619,
+                    0.22709999978542328,
+                    0.2833999991416931
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid058",
+                  "position": [
+                    -2.92549991607666,
+                    -0.996999979019165,
+                    16.63789939880371
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    153.585693359375,
+                    199.4864044189453,
+                    258.3042907714844
+                  ],
+                  "scale": [
+                    0.2831999957561493,
+                    0.21559999883174896,
+                    0.210099995136261
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid059",
+                  "position": [
+                    2.7211999893188477,
+                    0.1973000019788742,
+                    18.18429946899414
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    310.4184875488281,
+                    129.10009765625,
+                    216.21690368652344
+                  ],
+                  "scale": [
+                    0.6144999861717224,
+                    0.6383000016212463,
+                    0.5807999968528748
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid060",
+                  "position": [
+                    -15.970800399780273,
+                    -0.26080000400543213,
+                    10.777799606323242
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    54.996700286865234,
+                    12.415200233459473,
+                    143.33920288085938
+                  ],
+                  "scale": [
+                    0.21469999849796295,
+                    0.35519999265670776,
+                    0.33230000734329224
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid061",
+                  "position": [
+                    17.979999542236328,
+                    0.7735999822616577,
+                    6.5177998542785645
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    40.751399993896484,
+                    247.0841064453125,
+                    296.3185119628906
+                  ],
+                  "scale": [
+                    0.335099995136261,
+                    0.5123000144958496,
+                    0.4864000082015991
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid062",
+                  "position": [
+                    -16.911800384521484,
+                    0.3833000063896179,
+                    8.368900299072266
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    119.70149993896484,
+                    346.93109130859375,
+                    104.89299774169922
+                  ],
+                  "scale": [
+                    0.22529999911785126,
+                    0.16539999842643738,
+                    0.18279999494552612
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid063",
+                  "position": [
+                    9.312000274658203,
+                    -0.8104000091552734,
+                    16.307199478149414
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    37.91790008544922,
+                    109.3510971069336,
+                    76.59480285644531
+                  ],
+                  "scale": [
+                    0.24729999899864197,
+                    0.2646999955177307,
+                    0.20569999516010284
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid064",
+                  "position": [
+                    15.867600440979004,
+                    -0.22200000286102295,
+                    2.560499906539917
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    17.03230094909668,
+                    309.48480224609375,
+                    211.84730529785156
+                  ],
+                  "scale": [
+                    0.41040000319480896,
+                    0.5900999903678894,
+                    0.5485000014305115
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid065",
+                  "position": [
+                    12.343000411987305,
+                    0.4302999973297119,
+                    -12.563300132751465
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    243.40939331054688,
+                    81.56819915771484,
+                    18.129100799560547
+                  ],
+                  "scale": [
+                    0.3050000071525574,
+                    0.23489999771118164,
+                    0.34540000557899475
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid066",
+                  "position": [
+                    4.266200065612793,
+                    0.8282999992370605,
+                    15.445099830627441
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    214.8690948486328,
+                    331.7767028808594,
+                    173.3397979736328
+                  ],
+                  "scale": [
+                    0.3246000111103058,
+                    0.2362000048160553,
+                    0.24230000376701355
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid067",
+                  "position": [
+                    11.345199584960938,
+                    0.2029999941587448,
+                    11.699600219726563
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    99.1187973022461,
+                    315.289794921875,
+                    115.21549987792969
+                  ],
+                  "scale": [
+                    0.5422000288963318,
+                    0.5722000002861023,
+                    0.5803999900817871
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid068",
+                  "position": [
+                    -0.3982999920845032,
+                    -0.08060000091791153,
+                    -17.869400024414063
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    291.8757019042969,
+                    265.0350036621094,
+                    244.53179931640625
+                  ],
+                  "scale": [
+                    0.33379998803138733,
+                    0.47620001435279846,
+                    0.31150001287460327
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid069",
+                  "position": [
+                    -14.316200256347656,
+                    0.14890000224113464,
+                    -5.423600196838379
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    48.57699966430664,
+                    200.0052032470703,
+                    179.56500244140625
+                  ],
+                  "scale": [
+                    0.34940001368522644,
+                    0.5576000213623047,
+                    0.5408999919891357
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid070",
+                  "position": [
+                    18.220300674438477,
+                    0.06129999831318855,
+                    -8.959199905395508
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    38.9370002746582,
+                    290.31561279296875,
+                    191.03799438476563
+                  ],
+                  "scale": [
+                    0.3522000014781952,
+                    0.38359999656677246,
+                    0.3986000120639801
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid071",
+                  "position": [
+                    -13.565600395202637,
+                    0.06620000302791595,
+                    12.986499786376953
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    47.20199966430664,
+                    245.6833953857422,
+                    6.491399765014648
+                  ],
+                  "scale": [
+                    0.4154999852180481,
+                    0.49869999289512634,
+                    0.5501999855041504
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid072",
+                  "position": [
+                    -21.066699981689453,
+                    -0.6444000005722046,
+                    -2.0450000762939453
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    112.02519989013672,
+                    31.31719970703125,
+                    129.27769470214844
+                  ],
+                  "scale": [
+                    0.37549999356269836,
+                    0.6207000017166138,
+                    0.36719998717308044
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid073",
+                  "position": [
+                    -10.318699836730957,
+                    0.14830000698566437,
+                    -11.950300216674805
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    81.69650268554688,
+                    43.892398834228516,
+                    108.58740234375
+                  ],
+                  "scale": [
+                    0.5853000283241272,
+                    0.36250001192092896,
+                    0.4546999931335449
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid074",
+                  "position": [
+                    10.939800262451172,
+                    0.2777999937534332,
+                    14.680700302124023
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    197.70140075683594,
+                    108.67459869384766,
+                    204.48350524902344
+                  ],
+                  "scale": [
+                    0.27059999108314514,
+                    0.2935999929904938,
+                    0.3278000056743622
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid075",
+                  "position": [
+                    17.618900299072266,
+                    0.7382000088691711,
+                    7.332799911499023
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    44.639801025390625,
+                    128.16070556640625,
+                    68.14450073242188
+                  ],
+                  "scale": [
+                    0.3930000066757202,
+                    0.46219998598098755,
+                    0.38029998540878296
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid076",
+                  "position": [
+                    -17.561100006103516,
+                    0.13210000097751617,
+                    6.735899925231934
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    56.79899978637695,
+                    194.23680114746094,
+                    250.7657012939453
+                  ],
+                  "scale": [
+                    0.22910000383853912,
+                    0.27160000801086426,
+                    0.24940000474452972
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid077",
+                  "position": [
+                    -16.34429931640625,
+                    -0.18940000236034393,
+                    4.877900123596191
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    239.01060485839844,
+                    197.8699951171875,
+                    31.515600204467773
+                  ],
+                  "scale": [
+                    0.24860000610351563,
+                    0.1573999971151352,
+                    0.1979999989271164
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid078",
+                  "position": [
+                    9.230500221252441,
+                    -0.120899997651577,
+                    -15.293800354003906
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    49.299800872802734,
+                    333.7351989746094,
+                    44.11940002441406
+                  ],
+                  "scale": [
+                    0.3375999927520752,
+                    0.2777000069618225,
+                    0.24629999697208405
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid079",
+                  "position": [
+                    -11.009900093078613,
+                    -0.39809998869895935,
+                    15.405500411987305
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    71.3927001953125,
+                    59.414100646972656,
+                    323.4125061035156
+                  ],
+                  "scale": [
+                    0.1817999929189682,
+                    0.16439999639987946,
+                    0.26660001277923584
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid080",
+                  "position": [
+                    -3.8638999462127686,
+                    0.3181999921798706,
+                    -18.613100051879883
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    189.44650268554688,
+                    50.42340087890625,
+                    6.178500175476074
+                  ],
+                  "scale": [
+                    0.2531000077724457,
+                    0.28110000491142273,
+                    0.20640000700950623
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid081",
+                  "position": [
+                    -18.634000778198242,
+                    -0.36980000138282776,
+                    4.254700183868408
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    50.98939895629883,
+                    347.4472961425781,
+                    198.02720642089844
+                  ],
+                  "scale": [
+                    0.2700999975204468,
+                    0.273499995470047,
+                    0.24269999563694
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid082",
+                  "position": [
+                    16.367399215698242,
+                    -0.05950000137090683,
+                    -12.446900367736816
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    29.37339973449707,
+                    149.97689819335938,
+                    205.55079650878906
+                  ],
+                  "scale": [
+                    0.3750999867916107,
+                    0.2969000041484833,
+                    0.41760000586509705
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid083",
+                  "position": [
+                    -5.088799953460693,
+                    0.8525999784469604,
+                    21.128000259399414
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    227.37469482421875,
+                    62.85240173339844,
+                    354.1888122558594
+                  ],
+                  "scale": [
+                    0.5184000134468079,
+                    0.5570999979972839,
+                    0.49970000982284546
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid084",
+                  "position": [
+                    16.729799270629883,
+                    0.5601999759674072,
+                    4.978400230407715
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    171.70779418945313,
+                    336.74468994140625,
+                    310.68609619140625
+                  ],
+                  "scale": [
+                    0.3151000142097473,
+                    0.2517000138759613,
+                    0.34689998626708984
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid085",
+                  "position": [
+                    6.660699844360352,
+                    0.27639999985694885,
+                    -14.679200172424316
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    70.00389862060547,
+                    203.37359619140625,
+                    245.70680236816406
+                  ],
+                  "scale": [
+                    0.430400013923645,
+                    0.5116000175476074,
+                    0.48969998955726624
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid086",
+                  "position": [
+                    3.8338000774383545,
+                    0.5831000208854675,
+                    15.76609992980957
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    226.93980407714844,
+                    311.718994140625,
+                    251.60809326171875
+                  ],
+                  "scale": [
+                    0.26600000262260437,
+                    0.23720000684261322,
+                    0.28700000047683716
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid087",
+                  "position": [
+                    4.293099880218506,
+                    0.34299999475479126,
+                    -15.660799980163574
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    92.168701171875,
+                    77.08619689941406,
+                    58.30189895629883
+                  ],
+                  "scale": [
+                    0.5321000218391418,
+                    0.3544999957084656,
+                    0.4860000014305115
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid088",
+                  "position": [
+                    -20.277299880981445,
+                    0.2587999999523163,
+                    -6.023099899291992
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    355.94061279296875,
+                    159.1553955078125,
+                    183.42379760742188
+                  ],
+                  "scale": [
+                    0.4235999882221222,
+                    0.3961000144481659,
+                    0.45669999718666077
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid089",
+                  "position": [
+                    -6.544400215148926,
+                    -0.9089000225067139,
+                    -18.080799102783203
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    129.10479736328125,
+                    123.42980194091797,
+                    7.177499771118164
+                  ],
+                  "scale": [
+                    0.22200000286102295,
+                    0.2467000037431717,
+                    0.2508000135421753
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_c.strmesh",
+                  "name": "Asteroid090",
+                  "position": [
+                    -8.41349983215332,
+                    -0.6074000000953674,
+                    16.335800170898438
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    165.80990600585938,
+                    80.24620056152344,
+                    62.014400482177734
+                  ],
+                  "scale": [
+                    0.39070001244544983,
+                    0.2858999967575073,
+                    0.3720000088214874
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid091",
+                  "position": [
+                    15.111700057983398,
+                    0.003100000089034438,
+                    -9.407099723815918
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    65.52400207519531,
+                    277.9576110839844,
+                    245.9445037841797
+                  ],
+                  "scale": [
+                    0.30250000953674316,
+                    0.36739999055862427,
+                    0.21940000355243683
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid092",
+                  "position": [
+                    9.980299949645996,
+                    0.24500000476837158,
+                    -14.167400360107422
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    104.31729888916016,
+                    202.8939971923828,
+                    185.16209411621094
+                  ],
+                  "scale": [
+                    0.19509999454021454,
+                    0.2533000111579895,
+                    0.3100999891757965
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid093",
+                  "position": [
+                    15.463199615478516,
+                    0.013799999840557575,
+                    7.652699947357178
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    245.96780395507813,
+                    274.30218505859375,
+                    313.2510986328125
+                  ],
+                  "scale": [
+                    0.44920000433921814,
+                    0.29030001163482666,
+                    0.4489000141620636
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid094",
+                  "position": [
+                    -17.8075008392334,
+                    0.02889999933540821,
+                    0.9275000095367432
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    32.194801330566406,
+                    95.86389923095703,
+                    161.4541015625
+                  ],
+                  "scale": [
+                    0.19869999587535858,
+                    0.22139999270439148,
+                    0.24140000343322754
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid095",
+                  "position": [
+                    15.11359977722168,
+                    0.004800000227987766,
+                    -5.387599945068359
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    76.07170104980469,
+                    201.4407958984375,
+                    256.7362976074219
+                  ],
+                  "scale": [
+                    0.19619999825954437,
+                    0.21739999949932098,
+                    0.17139999568462372
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid096",
+                  "position": [
+                    14.199299812316895,
+                    -0.32989999651908875,
+                    10.950200080871582
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    230.7646026611328,
+                    94.70130157470703,
+                    102.05370330810547
+                  ],
+                  "scale": [
+                    0.4652000069618225,
+                    0.41260001063346863,
+                    0.6129000186920166
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/Asteroid.strmat",
+                  "mesh": "Assets/Meshes/rock_a.strmesh",
+                  "name": "Asteroid097",
+                  "position": [
+                    9.63010025024414,
+                    -0.7455000281333923,
+                    -11.459099769592285
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    295.5758972167969,
+                    18.281400680541992,
+                    148.43809509277344
+                  ],
+                  "scale": [
+                    0.16689999401569366,
+                    0.2102999985218048,
+                    0.27000001072883606
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid098",
+                  "position": [
+                    -12.481599807739258,
+                    0.6563000082969666,
+                    9.938300132751465
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    118.66390228271484,
+                    328.19000244140625,
+                    37.57780075073242
+                  ],
+                  "scale": [
+                    0.18950000405311584,
+                    0.27309998869895935,
+                    0.19740000367164612
+                  ],
+                  "staticForLighting": false
+                },
+                {
+                  "active": true,
+                  "children": [],
+                  "faceCulling": true,
+                  "material": "Assets/Materials/AsteroidDark.strmat",
+                  "mesh": "Assets/Meshes/rock_b.strmesh",
+                  "name": "Asteroid099",
+                  "position": [
+                    3.1412999629974365,
+                    -0.7641000151634216,
+                    -17.566999435424805
+                  ],
+                  "primitive": "Empty",
+                  "rotation": [
+                    220.58450317382813,
+                    178.1260986328125,
+                    335.09991455078125
+                  ],
+                  "scale": [
+                    0.1817999929189682,
+                    0.22349999845027924,
+                    0.19670000672340393
+                  ],
+                  "staticForLighting": false
+                }
+              ],
+              "faceCulling": true,
+              "name": "Belt",
+              "position": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "primitive": "Empty",
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "scripts": [
+                "AsteroidBelt"
               ],
               "staticForLighting": false
             },
@@ -2153,7 +3533,34 @@
                   "children": [
                     {
                       "active": true,
-                      "children": [],
+                      "children": [
+                        {
+                          "active": true,
+                          "castShadows": false,
+                          "children": [],
+                          "faceCulling": true,
+                          "material": "Assets/Materials/EarthAtmosphere.strmat",
+                          "mesh": "Assets/Meshes/sphere.strmesh",
+                          "name": "Atmosphere",
+                          "position": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "primitive": "Empty",
+                          "rotation": [
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "scale": [
+                            1.0800000429153442,
+                            1.0800000429153442,
+                            1.0800000429153442
+                          ],
+                          "staticForLighting": false
+                        }
+                      ],
                       "faceCulling": true,
                       "material": "Assets/Materials/Earth.strmat",
                       "mesh": "Assets/Meshes/sphere.strmesh",
@@ -2235,9 +3642,9 @@
                           "material": "Assets/Materials/SatBody.strmat",
                           "name": "Cuerpo",
                           "position": [
-                            0,
-                            0,
-                            0
+                            0.0,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2246,9 +3653,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.16,
-                            0.12,
-                            0.12
+                            0.1599999964237213,
+                            0.11999999731779099,
+                            0.11999999731779099
                           ],
                           "staticForLighting": false
                         },
@@ -2259,9 +3666,9 @@
                           "material": "Assets/Materials/SatPanel.strmat",
                           "name": "PanelIzq",
                           "position": [
-                            -0.27,
-                            0,
-                            0
+                            -0.27000001072883606,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2270,9 +3677,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.34,
-                            0.02,
-                            0.14
+                            0.3400000035762787,
+                            0.019999999552965164,
+                            0.14000000059604645
                           ],
                           "staticForLighting": false
                         },
@@ -2283,9 +3690,9 @@
                           "material": "Assets/Materials/SatPanel.strmat",
                           "name": "PanelDer",
                           "position": [
-                            0.27,
-                            0,
-                            0
+                            0.27000001072883606,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2294,9 +3701,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.34,
-                            0.02,
-                            0.14
+                            0.3400000035762787,
+                            0.019999999552965164,
+                            0.14000000059604645
                           ],
                           "staticForLighting": false
                         },
@@ -2307,9 +3714,9 @@
                           "material": "Assets/Materials/SatLight.strmat",
                           "name": "Luz",
                           "position": [
-                            0,
-                            0.09,
-                            0
+                            0.0,
+                            0.09000000357627869,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2318,9 +3725,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.03,
-                            0.03,
-                            0.03
+                            0.029999999329447746,
+                            0.029999999329447746,
+                            0.029999999329447746
                           ],
                           "staticForLighting": false
                         }
@@ -2339,9 +3746,9 @@
                         0.0
                       ],
                       "scale": [
-                        0.35,
-                        0.35,
-                        0.35
+                        0.3499999940395355,
+                        0.3499999940395355,
+                        0.3499999940395355
                       ],
                       "staticForLighting": false
                     },
@@ -2355,9 +3762,9 @@
                           "material": "Assets/Materials/SatBody.strmat",
                           "name": "Modulo",
                           "position": [
-                            0,
-                            0,
-                            0
+                            0.0,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2366,9 +3773,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.14,
-                            0.14,
-                            0.3
+                            0.14000000059604645,
+                            0.14000000059604645,
+                            0.30000001192092896
                           ],
                           "staticForLighting": false
                         },
@@ -2379,9 +3786,9 @@
                           "material": "Assets/Materials/SatBody.strmat",
                           "name": "Viga",
                           "position": [
-                            0,
-                            0,
-                            0
+                            0.0,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2390,9 +3797,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.95,
-                            0.03,
-                            0.03
+                            0.949999988079071,
+                            0.029999999329447746,
+                            0.029999999329447746
                           ],
                           "staticForLighting": false
                         },
@@ -2403,9 +3810,9 @@
                           "material": "Assets/Materials/SatGold.strmat",
                           "name": "PanelIzq",
                           "position": [
-                            -0.38,
-                            0,
-                            0
+                            -0.3799999952316284,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2414,9 +3821,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.28,
-                            0.02,
-                            0.36
+                            0.2800000011920929,
+                            0.019999999552965164,
+                            0.36000001430511475
                           ],
                           "staticForLighting": false
                         },
@@ -2427,9 +3834,9 @@
                           "material": "Assets/Materials/SatGold.strmat",
                           "name": "PanelDer",
                           "position": [
-                            0.38,
-                            0,
-                            0
+                            0.3799999952316284,
+                            0.0,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2438,9 +3845,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.28,
-                            0.02,
-                            0.36
+                            0.2800000011920929,
+                            0.019999999552965164,
+                            0.36000001430511475
                           ],
                           "staticForLighting": false
                         },
@@ -2451,9 +3858,9 @@
                           "material": "Assets/Materials/SatLight.strmat",
                           "name": "Luz",
                           "position": [
-                            0,
-                            0.11,
-                            0
+                            0.0,
+                            0.10999999940395355,
+                            0.0
                           ],
                           "primitive": "Cube",
                           "rotation": [
@@ -2462,9 +3869,9 @@
                             0.0
                           ],
                           "scale": [
-                            0.03,
-                            0.03,
-                            0.03
+                            0.029999999329447746,
+                            0.029999999329447746,
+                            0.029999999329447746
                           ],
                           "staticForLighting": false
                         }
@@ -2483,9 +3890,9 @@
                         0.0
                       ],
                       "scale": [
-                        0.3,
-                        0.3,
-                        0.3
+                        0.30000001192092896,
+                        0.30000001192092896,
+                        0.30000001192092896
                       ],
                       "staticForLighting": false
                     },
@@ -2508,9 +3915,9 @@
                         0.0
                       ],
                       "scale": [
-                        0.2,
-                        0.2,
-                        0.2
+                        0.20000000298023224,
+                        0.20000000298023224,
+                        0.20000000298023224
                       ],
                       "staticForLighting": false
                     }

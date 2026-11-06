@@ -54,6 +54,7 @@ struct UiState {
     float camYaw = 55.0f;       // grados respecto a la direccion al Sol: 0 = del lado del dia
     float camPitch = 35.0f;     // grados sobre el plano del sistema
     float camZoom = 1.0f;
+    bool camYawFromEarth = false; // vista de la Luna: camYaw todavia es relativo a la Tierra (CameraRig lo fija al entrar)
     float camIdle = 0.0f;       // segundos sin tocar la camara: pasado un rato, gira sola
     bool camDragging = false;   // hay un arrastre en curso sobre el mundo
     float camDragDist = 0.0f;   // cuanto se movio el puntero: poco = fue un clic, no un arrastre
@@ -102,8 +103,10 @@ inline void ResetUi() { Ui() = UiState{}; }
 // una tecnologia ya lo abrio (el Core decide, no la interfaz).
 inline void ResetCameraFor(BodyId b) {
     UiState& u = Ui();
-    // Tierra: 55 (el lado iluminado, el Sol a un lado); Luna: 135 desde la Tierra (la Tierra de lado en cuadro).
-    u.camYaw = b == BodyId::Sun ? 0.0f : b == BodyId::Moon ? 135.0f : 55.0f;
+    // Tierra: 55 (el lado iluminado, el Sol a un lado); Luna: 132 desde la Tierra (con 135 quedaba detras de la Luna; con
+    // 132 asoma a un lado). El de la Luna es relativo a la Tierra solo para entrar: CameraRig lo vuelve fijo en el mundo.
+    u.camYaw = b == BodyId::Sun ? 0.0f : b == BodyId::Moon ? 132.0f : 55.0f;
+    u.camYawFromEarth = b == BodyId::Moon;
     u.camPitch = 35.0f;
     u.camZoom = 1.0f;
     u.camIdle = 0.0f;

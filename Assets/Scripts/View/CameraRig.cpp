@@ -57,6 +57,7 @@ constexpr float kRad = 3.14159265f / 180.0f;
 constexpr float kDragSlop = 4.0f;
 constexpr float kIdleBeforeSpin = 2.5f;   // segundos
 constexpr float kSpinDegPerSec = 1.4f;
+constexpr float kPitchLimit = 89.0f;      // grados: casi el polo, arriba y abajo (ver HandleMouse)
 constexpr float kMapDist = 96.0f, kMapPitch = 75.0f;
 // EL ENCUADRE DEL MENU: la Tierra sube desde el borde de abajo y solo se ve su mitad de arriba. La camara mira a un
 // punto ENCIMA del centro de la Tierra (`kMenuLift`), asi el planeta queda debajo del cuadro; casi de lado
@@ -129,12 +130,21 @@ public:
             target.center = c;
             target.dist = (state.view == BodyId::Moon ? 5.5f : state.view == BodyId::Sun ? 36.0f : 16.0f) * state.camZoom;
             target.pitch = state.camPitch;
-            // El angulo se mide respecto a la direccion al Sol (para el Sol mismo, desde +z) y, para la Luna,
-            // respecto a la direccion a la TIERRA: asi, con el desvio por defecto, la Tierra queda de lado en
-            // pantalla en vez de escondida detras de la Luna o a la espalda de la camara.
+            // El angulo se mide respecto a la direccion al Sol (para el Sol mismo, desde +z). La LUNA es distinta: su
+            // angulo es FIJO EN EL MUNDO. Antes se media respecto a la direccion a la Tierra, y como la Luna da la vuelta
+            // a la Tierra cada 45 s esa referencia giraba sola: la camara no orbitaba la Luna, la arrastraba el mes, y al
+            // girar con el raton se sentia desfasado. Para el encuadre de entrada (la Tierra de lado) el angulo por
+            // defecto SI es relativo a la Tierra (`camYawFromEarth`, que pone ResetCameraFor): se convierte a fijo una
+            // vez, aqui, con la Tierra de ese momento, y desde ahi la Tierra se mueve por el cielo y la camara no.
             float ref = 0.0f;
-            if (state.view == BodyId::Moon) ref = std::atan2(earth.x - c.x, earth.z - c.z) / kRad;
-            else if (state.view != BodyId::Sun) ref = std::atan2(-c.x, -c.z) / kRad;
+            if (state.view == BodyId::Moon) {
+                if (state.camYawFromEarth) {
+                    state.camYaw += std::atan2(earth.x - c.x, earth.z - c.z) / kRad;
+                    state.camYawFromEarth = false;
+                }
+            } else if (state.view != BodyId::Sun) {
+                ref = std::atan2(-c.x, -c.z) / kRad;
+            }
             target.yaw = ref + state.camYaw;
         }
 
@@ -185,9 +195,14 @@ private:
                 const float dx = in.CursorDeltaX(), dy = in.CursorDeltaY();
                 state.camDragDist += std::fabs(dx) + std::fabs(dy);
                 // En el mapa no se gira (esta fijo a proposito: si se mueve, tocar un cuerpo chico se vuelve adivinar).
+                // Los signos los eligio la persona probando, eje por eje (yaw += dx, pitch += dy): las otras tres
+                // combinaciones se probaron y se sentian al reves. No "corregirlos" por simetria. El giro vertical es libre: se puede pasar por
+                // debajo del plano del sistema y mirar desde abajo. El unico tope es el polo, a `kPitchLimit` de cada
+                // lado: en 90 la camara quedaria mirando recto y al pasarlo se daria vuelta (el mundo cabeza abajo y el
+                // arrastre horizontal al reves).
                 if (state.camDragDist >= kDragSlop && !state.mapView) {
-                    state.camYaw -= dx * 0.4f;
-                    state.camPitch = std::clamp(state.camPitch + dy * 0.3f, 12.0f, 80.0f);
+                    state.camYaw += dx * 0.4f;
+                    state.camPitch = std::clamp(state.camPitch + dy * 0.3f, -kPitchLimit, kPitchLimit);
                     state.camIdle = 0.0f;
                 }
             }

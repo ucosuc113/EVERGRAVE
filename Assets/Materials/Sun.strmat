@@ -1,16 +1,14 @@
 {
   "name": "Sun",
-  "type": "unlit",
-  "surface": "opaque",
+  "type": "shader",
+  "shader": "Assets/Shaders/Sun.hlsl",
   "albedo": [
     1.0,
     0.8,
     0.25,
     1.0
   ],
-  "emissive": [
-    1.0,
-    0.8,
-    0.25
+  "userParams": [
+    [0.22, 0.76, 0.25, 0.0]
   ]
 }

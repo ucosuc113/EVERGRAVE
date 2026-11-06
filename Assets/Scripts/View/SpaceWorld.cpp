@@ -30,6 +30,8 @@
 
 #include "Engine/Diagnostics/Log.h"
 #include "Engine/Rendering/Camera.h"
+#include "Engine/Rendering/Material.h"
+#include "Engine/Rendering/MaterialCache.h"
 #include "Engine/Scene/GameObject.h"
 #include "Engine/Scene/Raycast.h"
 #include "Engine/Scene/SceneQuery.h"
@@ -55,6 +57,7 @@ constexpr const char* kMoonPath = "Space/OrbitPivot/EarthAnchor/Moon";
 constexpr const char* kLightPath = "Space/OrbitPivot/Sunlight";
 constexpr const char* kEarthPath = "Space/OrbitPivot/EarthAnchor/Tilt/Earth";
 constexpr const char* kSunPath = "Space/OrbitPivot/Sun";
+constexpr const char* kAtmospherePath = "Space/OrbitPivot/EarthAnchor/Tilt/Earth/Atmosphere";
 
 // Grados por segundo. La orbita de la Tierra tarda 7,5 minutos, el dia terrestre 45 s y el mes de
 // la Luna 45 s tambien: lento para no marear, rapido para verse vivo.
@@ -83,6 +86,7 @@ public:
         m_earth = FindByPath(SceneService::MutableRoots(), kEarthPath);
         m_moon = FindByPath(SceneService::MutableRoots(), kMoonPath);
         m_sun = FindByPath(SceneService::MutableRoots(), kSunPath);
+        m_atmosphere = FindByPath(SceneService::MutableRoots(), kAtmospherePath);
         m_light = FindByPath(SceneService::MutableRoots(), kLightPath);
         if (!m_anchor || !m_earth || !m_moon || !m_sun) Log::Warn(L"EVERGRAVE: la escena no tiene Sol, Tierra y Luna en Space/OrbitPivot");
         if (m_earth) m_earthBaseScale = m_earth->transform.scale[0];
@@ -129,6 +133,18 @@ private:
             m_light->transform.rotation[1] = std::atan2(ex, ez) / kRad;
         }
         if (m_earth) m_earth->transform.rotation[1] = Wrap360(m_earth->transform.rotation[1] + kSpinDegPerSec * dt);
+
+        // La Tierra DE FONDO: mirando la Luna, la Tierra esta detras y se apaga y enfria (Earth.hlsl, UserParams[1].x), para
+        // que la profundidad se lea por el valor y las dos no se fundan. Suavizado al ritmo de la camara, asi el cambio
+        // acompana al vuelo en vez de saltar. Es por RUTA del material: la unica Tierra que lo usa es esta.
+        const bool moonView = !Ui().menu && !Ui().mapView && Ui().view == BodyId::Moon;
+        m_earthBack += ((moonView ? 1.0f : 0.0f) - m_earthBack) * (1.0f - std::exp(-3.2f * dt));
+        // Va a la Tierra y a su capa de aire (Earth/Atmosphere): un halo encendido sobre una Tierra apagada se veria
+        // como un aro suelto.
+        if (MaterialCache* cache = SceneService::Materials())
+            for (const GameObject* o : {static_cast<const GameObject*>(m_earth), static_cast<const GameObject*>(m_atmosphere)})
+                if (o && !o->materialPath.empty())
+                    if (Material* m = cache->GetMutable(o->materialPath)) m->userParams[1].x = m_earthBack;
 
         // Un golpe de escala al usar una interaccion: respuesta del clic, no
         // progreso. Decae solo.
@@ -216,9 +232,11 @@ private:
     GameObject* m_light = nullptr;
     GameObject* m_earth = nullptr;
     GameObject* m_sun = nullptr;
+    GameObject* m_atmosphere = nullptr; // opcional: la capa de aire, para apagarla con la Tierra
     float m_earthBaseScale = 1.0f, m_sunBaseScale = 1.0f;
     float m_earthPulse = 0.0f, m_sunPulse = 0.0f;
     float m_orbit = 0.0f, m_month = 0.0f;
+    float m_earthBack = 0.0f; // 0 = la Tierra normal, 1 = de fondo (vista de la Luna)
     float m_sunFar = 1.0f; // 0 = el Sol en su sitio, 1 = lejos (se empieza en la Tierra)
 };
 

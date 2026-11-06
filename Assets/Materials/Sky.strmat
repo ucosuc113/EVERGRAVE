@@ -1,0 +1,12 @@
+{
+  "name": "Sky",
+  "type": "unlit",
+  "surface": "opaque",
+  "albedo": [
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "albedoTexture": "Assets/Textures/Sky.png"
+}

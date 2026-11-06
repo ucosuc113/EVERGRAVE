@@ -127,7 +127,8 @@ bool MenuWanted() {
 // Para pruebas: con EVERGRAVE_SAVE=<ruta> la partida arranca cargada de ese archivo (el mismo
 // formato que F5), en vez de vacia. Es como se mira el final del juego sin jugar treinta horas:
 // un guardado con todo investigado y mil unidades de cada tipo. Sin la variable no hace nada.
-// Con EVERGRAVE_CAMYAW / EVERGRAVE_CAMPITCH=<grados> la camara arranca con ese angulo (para mirar un lado concreto).
+// Con EVERGRAVE_CAMYAW / EVERGRAVE_CAMPITCH=<grados> la camara arranca con ese angulo (para mirar un lado concreto), y con
+// EVERGRAVE_VIEW=moon|sun|map en esa vista.
 void LoadTestSave() {
 #ifdef _WIN32
     char* buf = nullptr;
@@ -157,8 +158,19 @@ public:
         LoadTestSave();
 #ifdef _WIN32
         {
-            char* yaw = nullptr;
+            // EVERGRAVE_VIEW=moon|sun|map arranca en esa vista (si la partida la tiene abierta): una corrida automatica no
+            // puede apretar 2, 3 o M, y sin esto la vista de la Luna no se podia capturar. Antes que el angulo: elegir la
+            // vista pone el de esa vista, y EVERGRAVE_CAMYAW lo pisa despues si tambien viene.
             size_t n = 0;
+            char* view = nullptr;
+            if (_dupenv_s(&view, &n, "EVERGRAVE_VIEW") == 0 && view) {
+                const std::string v = view;
+                std::free(view);
+                if (v == "moon") GoToBody(BodyId::Moon);
+                else if (v == "sun") GoToBody(BodyId::Sun);
+                else if (v == "map") GoToMap();
+            }
+            char* yaw = nullptr;
             if (_dupenv_s(&yaw, &n, "EVERGRAVE_CAMYAW") == 0 && yaw) {
                 Ui().camYaw = static_cast<float>(std::atof(yaw));
                 std::free(yaw);
