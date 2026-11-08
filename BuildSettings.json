@@ -7,6 +7,17 @@
     "orientation": "sensorLandscape",
     "outputDir": "Build/Android",
     "packageName": "",
+    "quality": {
+      "aa": "",
+      "enabled": false,
+      "fps": 0,
+      "lighting": "",
+      "prepass": true,
+      "scale": 1.0,
+      "shadowAA": "",
+      "shadows": "",
+      "surface": 1.0
+    },
     "targetSdk": 0,
     "versionCode": 1,
     "x86_64": true
@@ -26,19 +37,19 @@
   "input": {
     "cursor": "visible"
   },
-  "platform": "windows",
+  "platform": "android",
   "product": {
     "company": "",
     "copyright": "",
-    "icon": "",
+    "icon": "Assets/UI/moon-icon.png",
     "name": "EVERGRAVE",
     "version": "1.0.0"
   },
   "render": {
     "aa": "off",
     "lighting": "soft",
-    "shadowAA": "x2",
-    "shadows": "medium"
+    "shadowAA": "off",
+    "shadows": "low"
   },
   "scenes": [
     {

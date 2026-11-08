@@ -23,6 +23,7 @@
 // Los objetos se buscan por ruta (Space/OrbitPivot/...) y no por campos de
 // Inspector: son nombres que esta escena define y que esta clase conoce.
 
+#include "../Services/Cine.h"
 #include "../Services/Controls.h"
 #include "../Services/Session.h"
 #include "../Services/UseFeedback.h"
@@ -46,6 +47,7 @@
 #include <cmath>
 #include <cstdio>
 #include <string>
+#include <vector>
 
 using namespace strace;
 using namespace evergrave;
@@ -95,6 +97,10 @@ public:
 
     void OnUpdate(float dt) override {
         Animate(dt);
+        if (Cine().active) {
+            DrawCineOverlay(); // al final del frame y de los paneles: las barras y el negro tapan hasta lo que dibujan los efectos
+            return;
+        }
         HandlePointer();
     }
 
@@ -103,6 +109,12 @@ private:
         // La Tierra en su orbita (y el Sol al centro); la Luna en la suya.
         m_orbit = Wrap360(m_orbit + kOrbitDegPerSec * dt);
         m_month = Wrap360(m_month + kMoonDegPerSec * dt);
+        // FILMANDO: los angulos son funcion del tiempo de la toma (Services/Cine.h), no un acumulador: asi la fase de la Luna de cada
+        // toma es la que se pidio, y un eclipse es un eclipse. (cos/sin no necesitan el angulo envuelto.)
+        if (Cine().active) {
+            m_orbit = Cine().f.orbitDeg;
+            m_month = Cine().world.monthDeg;
+        }
         if (m_anchor) {
             m_anchor->transform.position[0] = kEarthOrbitRadius * std::cos(m_orbit * kRad);
             m_anchor->transform.position[1] = 0.0f;
@@ -112,10 +124,26 @@ private:
             m_moon->transform.position[0] = kMoonOrbitRadius * std::cos(m_month * kRad);
             m_moon->transform.position[2] = kMoonOrbitRadius * std::sin(m_month * kRad);
             m_moon->transform.rotation[1] = -m_month; // siempre la misma cara a la Tierra
+            // Filmando, la Luna esta donde la toma diga (en el baile sale de su orbita y rodea al Sol): su posicion local es la del mundo
+            // menos la del ancla de la Tierra (cuelga de ella sin giro), y su tamano crece un poco mientras baila.
+            if (Cine().active && m_anchor) {
+                const CineWorld& w = Cine().world;
+                m_moon->transform.position[0] = w.moon.x - w.earth.x;
+                m_moon->transform.position[1] = w.moon.y - w.earth.y;
+                m_moon->transform.position[2] = w.moon.z - w.earth.z;
+                if (m_moonBaseScale <= 0.0f) m_moonBaseScale = m_moon->transform.scale[0];
+                SetUniformScale(*m_moon, m_moonBaseScale * w.moonScale);
+            }
         }
         // El Sol que se VE: en su sitio para el mapa y la vista del Sol, lejos para la Tierra y la Luna. Se mueve con
         // suavidad, al ritmo de la camara, para que al cambiar de vista se aleje o se acerque en vez de saltar.
-        if (m_sun && m_anchor) {
+        if (m_sun && m_anchor && Cine().active) {
+            // La distancia a la que se VE el Sol la pide la toma (un eclipse necesita un Sol del tamano de la Luna).
+            m_sun->transform.position[0] = Cine().world.sun.x;
+            m_sun->transform.position[1] = Cine().world.sun.y; // distinta de 0 en el eclipse: el Sol queda sobre el rayo camara -> Luna
+            m_sun->transform.position[2] = Cine().world.sun.z;
+            m_sunFar = Cine().f.k.sunDist > 0.0f ? 1.0f : 0.0f;
+        } else if (m_sun && m_anchor) {
             const bool closeUp = Ui().mapView || Ui().view == BodyId::Sun;
             m_sunFar += ((closeUp ? 0.0f : 1.0f) - m_sunFar) * (1.0f - std::exp(-3.2f * dt));
             const float ex = m_anchor->transform.position[0], ez = m_anchor->transform.position[2];
@@ -133,12 +161,14 @@ private:
             m_light->transform.rotation[1] = std::atan2(ex, ez) / kRad;
         }
         if (m_earth) m_earth->transform.rotation[1] = Wrap360(m_earth->transform.rotation[1] + kSpinDegPerSec * dt);
+        if (m_earth && Cine().active) m_earth->transform.rotation[1] = std::fmod(Cine().f.spinDeg, 360.0f);
 
         // La Tierra DE FONDO: mirando la Luna, la Tierra esta detras y se apaga y enfria (Earth.hlsl, UserParams[1].x), para
         // que la profundidad se lea por el valor y las dos no se fundan. Suavizado al ritmo de la camara, asi el cambio
         // acompana al vuelo en vez de saltar. Es por RUTA del material: la unica Tierra que lo usa es esta.
         const bool moonView = !Ui().menu && !Ui().mapView && Ui().view == BodyId::Moon;
         m_earthBack += ((moonView ? 1.0f : 0.0f) - m_earthBack) * (1.0f - std::exp(-3.2f * dt));
+        if (Cine().active) m_earthBack = moonView ? 1.0f : 0.0f; // un corte es un corte: la Tierra de fondo no se desliza
         // Va a la Tierra y a su capa de aire (Earth/Atmosphere): un halo encendido sobre una Tierra apagada se veria
         // como un aro suelto.
         if (MaterialCache* cache = SceneService::Materials())
@@ -151,10 +181,58 @@ private:
         m_earthPulse = std::max(0.0f, m_earthPulse - dt * 5.0f);
         m_sunPulse = std::max(0.0f, m_sunPulse - dt * 5.0f);
         if (m_earth) SetUniformScale(*m_earth, m_earthBaseScale * (1.0f + 0.04f * m_earthPulse));
-        if (m_sun) SetUniformScale(*m_sun, m_sunBaseScale * (1.0f + 0.03f * m_sunPulse));
+        if (m_sun) SetUniformScale(*m_sun, m_sunBaseScale * (1.0f + 0.03f * m_sunPulse) * (Cine().active ? Cine().f.k.sunScale : 1.0f));
     }
 
     static void SetUniformScale(GameObject& o, float s) { o.transform.scale[0] = o.transform.scale[1] = o.transform.scale[2] = s; }
+
+    // LAS BARRAS, EL NEGRO Y LA DEDICATORIA de la cinematica. Todo en pixeles internos (960x540): el IMAX son dos barras negras a los
+    // lados (enteras: una barra de medio pixel seria un borde gris), y el fundido es un rectangulo negro encima de todo.
+    static void DrawCineOverlay() {
+        const CineFrame& f = Cine().f;
+        const float W = UiService::Width(), H = UiService::Height();
+        if (W <= 0.0f || H <= 0.0f) return;
+        UiDrawList& ui = UiService::Frame();
+        const float visible = std::min(W, f.ratio * H);
+        const float bar = std::floor((W - visible) * 0.5f);
+        const UiColor black = UiColor::Bytes(0, 0, 0, 255);
+        // El destello de los cortes donde algo nace: luz calida sobre la imagen (las barras van encima y no se borran).
+        if (f.flash > 0.001f) ui.AddRect(UiRect{0.0f, 0.0f, W, H}, UiColor::Bytes(255, 244, 214, static_cast<int>(235.0f * std::min(1.0f, f.flash))));
+        if (bar > 0.0f) {
+            ui.AddRect(UiRect{0.0f, 0.0f, bar, H}, black);
+            ui.AddRect(UiRect{W - bar, 0.0f, bar, H}, black);
+            // El filo: mientras las barras se deslizan (y un momento despues) una linea tenue en su borde interior. Contra el negro del
+            // espacio una barra negra no se ve, y el cambio de formato es justo lo que el corte tiene que mostrar.
+            if (f.edge > 0.01f) {
+                const UiColor edge = UiColor::Bytes(150, 168, 205, static_cast<int>(150.0f * f.edge));
+                ui.AddRect(UiRect{bar, 0.0f, 1.0f, H}, edge);
+                ui.AddRect(UiRect{W - bar - 1.0f, 0.0f, 1.0f, H}, edge);
+            }
+        }
+        // El texto va centrado en lo que SE VE (entre las barras), no en la imagen entera.
+        const float shownX = bar, shownW = W - 2.0f * bar;
+        if (f.text > 0.01f && !Cine().text.empty()) {
+            const UiRect r{shownX, std::floor(H * 0.80f), shownW, 20.0f};
+            ui.AddTextCentered(r, Cine().text, UiColor::Bytes(255, 238, 216, static_cast<int>(255.0f * f.text)), 2);
+        }
+        // Subtitulos (EVERGRAVE_CINE_SUBS): una linea o dos, abajo, mas chicos que la dedicatoria.
+        for (const CineSub& s : Cine().subs) {
+            if (f.t < s.t0 || f.t > s.t1) continue;
+            const float a = CineSubAlpha(s, f.t) * (1.0f - f.fade);
+            if (a <= 0.01f) continue;
+            float y = std::floor(H * 0.90f) - 5.0f;
+            std::size_t from = 0;
+            while (from <= s.text.size()) {
+                const std::size_t nl = s.text.find('\n', from);
+                const std::string line = s.text.substr(from, nl == std::string::npos ? std::string::npos : nl - from);
+                ui.AddTextCentered(UiRect{shownX, y, shownW, 10.0f}, line, UiColor::Bytes(235, 232, 228, static_cast<int>(235.0f * a)), 1);
+                y += 11.0f;
+                if (nl == std::string::npos) break;
+                from = nl + 1;
+            }
+        }
+        if (f.fade > 0.001f) ui.AddRect(UiRect{0.0f, 0.0f, W, H}, UiColor::Bytes(0, 0, 0, static_cast<int>(255.0f * std::min(1.0f, f.fade))));
+    }
 
     // Que elemento esta bajo el cursor, por el rayo de la camara del juego.
     bool Pick(InteractionTarget& out) const {
@@ -169,15 +247,23 @@ private:
         const DirectX::XMMATRIX viewProj =
             ComputeGameCameraView(*cam) * ComputeGameCameraProjection(*cam->camera, SceneService::Type(), w / h);
         Ray ray;
-        RaycastHit hit;
         if (!ScreenPointToRay(in.CursorX(), in.CursorY(), w, h, viewProj, ray)) return false;
-        if (!SceneService::Raycast(ray, hit) || !hit.object) return false;
 
-        const std::string path = PathOf(*hit.object);
-        if (StartsWith(path, kEarthPath)) { out = InteractionTarget::Earth; return true; }
-        // La Luna se recolecta como la Tierra: es otro mundo que se estudia.
-        if (StartsWith(path, kMoonPath)) { out = InteractionTarget::Earth; return true; }
-        if (StartsWith(path, kSunPath)) { out = InteractionTarget::Sun; return true; }
+        // TODOS los aciertos, del mas cercano al mas lejano, y se queda el primero que sea un cuerpo. Con solo el mas
+        // cercano, cada satelite, estacion, anillo o nave que se ha ido construyendo alrededor de la Tierra se
+        // INTERPONIA: el rayo daba en el adorno, no era la Tierra, y el clic no hacia nada. Cuantas mas tecnologias,
+        // mas adornos delante - de ahi que fallara justo al avanzar. Los adornos no son interactuables, asi que no
+        // tienen por que comerse el clic.
+        std::vector<RaycastHit> hits;
+        SceneService::RaycastAll(ray, hits);
+        for (const RaycastHit& hit : hits) {
+            if (!hit.object) continue;
+            const std::string path = PathOf(*hit.object);
+            if (StartsWith(path, kEarthPath)) { out = InteractionTarget::Earth; return true; }
+            // La Luna se recolecta como la Tierra: es otro mundo que se estudia.
+            if (StartsWith(path, kMoonPath)) { out = InteractionTarget::Earth; return true; }
+            if (StartsWith(path, kSunPath)) { out = InteractionTarget::Sun; return true; }
+        }
         return false;
     }
 
@@ -187,7 +273,7 @@ private:
 
         // En el mapa un clic elige cuerpo (lo maneja CameraRig), y mientras se arrastra no se apunta. Con el
         // menu principal abierto el mundo no se toca.
-        if (Ui().menu || Ui().mapView || Ui().camDragging) return;
+        if (Ui().menu || Ui().mapView || Ui().camDragging || Ui().cine) return; // (cine: filmando o EVERGRAVE_PHOTO: sin etiquetas junto al cursor)
         InteractionTarget target;
         if (!Pick(target)) return;
         const auto unlocked = [&](const InteractionId& id) { return game.IsUnlocked(id); };
@@ -234,6 +320,7 @@ private:
     GameObject* m_sun = nullptr;
     GameObject* m_atmosphere = nullptr; // opcional: la capa de aire, para apagarla con la Tierra
     float m_earthBaseScale = 1.0f, m_sunBaseScale = 1.0f;
+    float m_moonBaseScale = 0.0f; // la cinematica: el tamano de la Luna en la escena (se lee la primera vez)
     float m_earthPulse = 0.0f, m_sunPulse = 0.0f;
     float m_orbit = 0.0f, m_month = 0.0f;
     float m_earthBack = 0.0f; // 0 = la Tierra normal, 1 = de fondo (vista de la Luna)

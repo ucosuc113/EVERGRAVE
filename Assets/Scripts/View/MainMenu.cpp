@@ -18,6 +18,7 @@
 
 #include "../Services/Controls.h"
 #include "../Services/Session.h"
+#include "TitleCard.h"
 
 #include "Engine/Components/UI/UiComponents.h"
 #include "Engine/Diagnostics/Log.h"
@@ -134,13 +135,18 @@ public:
         if (!m_canvas || !m_group) Log::Warn(L"EVERGRAVE: la escena no tiene Menu/Canvas o Space/.../Satelites");
         m_sel = Ui().hasSave ? kContinue : kNew;
         m_shown = false;
+        m_first = true;
     }
 
     void OnUpdate(float dt) override {
         UiState& state = Ui();
         // Mostrar u ocultar: el Canvas, los satelites, y la Luna de verdad (que a su distancia entraria al cuadro
         // como un cuarto satelite).
-        if (state.menu != m_shown) {
+        // El PRIMER frame siempre reconcilia: la escena trae el menu encendido, y en una corrida de prueba (con partida
+        // cargada) el estado nace cerrado - sin esto el titulo se quedaba pintado encima del juego, porque `menu`
+        // y `m_shown` valian lo mismo (false) y nadie apagaba el Canvas.
+        if (m_first || state.menu != m_shown) {
+            m_first = false;
             m_shown = state.menu;
             if (m_canvas) m_canvas->active = state.menu;
             if (m_group) m_group->active = state.menu;
@@ -150,9 +156,10 @@ public:
         if (!state.menu) return;
 
         m_time += dt;
-        Select();
+        if (!state.titleActive) Select(); // detras del titulo el menu se ve pero no responde
         Style();
         Orbit(dt);
+        DrawTitleCard(); // al final del frame: encima de todo lo del menu
     }
 
 private:
@@ -254,6 +261,7 @@ private:
     int m_sel = kNew;
     float m_time = 0.0f;
     bool m_shown = false;
+    bool m_first = true;
 };
 
 STRACE_REGISTER_SCRIPT(MainMenu)

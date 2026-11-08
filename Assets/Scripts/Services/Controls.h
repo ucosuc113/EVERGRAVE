@@ -7,6 +7,8 @@
 // reenlazar cualquier otro codigo, y un menu que cambia "interact" no tiene por
 // que mover el boton de recolectar.
 
+#include "Touch.h"
+
 #include "Engine/Input/InputService.h"
 
 namespace evergrave {
@@ -26,11 +28,12 @@ inline void BindControls() {
     bindKey("ev_view_sun", Key::Digit3);
     bindKey("ev_map", Key::M);
     bindKey("ev_gather", Key::Space);
-    bindKey("ev_save", Key::F5);
-    bindKey("ev_load", Key::F9);
     bindKey("ev_close", Key::Escape);
     bindKey("ev_scroll_up", Key::Up);
     bindKey("ev_scroll_down", Key::Down);
+    bindKey("ev_research", Key::Enter); // investigar lo elegido en el panel de tecnologias
+    bindKey("ev_tree_left", Key::Left); // moverse de a una tarjeta en la rejilla de ese panel
+    bindKey("ev_tree_right", Key::Right);
     // El menu principal: dos teclas para cada lado y dos para aceptar. Esc no cierra nada alli: es un menu, no un panel.
     bindKey("ev_menu_prev", Key::Left);
     in.BindKey("ev_menu_prev", Key::A);
@@ -62,6 +65,15 @@ inline Pointer ReadPointer() {
     p.y = in.CursorY();
     p.inside = in.CursorInside();
     p.clicked = p.inside && in.Pressed("ev_click");
+    if (TouchMode()) {
+        // Con el dedo: el clic es un TOQUE, al soltar y sin haberse movido (empezar a arrastrar una lista sobre un boton
+        // de comprar no lo aprieta); y no hay hover, el puntero solo esta mientras el dedo esta puesto (o el frame del
+        // toque, para que el boton que se toco responda).
+        TouchUpdate();
+        const TouchGesture& g = Touch();
+        p.clicked = p.inside && g.tap;
+        p.inside = p.inside && (g.held || g.tap);
+    }
     return p;
 }
 

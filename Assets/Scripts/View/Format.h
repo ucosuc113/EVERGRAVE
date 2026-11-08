@@ -78,6 +78,17 @@ inline std::string FormatRate(double perSecond) {
     return b;
 }
 
+// El numero de un efecto: lo chico como siempre (+0.5, +1), y desde mil con las abreviaturas del juego. Con
+// "%g" un efecto de la era 5 salia "+2.2e+08 per second", que nadie lee de un vistazo.
+inline std::string EffectNumber(double v) {
+    if (v < 1000.0) {
+        char b[32];
+        std::snprintf(b, sizeof b, "%g", v);
+        return b;
+    }
+    return FormatAmount(v);
+}
+
 // `interactions` (opcional) pone el NOMBRE de la interaccion a la que apunta el
 // efecto; sin el sale la id.
 inline std::string DescribeEffect(const Effect& e, const InteractionSet* interactions = nullptr) {
@@ -87,10 +98,10 @@ inline std::string DescribeEffect(const Effect& e, const InteractionSet* interac
     switch (e.kind) {
         case EffectKind::UnlockInteraction: std::snprintf(b, sizeof b, "Unlocks: %s", targetName.c_str()); break;
         case EffectKind::ClickPowerAdd:
-            if (e.target.empty()) std::snprintf(b, sizeof b, "+%g per gather", e.value);
-            else std::snprintf(b, sizeof b, "+%g per use of %s", e.value, targetName.c_str());
+            if (e.target.empty()) std::snprintf(b, sizeof b, "+%s per gather", EffectNumber(e.value).c_str());
+            else std::snprintf(b, sizeof b, "+%s per use of %s", EffectNumber(e.value).c_str(), targetName.c_str());
             break;
-        case EffectKind::PassiveAdd: std::snprintf(b, sizeof b, "+%g per second", e.value); break;
+        case EffectKind::PassiveAdd: std::snprintf(b, sizeof b, "+%s per second", EffectNumber(e.value).c_str()); break;
         case EffectKind::UnlockBody: {
             BodyId body;
             if (e.target == kMapKey) std::snprintf(b, sizeof b, "Unlocks: the system map");

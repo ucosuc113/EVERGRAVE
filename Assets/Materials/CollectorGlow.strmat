@@ -1,0 +1,20 @@
+{
+  "name": "CollectorGlow",
+  "albedo": [
+    1.0,
+    0.75,
+    0.4,
+    1.0
+  ],
+  "specular": [
+    0,
+    0,
+    0
+  ],
+  "shininess": 8.0,
+  "emissive": [
+    1.0,
+    0.7,
+    0.35
+  ]
+}

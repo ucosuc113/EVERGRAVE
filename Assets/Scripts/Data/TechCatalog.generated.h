@@ -992,13 +992,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Industrial", 5, 4});
 
     tree.Add({"solar_power_satellites",
-              "Solar Power Satellites",
-              "Giant collectors beaming sunlight to somewhere useful. The Sun keeps working overtime.",
+              "Heliocentric Collectors",
+              "Collectors that orbit the Sun instead of the Earth. Lonely, but never in the shade.",
               {{R, 124518898208250}},
-              {"fusion_torches", "space_solar_arrays"},
+              {"solar_sails"},
               {},
               {{K::PassiveAdd, 50000000}},
-              "Power", 5, 4});
+              "Solar", 5, 4});
 
     tree.Add({"gas_giant_scooping",
               "Gas Giant Scooping",
@@ -1100,8 +1100,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Power", 5, 7});
 
     tree.Add({"planetary_telescopes",
-              "Planetary Telescopes",
-              "A telescope the size of an orbit. You can read the label on a distant cereal box.",
+              "Infrared Excess Survey",
+              "Look for stars that glow warm in infrared: someone else's swarm. So far, nobody. Rude.",
               {{R, 667343470084839.9}},
               {"autonomous_prospectors", "mirror_phalanx"},
               {},
@@ -1164,7 +1164,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"stellar_surveys",
               "Stellar Surveys",
-              "Chart every star in the neighborhood. Most of them are very rude about being looked at.",
+              "Chart every star nearby. Proxima Centauri is the closest one, 4.24 light-years out. Remember the name.",
               {{R, 2043739377134822}},
               {"planetary_telescopes"},
               {},
@@ -1181,13 +1181,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Mining", 5, 9});
 
     tree.Add({"solar_mirror_arrays",
-              "Solar Mirror Arrays",
-              "Mirrors the size of continents orbiting the Sun. Don't look directly at the schedule.",
+              "Statite Prototype",
+              "A mirror that hovers on sunlight instead of orbiting. It doesn't fall; it just refuses.",
               {{R, 2043739377134822}},
-              {"laser_launch_arrays"},
+              {"solar_power_satellites", "light_sail_fleets", "laser_launch_arrays"},
               {},
               {{K::YieldMultiplier, 1.2}},
-              "Optics", 5, 9});
+              "Solar", 5, 9});
 
     tree.Add({"fusion_drives",
               "Fusion Drives",
@@ -1209,7 +1209,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"megastructure_design",
               "Megastructure Design",
-              "Blueprints for things bigger than moons. The engineers try not to think about the scale.",
+              "Freeman Dyson's idea: not a solid shell, a swarm of collectors. Shells crack; swarms just multiply.",
               {{R, 3576543909985938.5}},
               {"orbital_shipyards", "helium_refineries"},
               {},
@@ -1217,13 +1217,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Industrial", 5, 10});
 
     tree.Add({"power_collectors",
-              "Power Collectors",
-              "A ring of collectors orbiting the Sun, catching light that used to be wasted.",
+              "Pilot Collector Ring",
+              "The first collectors meant to stay around the Sun. Small, cheap and very far from anything.",
               {{R, 6258951842475392}},
-              {"interplanetary_grid", "solar_mirror_arrays"},
+              {"interplanetary_grid", "solar_mirror_arrays", "megastructure_design"},
               {},
               {{K::PassiveAdd, 2200000000}},
-              "Power", 5, 11});
+              "Solar", 5, 11});
 
     tree.Add({"shipyard_networks",
               "Shipyard Networks",
@@ -1245,7 +1245,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"planetary_engineers",
               "Planetary Engineers",
-              "People whose job is to move planets around. The job title fits on a very large business card.",
+              "People whose job is moving planets. Their first memo says: Mercury is mostly in the way.",
               {{R, 1.916804001758089e+16}},
               {"megastructure_design", "shipyard_networks"},
               {},
@@ -1325,8 +1325,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Industrial", 6, 3});
 
     tree.Add({"lunar_telescopes",
-              "Lunar Telescopes",
-              "No air, no clouds, no excuses. The sky is finally honest.",
+              "Lunar Coronagraph",
+              "Hide the Sun behind a disc and watch its crown. No air, so the view is perfect.",
               {{R, 3.175147391192291e+17}},
               {"lunar_landers", "regolith_bricks"},
               {},
@@ -1433,13 +1433,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Orbit", 6, 6});
 
     tree.Add({"lunar_glass",
-              "Lunar Glass",
-              "Glass made from dust. Pretty, tough and very, very local.",
+              "Thin-Film Mirrors",
+              "Lunar glass with an aluminium coat thinner than a soap bubble. Light, cheap and very shiny.",
               {{R, 2.010384260075789e+18}},
-              {"regolith_concrete"},
+              {"lunar_solar_arrays", "regolith_concrete"},
               {},
               {{K::YieldMultiplier, 1.1}},
-              "Materials", 6, 6});
+              "Solar", 6, 6});
 
     tree.Add({"cislunar_shuttles",
               "Cislunar Shuttles",
@@ -1461,7 +1461,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"lunar_assembly_lines",
               "Lunar Assembly Lines",
-              "Build machines on the Moon from Moon stuff. Shipping is a rounding error.",
+              "Build collector panels on the Moon from Moon stuff. Shipping them sunward is a rounding error.",
               {{R, 3.7192108811402107e+18}},
               {"robotic_foundry_crews", "lunar_glass"},
               {},
@@ -1487,13 +1487,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Materials", 6, 7});
 
     tree.Add({"lagrange_stations",
-              "Lagrange Stations",
-              "Park a station where gravity cancels out. The universe's best parking spots.",
+              "Sun-Earth L1 Station",
+              "Park a station where the Sun and the Earth pull the same. The best seat to watch the Sun.",
               {{R, 6.88054013010939e+18}},
-              {"lunar_orbit_stations", "regolith_shielding"},
+              {"lunar_orbit_stations", "lunar_glass", "regolith_shielding"},
               {},
               {{K::YieldMultiplier, 1.15}},
-              "Orbit", 6, 8});
+              "Solar", 6, 8});
 
     tree.Add({"lunar_rail_network",
               "Lunar Rail Network",
@@ -1506,7 +1506,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"laser_ranging",
               "Laser Ranging",
-              "Bounce a laser off a mirror on the Moon. Measures the distance to the millimeter.",
+              "Bounce a laser off every collector. Now the swarm is measured to the millimeter.",
               {{R, 6.88054013010939e+18}},
               {"far_side_observatory", "lunar_comms_relay"},
               {},
@@ -1667,13 +1667,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Materials", 7, 2});
 
     tree.Add({"orbit_modelling",
-              "Orbit Modelling",
-              "Predict every rock's path around the Moon. A very tidy kind of paranoia.",
+              "Swarm Orbit Modelling",
+              "Plan thousands of orbits that never cross. A very tidy kind of paranoia.",
               {{R, 1.7679879360688329e+21}},
               {"lunar_master_plan", "lunar_reactors"},
               {},
               {{K::YieldMultiplier, 1.1}},
-              "Instruments", 7, 3});
+              "Solar", 7, 3});
 
     tree.Add({"lunar_fuel_depots",
               "Lunar Fuel Depots",
@@ -1686,7 +1686,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"mass_driver_design",
               "Mass Driver Design",
-              "Plans for a machine that throws cargo off the Moon. The throwing is the easy part.",
+              "Plans for a magnetic track that throws panels off the Moon. The throwing is the easy part.",
               {{R, 1.7679879360688329e+21}},
               {"regolith_refining", "lunar_alloys"},
               {},
@@ -1704,7 +1704,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"lunar_mass_drivers",
               "Lunar Mass Drivers",
-              "Long magnetic tracks that fling cargo into space. Unlocks the Mass Driver.",
+              "Long magnetic tracks that fling collector panels sunward. Unlocks the Mass Driver.",
               {{R, 3.3591770785307825e+21}},
               {"mass_driver_design", "lunar_fuel_depots"},
               {},
@@ -1803,7 +1803,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"lunar_shipyards",
               "Lunar Shipyards",
-              "Build ships where gravity is weak. A very light-footed industry.",
+              "Build sail-tugs where gravity is weak. They carry the panels the last mile to the Sun.",
               {{R, 1.2126629253496122e+22}},
               {"lunar_mass_drivers", "deep_vein_mining"},
               {},
@@ -1874,8 +1874,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Industrial", 7, 8});
 
     tree.Add({"lunar_navigation",
-              "Lunar Navigation",
-              "Satellites that know where everything is. Finally, a GPS that works.",
+              "Pulsar Navigation",
+              "Each collector reads the ticking of dead stars to know where it is. A GPS for the Sun.",
               {{R, 4.3777131605121e+22}},
               {"underground_labs", "earth_return_cargo"},
               {},
@@ -1910,8 +1910,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Orbit", 7, 9});
 
     tree.Add({"beam_calibration",
-              "Beam Calibration",
-              "Make every beam hit exactly where it should.",
+              "Phased-Array Beaming",
+              "A thousand collectors in step act as one antenna. The beam lands on a coin.",
               {{R, 8.31765500497299e+22}},
               {"spectral_tuning_lunar"},
               {},
@@ -1919,13 +1919,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Optics", 7, 9});
 
     tree.Add({"first_export",
-              "First Export",
-              "The first shipment of moon power reaches Earth. Everyone claps politely.",
+              "First Swarm Power",
+              "The first watts from the swarm reach the Earth. Everyone claps politely.",
               {{R, 1.580354450944868e+23}},
-              {"earth_moon_elevator", "flare_forecasting"},
+              {"lunar_mass_drivers", "flare_forecasting", "beam_calibration"},
               {},
               {{K::PassiveAdd, 260000000000000}},
-              "Power", 7, 10});
+              "Solar", 7, 10});
 
     tree.Add({"lunar_composites",
               "Lunar Composites",
@@ -1973,13 +1973,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Orbit", 7, 12});
 
     tree.Add({"export_balancing",
-              "Export Balancing",
-              "Make sure the beam lights the right places. Fussy, but worth it.",
+              "Inner Swarm Ring",
+              "The lunar panels settle at Mercury's distance. Seven times the sunlight, same paperwork.",
               {{R, 1.0839651179030848e+24}},
-              {"base_autonomy", "moon_orbit_tuning"},
+              {"lunar_navigation", "first_export", "base_autonomy"},
               {},
               {{K::YieldMultiplier, 1.25}},
-              "Optics", 7, 13});
+              "Solar", 7, 13});
 
     tree.Add({"lunar_industrial_complex",
               "Lunar Industrial Complex",
@@ -2000,8 +2000,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Logistics", 8, 1});
 
     tree.Add({"solar_monitoring",
-              "Solar Monitoring",
-              "Watch the Sun all day, every day. Dream job, no pay.",
+              "Helioseismology",
+              "Listen to the Sun ring like a bell. It hums every five minutes.",
               {{R, 5.881816707311102e+24}},
               {"solar_charter"},
               {},
@@ -2042,7 +2042,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               {"solar_telescopes"},
               {},
               {{K::PassiveAdd, 1400000000000000}},
-              "Power", 8, 3});
+              "Solar", 8, 3});
 
     tree.Add({"flux_instruments",
               "Flux Instruments",
@@ -2055,7 +2055,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"solar_wind_harvest",
               "Solar Wind Harvest",
-              "Catch the Sun's breath in a net. Free fuel, mildly radioactive.",
+              "Catch the Sun's breath with a magnetic loop. Free power, mildly radioactive.",
               {{R, 1.1175451743891095e+25}},
               {"solar_monitoring"},
               {},
@@ -2117,8 +2117,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Instruments", 8, 5});
 
     tree.Add({"thermal_composites",
-              "Thermal Composites",
-              "Layers that take the heat so you don't have to.",
+              "Waste-Heat Radiators",
+              "Every collector glows warm on its back. Physics always sends the bill.",
               {{R, 4.034338079544685e+25}},
               {"corona_materials"},
               {},
@@ -2163,7 +2163,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"orbit_corridors",
               "Orbit Corridors",
-              "Safe lanes around the Sun. Mostly safe.",
+              "Lanes where no two collectors ever meet. Mostly safe.",
               {{R, 7.6652423511348995e+25}},
               {"sun_logistics", "sun_mirrors"},
               {},
@@ -2172,12 +2172,12 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"solar_collector_swarm",
               "Solar Collector Swarm",
-              "A cloud of collectors that take sunlight home. Unlocks the Solar Catcher.",
+              "The swarm proper: a cloud of collectors that take sunlight home. Unlocks the Dyson Collector.",
               {{R, 1.4563960467156309e+26}},
-              {"magnetic_field_models", "thermal_composites"},
+              {"close_orbit_arrays", "magnetic_field_models", "thermal_composites"},
               {},
               {{K::PassiveAdd, 1.1e+16}},
-              "Orbit", 8, 7});
+              "Solar", 8, 7});
 
     tree.Add({"flare_models",
               "Flare Models",
@@ -2243,8 +2243,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Logistics", 8, 8});
 
     tree.Add({"solar_construction",
-              "Solar Construction",
-              "Build giant things in sunlight. Free lighting.",
+              "Mercury Disassembly",
+              "Take the smallest planet apart, one bucket at a time. It wasn't using all of itself.",
               {{R, 5.257589728643427e+26}},
               {"solar_foundries", "sun_proof_alloys"},
               {},
@@ -2252,22 +2252,22 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Industrial", 8, 9});
 
     tree.Add({"collector_ring",
-              "Collector Ring",
-              "A loop of collectors around the Sun. The Sun looks fashionable.",
+              "Dyson Ring",
+              "A closed ring of collectors around the Sun's equator. The Sun wears its first belt.",
               {{R, 5.257589728643427e+26}},
-              {"solar_collector_swarm", "solar_trade_routes"},
+              {"orbit_corridors", "solar_collector_swarm"},
               {},
               {{K::PassiveAdd, 3.8e+16}},
-              "Orbit", 8, 9});
+              "Solar", 8, 9});
 
     tree.Add({"mirror_swarms",
-              "Mirror Swarms",
-              "Mirrors in formation. Tidy, shiny, a bit ominous.",
+              "Dyson Bubble",
+              "Statites hover over the poles, held up by light alone. They never orbit and never collide.",
               {{R, 5.257589728643427e+26}},
-              {"focusing_arrays", "reactor_study"},
+              {"solar_collector_swarm", "focusing_arrays"},
               {},
               {{K::YieldMultiplier, 1.2}},
-              "Optics", 8, 9});
+              "Solar", 8, 9});
 
     tree.Add({"close_orbit_insertion",
               "Close Orbit Insertion",
@@ -2279,13 +2279,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Orbit", 8, 9});
 
     tree.Add({"solar_assembly",
-              "Solar Assembly",
-              "Assemble whatever you need beside the star.",
+              "Tilted Rings",
+              "More rings, each at its own radius and tilt. The Sun looks like a gyroscope.",
               {{R, 9.98942048442251e+26}},
-              {"solar_construction", "close_orbit_insertion"},
+              {"solar_construction", "collector_ring", "close_orbit_insertion"},
               {},
               {{K::PassiveAdd, 6.5e+16}},
-              "Industrial", 8, 10});
+              "Solar", 8, 10});
 
     tree.Add({"collector_cargo",
               "Collector Cargo",
@@ -2298,7 +2298,7 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
 
     tree.Add({"solar_systems_ai",
               "Solar Systems AI",
-              "A mind for the whole system's star business.",
+              "A mind that steers a billion collectors. It has strong opinions about traffic.",
               {{R, 9.98942048442251e+26}},
               {"stellar_ai", "collector_ring"},
               {},
@@ -2306,13 +2306,13 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Instruments", 8, 10});
 
     tree.Add({"sun_landing_rig",
-              "Sun Landing Rig",
-              "A platform that floats near the surface. The surface is not available.",
+              "Star Lifting",
+              "Pull hydrogen off the Sun with magnetic fields. The Sun has plenty, and we'll need it later.",
               {{R, 1.8979898920402773e+27}},
-              {"solar_assembly", "collector_cargo"},
+              {"magnetic_field_models", "reactor_study", "collector_cargo"},
               {},
               {{K::PassiveAdd, 1.2e+17}},
-              "Orbit", 8, 11});
+              "Power", 8, 11});
 
     tree.Add({"solar_power_hub",
               "Solar Power Hub",
@@ -2324,17 +2324,17 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Power", 8, 11});
 
     tree.Add({"solar_networks",
-              "Solar Networks",
-              "Every collector on one network.",
+              "Swarm Coverage",
+              "So many collectors that the Sun looks dotted. From far away it is getting dimmer.",
               {{R, 3.606180794876526e+27}},
-              {"sun_landing_rig", "solar_power_hub"},
+              {"mirror_swarms", "solar_assembly", "solar_power_hub"},
               {},
               {{K::YieldMultiplier, 1.2}},
-              "Industrial", 8, 12});
+              "Solar", 8, 12});
 
     tree.Add({"solar_gate_prep",
-              "Solar Gate Prep",
-              "Preparing the way for what comes after. Ominous music is optional.",
+              "Proxima Alignment",
+              "Point the swarm at Proxima Centauri and find the quiet spot in between. Ominous music optional.",
               {{R, 6.8517435102654e+27}},
               {"solar_networks", "solar_systems_ai"},
               {},
@@ -2342,8 +2342,8 @@ inline void RegisterGeneratedCatalog(TechTree& tree) {
               "Orbit", 8, 13});
 
     tree.Add({"solar_foothold",
-              "Solar Foothold",
-              "A hold on the Sun. The last step for now: the Dyson sphere comes next.",
+              "Kardashev Threshold",
+              "Most of the Sun's light now works for us. The last step for now.",
               {{R, 1.301831266950426e+28}},
               {"sun_landing_rig", "solar_networks", "solar_gate_prep"},
               {},
@@ -2404,7 +2404,7 @@ inline void RegisterGeneratedInstallations(InstallationSet& set) {
     set.Add({"lunar_foundry", "Lunar Foundry", "Turns dust into metal, and metal into more foundries.",
              "lunar_foundries", 7240000000, 7440000, 1.15, 12,
              L::Surface, 0xFF9646, 6, BodyId::Moon});
-    set.Add({"mass_driver", "Mass Driver", "Throws cargo off the Moon. Aim is optional, momentum is not.",
+    set.Add({"mass_driver", "Mass Driver", "Throws collector panels off the Moon, sunward. Aim is optional, momentum is not.",
              "lunar_mass_drivers", 43000000000, 40200000, 1.15, 3,
              L::Far, 0xFFF0AA, 7, BodyId::Moon});
     set.Add({"lunar_solar_farm", "Lunar Solar Farm", "A ring of panels with no weather to worry about. Birds are not an issue.",
@@ -2413,7 +2413,7 @@ inline void RegisterGeneratedInstallations(InstallationSet& set) {
     set.Add({"solar_probe", "Solar Probe", "Flies into the Sun on purpose. Sends postcards.",
              "solar_probes", 1510000000000, 1170000000, 1.15, 40,
              L::Orbit, 0x8CE6FF, 8, BodyId::Sun});
-    set.Add({"solar_catcher", "Solar Catcher", "A collector that takes sunlight home. The Sun doesn't invoice.",
+    set.Add({"solar_catcher", "Dyson Collector", "One collector of the swarm. Takes sunlight home; the Sun doesn't invoice.",
              "solar_collector_swarm", 9000000000000, 6330000000, 1.15, 3,
              L::Orbit, 0xFFC878, 8, BodyId::Sun});
     set.SetMilestones({{10, 2}, {25, 2}, {50, 2}, {100, 2}, {200, 2}});

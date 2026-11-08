@@ -200,6 +200,14 @@ public:
         return dropped + static_cast<int>(wanted.size()); // lo que sobra son ids que ya no existen
     }
 
+    // Marca como investigadas estas ids SIN mirar sus requisitos (las que no existan se ignoran). Existe para la cinematica
+    // (Services/Cine.h): lo que se quiere filmar es UNA estructura (los anillos de Dyson) sin traer las ~120 tecnologias de la
+    // Tierra que hay antes en la cadena, y `RestoreResearched` las descartaria sin avisar. El juego no lo usa.
+    void ForceResearched(const std::vector<TechId>& ids) {
+        for (const TechId& id : ids)
+            if (Find(id)) m_researched.insert(id);
+    }
+
     void ClearResearched() { m_researched.clear(); }
 
     // Las investigadas en el orden del registro (para guardar de forma estable).

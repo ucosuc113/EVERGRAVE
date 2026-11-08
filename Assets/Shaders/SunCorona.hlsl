@@ -34,4 +34,5 @@ float4 PSMain(PSInput input) : SV_TARGET {
     const float g = floor(saturate(glow) * 4.0 + Bayer4(input.position.xy)) / 4.0;
     const float3 col = lerp(float3(1.0, 0.45, 0.12), float3(1.0, 0.80, 0.42), saturate(glow * 1.4));
     return float4(col, g);
+    // the SUN jeje >:3
 }

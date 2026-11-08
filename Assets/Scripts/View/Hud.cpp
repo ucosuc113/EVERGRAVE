@@ -11,6 +11,7 @@
 #include "../Services/Session.h"
 #include "../Services/UseFeedback.h"
 
+#include "Engine/Gameplay/GameTime.h"
 #include "Engine/Scripting/IScript.h"
 #include "Engine/Scripting/ScriptRegistry.h"
 
@@ -18,6 +19,7 @@
 #include <cmath>
 #include <cstdio>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 using namespace strace;
@@ -25,12 +27,17 @@ using namespace evergrave;
 
 namespace {
 constexpr float kBarH = 28.0f;
+
+void AgeFloaters(std::vector<UiState::Floater>& fl, float dt) {
+    for (UiState::Floater& f : fl) f.age += dt;
+    fl.erase(std::remove_if(fl.begin(), fl.end(), [](const UiState::Floater& f) { return f.age > 1.1f; }), fl.end());
+}
 }
 
 class Hud : public IScript {
 public:
     void OnUpdate(float dt) override {
-        if (Ui().menu) return; // el menu principal esta abierto: el HUD espera detras
+        if (Ui().menu || Ui().cine) return; // el menu principal esta abierto (o se esta filmando): el HUD espera detras
         UiDrawList& ui = UiService::Frame();
         const float W = UiService::Width();
         // El HUD se ancla al AREA VISIBLE, no a los bordes de la imagen: con el
@@ -42,6 +49,14 @@ public:
         const Pointer p = ReadPointer();
         GameState& game = Session();
         UiState& state = Ui();
+
+        // El panel de investigacion ocupa la pantalla ENTERA (y dibuja su propio saldo): con el abierto, las
+        // barras no se dibujan ni responden. Si se dibujaran debajo, un clic sobre el panel caeria tambien
+        // sobre el boton que quedo detras (el del arbol lo cerraria, el de recolectar cobraria).
+        if (state.treeOpen) {
+            AgeFloaters(state.floaters, dt);
+            return;
+        }
 
         // --- Barra de arriba: saldo, produccion, boton del arbol ---
         // El fondo de la barra ocupa todo el ancho; su contenido, el visible.
@@ -55,10 +70,30 @@ public:
         ui.AddText(tx, T + 6, InfoOf(ResourceId::Research).name, kit::Dim(), 1);
         ui.AddText(tx, T + 16, FormatRate(game.PassiveRate()) + "   gather +" + FormatAmount(game.GatherAmount()), kit::TextSoft(), 1);
 
+        // La tienda es un interruptor (neutro); el arbol es el destino al que se quiere llevar a la persona (rojo).
         const UiRect shopBtn = kit::Rect(R - 128.0f - 96.0f, T + 4, 88, 20);
-        if (kit::Button(ui, shopBtn, state.shopOpen ? "HIDE SHOP [B]" : "SHOP [B]", true, p)) state.shopOpen = !state.shopOpen;
+        if (kit::Button(ui, shopBtn, state.shopOpen ? "HIDE SHOP [B]" : "SHOP [B]", true, p, false)) state.shopOpen = !state.shopOpen;
         const UiRect treeBtn = kit::Rect(R - 128.0f, T + 4, 120, 20);
-        if (kit::Button(ui, treeBtn, state.treeOpen ? "CLOSE TREE [T]" : "TECH TREE [T]", true, p)) state.treeOpen = !state.treeOpen;
+        if (kit::Button(ui, treeBtn, "RESEARCH [T]", true, p) && state.treeToggledFrame != GameTime::FrameCount()) {
+            state.treeOpen = !state.treeOpen;
+            state.treeToggledFrame = GameTime::FrameCount(); // el CLOSE del panel esta debajo de este boton: que no lo vuelva a cerrar
+        }
+        // Cuantas tecnologias se pueden investigar YA: sin esto la persona tiene que abrir el panel para saber si
+        // hay algo que hacer. Un circulo verde sobre el boton, solo si hay.
+        {
+            int ready = 0;
+            const TechTree& tree = game.tree();
+            const std::unordered_set<TechId> seen = tree.RevealedIds();
+            for (const TechDef& d : tree.All())
+                if (seen.count(d.id) && tree.Check(d.id, game.wallet()) == ResearchResult::Ok) ++ready;
+            if (ready > 0) {
+                const std::string n = std::to_string(ready);
+                const float bw = kit::TextW(n) + 8.0f;
+                const UiRect badge = kit::Rect(treeBtn.Right() - bw - 5.0f, treeBtn.y + 4.0f, bw, 12);
+                kit::Card(ui, badge, kit::Go(), UiColor{0, 0, 0, 0});
+                ui.AddTextCentered(badge, n, UiColor::Bytes(10, 24, 18), 1);
+            }
+        }
 
         // --- El selector de vista: de un vistazo, donde se esta y a donde se puede ir ---
         // Tierra, Luna, Sol y Mapa, y el Dyson al final (reservado: aun no existe). Los cerrados se ven
@@ -68,19 +103,21 @@ public:
             struct Slot { const char* label; BodyId body; bool isMap; };
             const Slot slots[] = {{"EARTH", BodyId::Earth, false}, {"MOON", BodyId::Moon, false}, {"SUN", BodyId::Sun, false},
                                   {"MAP", BodyId::Earth, true}, {"DYSON", BodyId::Dyson, false}};
+            const int slotCount = kDysonVisible ? 5 : 4; // el Dyson va al final: escondido, se corta de la lista (ver Bodies.h)
             const float bw = 50.0f, gap = 3.0f;
-            const float total = 5 * bw + 4 * gap;
+            const float total = slotCount * bw + (slotCount - 1) * gap;
             float x = std::floor(cx - total * 0.5f);
             const float y = T + kBarH + 4.0f;
             const Slot* hoverSlot = nullptr;
             float hoverX = 0.0f;
-            for (const Slot& s : slots) {
+            for (int si = 0; si < slotCount; ++si) {
+                const Slot& s = slots[si];
                 const UiRect r = kit::Rect(x, y, bw, 16);
                 const bool open = s.isMap ? game.IsMapUnlocked() : game.IsBodyUnlocked(s.body);
                 const bool selected = s.isMap ? state.mapView : (!state.mapView && state.view == s.body);
                 const bool hot = p.Over(r.x, r.y, r.width, r.height);
-                ui.AddRect(r, selected ? kit::RedDark() : kit::Field());
-                ui.AddRectOutline(r, selected ? kit::Red() : hot && open ? kit::Text() : open ? kit::Line() : kit::Faint().WithAlpha(0.6f), 1.0f);
+                kit::Card(ui, r, selected ? UiColor::Bytes(112, 34, 42) : hot && open ? UiColor::Bytes(38, 50, 72) : open ? UiColor::Bytes(24, 32, 48) : UiColor::Bytes(16, 21, 32),
+                          selected ? UiColor::Bytes(196, 62, 66) : hot && open ? kit::TextSoft() : open ? kit::Line() : kit::Faint().WithAlpha(0.35f));
                 ui.AddTextCentered(r, s.label, open ? (selected ? kit::Text() : kit::TextSoft()) : kit::Faint(), 1);
                 if (hot) {
                     state.pointerOverUi = true;
@@ -108,8 +145,7 @@ public:
                 }
                 const float w = kit::TextW(msg) + 12.0f;
                 const UiRect tip = kit::Rect(std::floor(std::clamp(hoverX + bw * 0.5f - w * 0.5f, L + 4.0f, R - w - 4.0f)), y + 20.0f, w, 14);
-                ui.AddRect(tip, UiColor::Bytes(4, 4, 7, 245));
-                ui.AddRectOutline(tip, kit::Faint(), 1.0f);
+                kit::Card(ui, tip, UiColor::Bytes(8, 11, 18, 245), kit::Line());
                 ui.AddTextCentered(tip, msg, open ? kit::Text() : kit::Dim(), 1);
             }
         }
@@ -145,7 +181,11 @@ public:
             }
         }
 
-        ui.AddText(L + 8, by + 10, "F5 SAVE  F9 LOAD", kit::Dim(), 1);
+        // El guardado es automatico: no hay tecla, solo la confirmacion discreta de que acaba de pasar.
+        if (state.saveFlash > 0.0f) {
+            const float a = std::min(1.0f, state.saveFlash / 0.6f);
+            ui.AddText(L + 8, by + 10, "SAVED", kit::Go().WithAlpha(a), 1);
+        }
         const std::string progress = "TECH " + std::to_string(game.tree().ResearchedCount()) + "/" + std::to_string(game.tree().All().size());
         ui.AddText(R - 8.0f - kit::TextW(progress), by + 10, progress, kit::Dim(), 1);
 
@@ -154,15 +194,13 @@ public:
             const float a = state.toastTime < 0.5f ? state.toastTime / 0.5f : 1.0f;
             const float w = kit::TextW(state.toast) + 16.0f;
             const UiRect r = kit::Rect(std::floor(cx - w * 0.5f), by - 22.0f, w, 16);
-            ui.AddRect(r, kit::Bar().WithAlpha(0.9f * a));
-            ui.AddRectOutline(r, kit::Red().WithAlpha(a), 1.0f);
+            kit::Card(ui, r, kit::Bar().WithAlpha(0.92f * a), kit::Red().WithAlpha(0.85f * a));
             ui.AddTextCentered(r, state.toast, kit::Text().WithAlpha(a), 1);
         }
 
         // --- Numeros que suben donde se hizo clic ---
         std::vector<UiState::Floater>& fl = state.floaters;
-        for (UiState::Floater& f : fl) f.age += dt;
-        fl.erase(std::remove_if(fl.begin(), fl.end(), [](const UiState::Floater& f) { return f.age > 1.1f; }), fl.end());
+        AgeFloaters(fl, dt);
         for (const UiState::Floater& f : fl) {
             const float a = f.age < 0.7f ? 1.0f : 1.0f - (f.age - 0.7f) / 0.4f;
             const float rise = std::floor(f.age * 26.0f);

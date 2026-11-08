@@ -24,6 +24,10 @@ namespace evergrave {
 enum class BodyId : int { Earth, Moon, Sun, Dyson };
 inline constexpr int kBodyCount = 4;
 
+// El Dyson (el final) esta ESCONDIDO de la interfaz: no sale en el selector de vista. Todo lo demas (el enum, el guardado, la
+// tecnologia, las mallas) sigue intacto para retomarlo despues de la entrega: basta poner esto en true.
+inline constexpr bool kDysonVisible = false;
+
 struct BodyInfo {
     const char* key;   // estable: es lo que sale de la hoja
     const char* name;

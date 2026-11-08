@@ -47,6 +47,8 @@
 // usan las rocas. Es por RUTA (`SceneService::Materials()`), compartido por todas: es un dato del mundo, no de una
 // roca. Sin el (w = 0), el shader vuelve a la direccion de la luz.
 
+#include "../Services/Cine.h"
+
 #include "Engine/Diagnostics/Log.h"
 #include "Engine/Rendering/Material.h"
 #include "Engine/Rendering/MaterialCache.h"
@@ -141,8 +143,12 @@ public:
     void OnUpdate(float dt) override {
         Follow();
         PublishSun();
-        const float far = Lejania();
+        // FILMANDO NO HAY TRUCO: cada roca va en su sitio de verdad (las que estan detras del Sol, detras de el, tapadas; con el truco todas
+        // quedaban DELANTE del Sol, y en un plano de cine se lee como un error), y el cinturon entero se escala con el Sol de la toma.
+        const bool cine = evergrave::Cine().active;
+        const float far = cine ? 0.0f : Lejania();
         const float near = 1.0f - (1.0f - kFarNear) * far;
+        const float zoom = cine ? evergrave::Cine().f.k.sunScale : 1.0f;
         // La camara en coordenadas del cinturon (Belt y Camara cuelgan de OrbitPivot, sin giro ni escala: restar basta).
         float cam[3] = {0, 0, 0};
         if (m_cam)
@@ -150,13 +156,13 @@ public:
         for (Rock& r : m_rocks) {
             r.angle = std::fmod(r.angle + r.degPerSec * dt, 360.0f);
             const float a = r.angle * kRad;
-            const float q[3] = {r.radius * std::cos(a), r.lift * std::cos(a - r.node0 * kRad), r.radius * std::sin(a)};
+            const float q[3] = {zoom * r.radius * std::cos(a), zoom * r.lift * std::cos(a - r.node0 * kRad), zoom * r.radius * std::sin(a)};
             // Hacia la camara por la misma recta: mismo pixel, mas cerca.
             float* p = r.node->transform.position;
             for (int k = 0; k < 3; ++k) p[k] = cam[k] + (q[k] - cam[k]) * near;
             const float g = 1.0f + (r.grow - 1.0f) * far;
             // Al acercarse ya se ve 1/near mas grande: la escala real se compensa para que lo que se VE sea g.
-            for (int k = 0; k < 3; ++k) r.node->transform.scale[k] = r.scale[k] * g * near;
+            for (int k = 0; k < 3; ++k) r.node->transform.scale[k] = r.scale[k] * g * near * zoom;
             float* rot = r.node->transform.rotation;
             for (int k = 0; k < 3; ++k) rot[k] = std::fmod(rot[k] + r.spin[k] * dt + 360.0f, 360.0f);
         }

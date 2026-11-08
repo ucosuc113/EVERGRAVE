@@ -52,9 +52,15 @@ std::wstring Wide(const std::string& s) { return std::wstring(s.begin(), s.end()
 
 bool Enabled() {
     static const bool on = [] {
+#ifdef _WIN32
         char buf[8] = {};
         size_t len = 0;
         return getenv_s(&len, buf, sizeof(buf), "EVERGRAVE_CHECK") == 0 && len > 0 && buf[0] == '1';
+#else
+        // getenv_s es de MSVC: el clang del NDK (Android) no lo declara y el Build entero fallaba por esta linea.
+        const char* v = std::getenv("EVERGRAVE_CHECK");
+        return v && v[0] == '1';
+#endif
     }();
     return on;
 }
@@ -141,8 +147,11 @@ private:
         float px = 0, py = 0;
         DirectX::XMMATRIX vp;
         ToScreen(*cam, ComputeWorldPosition(*earth), px, py, vp);
-        Expect(std::fabs(px - UiService::Width() * 0.5f) < 20.0f && std::fabs(py - UiService::Height() * 0.5f) < 20.0f,
-               L"la Tierra esta en el centro de la imagen", Num(px) + L"," + Num(py));
+        // La toma de la Tierra la pone en el centro del AREA LIBRE (a la derecha de la tienda, CameraRig::FramingPan), no en el de la pantalla: lo que se pide es que
+        // quede a la vista y fuera del panel (los 178 px de la izquierda), centrada en vertical. El chequeo viejo pedia el centro de la pantalla, y de hecho solo pasaba
+        // mientras la camara todavia no habia llegado a su encuadre.
+        Expect(px > 190.0f && px < UiService::Width() - 60.0f && std::fabs(py - UiService::Height() * 0.5f) < 40.0f,
+               L"la Tierra esta en el area libre de la imagen (a la derecha de la tienda)", Num(px) + L"," + Num(py));
 
         ExpectPickable(*cam, *earth, kEarth, L"la Tierra");
 

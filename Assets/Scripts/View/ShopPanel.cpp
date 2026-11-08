@@ -41,9 +41,10 @@ namespace {
 
 constexpr float kBarH = 28.0f;
 constexpr float kShopW = 172.0f;
-constexpr float kRowH = 38.0f;
-constexpr float kHeaderH = 36.0f;
-constexpr float kScrollStep = 38.0f;
+constexpr float kRowH = 40.0f;
+constexpr float kHeaderH = 38.0f;
+constexpr float kScrollStep = 43.0f;
+constexpr float kRowGap = 3.0f;
 
 UiColor ColorOf(std::uint32_t rgb, float a = 1.0f) {
     return UiColor::Bytes(static_cast<int>((rgb >> 16) & 0xFF), static_cast<int>((rgb >> 8) & 0xFF), static_cast<int>(rgb & 0xFF),
@@ -63,7 +64,7 @@ struct Row {
 class ShopPanel : public IScript {
 public:
     void OnUpdate(float dt) override {
-        if (Ui().menu) return; // el menu principal esta abierto
+        if (Ui().menu || Ui().cine) return; // el menu principal esta abierto (o se esta filmando)
         UiState& state = Ui();
         GameState& game = Session();
         InputActions& in = InputService::Actions();
@@ -83,22 +84,21 @@ public:
         // hace clic). Una columna de tienda encima lo taparia.
         const UiRect shop = kit::Rect(vis.x + 6.0f, vis.y + kBarH + 4.0f, kShopW, vis.height - 2.0f * kBarH - 8.0f);
         const UiRect list = kit::Rect(shop.x + 2, shop.y + kHeaderH, shop.width - 4, shop.height - kHeaderH - 3);
-        ui.AddRect(shop, kit::Panel());
-        ui.AddRectOutline(shop, kit::Line(), 1.0f);
+        kit::Card(ui, shop, kit::Panel(), kit::Line().WithAlpha(0.8f));
         if (p.Over(shop.x, shop.y, shop.width, shop.height)) state.pointerOverUi = true;
 
         // --- Cabecera: titulo, total de unidades y modo de compra ---
-        ui.AddText(shop.x + 7, shop.y + 5, std::string("SHOP - ") + InfoOf(state.view).name, kit::Text(), 1);
+        ui.AddText(shop.x + 8, shop.y + 6, std::string("SHOP - ") + InfoOf(state.view).name, kit::Text(), 1);
         const std::string total = "x" + std::to_string(game.OwnedOn(state.view));
-        ui.AddText(shop.Right() - 7.0f - kit::TextW(total), shop.y + 5, total, kit::Dim(), 1);
-        const float bw = (shop.width - 14.0f - 3.0f * 3.0f) / 4.0f;
+        ui.AddText(shop.Right() - 8.0f - kit::TextW(total), shop.y + 6, total, kit::Dim(), 1);
+        const float bw = (shop.width - 16.0f - 3.0f * 3.0f) / 4.0f;
         for (int m = 0; m < 4; ++m) {
-            const UiRect r = kit::Rect(shop.x + 7 + m * (bw + 3.0f), shop.y + 17, bw, 14);
+            const UiRect r = kit::Rect(shop.x + 8 + m * (bw + 3.0f), shop.y + 18, bw, 15);
             const bool sel = state.shopBuyMode == m;
             const bool hot = p.Over(r.x, r.y, r.width, r.height);
-            ui.AddRect(r, sel ? kit::RedDark() : kit::Field());
-            ui.AddRectOutline(r, sel ? kit::Red() : hot ? kit::Text() : kit::Line(), 1.0f);
-            ui.AddTextCentered(r, kModeLabel[m], sel ? kit::Text() : kit::Dim(), 1);
+            kit::Card(ui, r, sel ? UiColor::Bytes(112, 34, 42) : hot ? UiColor::Bytes(38, 50, 72) : UiColor::Bytes(24, 32, 48),
+                      sel ? UiColor::Bytes(196, 62, 66) : hot ? kit::TextSoft() : kit::Line());
+            ui.AddTextCentered(r, kModeLabel[m], sel || hot ? kit::Text() : kit::Dim(), 1);
             if (hot && p.clicked) state.shopBuyMode = m;
         }
 
@@ -111,9 +111,10 @@ public:
             if (unlocked || seen.count(d.unlockedBy)) rows.push_back({&d, unlocked});
         }
 
-        const float contentH = static_cast<float>(rows.size()) * kRowH;
+        const float contentH = static_cast<float>(rows.size()) * (kRowH + kRowGap);
         const bool overList = p.Over(list.x, list.y, list.width, list.height);
         if (overList) state.shopScroll -= in.WheelDelta() * kScrollStep;
+        state.shopScroll -= TouchScrollY(list); // con el dedo: arrastrar la lista
         state.shopScroll = std::clamp(state.shopScroll, 0.0f, std::max(0.0f, contentH - list.height));
 
         if (rows.empty()) {
@@ -122,15 +123,18 @@ public:
         }
 
         // --- Las filas ---
+        // Cada una es una tarjeta: el icono lleva cuantas hay, el nombre arriba (hasta dos lineas), y abajo lo que
+        // cuesta la proxima (verde si alcanza, ambar si no) y lo que da. Antes el costo y la cantidad eran dos
+        // numeros sueltos sin rotulo en dos esquinas, y los nombres largos se montaban sobre ellos.
         const Wallet& wallet = game.wallet();
         const Row* hover = nullptr;
         float hoverY = 0.0f;
         ui.PushClipRect(list);
         for (std::size_t i = 0; i < rows.size(); ++i) {
             const InstallationDef& d = *rows[i].def;
-            const float y = list.y + static_cast<float>(i) * kRowH - state.shopScroll;
+            const float y = list.y + static_cast<float>(i) * (kRowH + kRowGap) - state.shopScroll;
             if (y + kRowH < list.y || y > list.Bottom()) continue;
-            const UiRect r = kit::Rect(list.x + 2, y + 1, list.width - 4, kRowH - 2);
+            const UiRect r = kit::Rect(list.x + 3, y + 1, list.width - 6, kRowH);
             const bool hot = overList && p.Over(r.x, r.y, r.width, r.height);
             if (hot) {
                 hover = &rows[i];
@@ -145,33 +149,44 @@ public:
             const bool canBuy = unlocked && wallet.CanAfford({{ResourceId::Research, cost}});
 
             const UiColor tint = ColorOf(d.color);
-            ui.AddRect(r, hot && unlocked ? kit::Field() : UiColor::Bytes(13, 13, 18));
-            ui.AddRectOutline(r, canBuy ? ColorOf(d.color, hot ? 0.95f : 0.55f) : hot && unlocked ? kit::Dim() : kit::Faint().WithAlpha(0.55f), 1.0f);
+            UiColor fill = UiColor::Bytes(22, 29, 43);
+            if (canBuy) fill = UiColor::Bytes(20, 38, 42);
+            if (!unlocked) fill = UiColor::Bytes(16, 21, 32);
+            if (hot && unlocked) fill = canBuy ? UiColor::Bytes(25, 46, 50) : UiColor::Bytes(29, 38, 56);
+            kit::Card(ui, r, fill, UiColor{0, 0, 0, 0});
             if (state.shopFlash > 0.0f && state.shopFlashId == d.id)
-                ui.AddRect(r, UiColor::Bytes(255, 255, 255, static_cast<int>(70.0f * state.shopFlash)));
+                kit::Card(ui, r, UiColor::Bytes(255, 255, 255, static_cast<int>(60.0f * state.shopFlash)), UiColor{0, 0, 0, 0});
 
-            // Icono: una gema del color de la instalacion; apagada si todavia no se abre.
-            kit::Gem(ui, r.x + 14, r.y + r.height * 0.5f, 16, unlocked ? ColorOf(d.color, 0.25f) : UiColor::Bytes(12, 12, 15),
-                     unlocked ? tint : kit::Faint());
+            // Icono: una gema del color de la instalacion con la cantidad adentro; apagada si todavia no se abre.
+            const float gx = r.x + 19.0f, gy = r.y + r.height * 0.5f;
+            kit::Gem(ui, gx, gy, 26, unlocked ? ColorOf(d.color, 0.2f) : UiColor::Bytes(14, 19, 29), unlocked ? tint : kit::Faint().WithAlpha(0.6f));
+            if (unlocked) {
+                const int owned = game.Owned(d.id);
+                const std::string count = owned >= 1000 ? FormatAmount(static_cast<double>(owned)) : std::to_string(owned);
+                ui.AddText(std::floor(gx - kit::TextW(count) * 0.5f), std::floor(gy - 3.0f), count, owned > 0 ? kit::Text() : kit::Faint(), 1);
+            } else {
+                ui.AddText(std::floor(gx - 2.0f), std::floor(gy - 3.0f), "?", kit::Faint(), 1);
+            }
 
-            const float textX = r.x + 28.0f;
-            const std::string count = unlocked ? std::to_string(game.Owned(d.id)) : "";
-            const float countW = count.empty() ? 0.0f : kit::TextW(count, 2);
-            if (!count.empty()) ui.AddText(r.Right() - 5.0f - countW, r.y + 3, count, game.Owned(d.id) > 0 ? kit::TextSoft() : kit::Faint(), 2);
-
-            const std::vector<std::string> lines = WrapText(d.name, static_cast<int>(r.width - 28.0f - countW - 6.0f), 1);
+            const float tx = r.x + 38.0f, tw = r.Right() - tx - 6.0f;
+            const std::vector<std::string> lines = WrapText(d.name, static_cast<int>(tw), 1);
+            const float nameY = lines.size() > 1 ? r.y + 4.0f : r.y + 7.0f;
             for (std::size_t k = 0; k < lines.size() && k < 2; ++k)
-                ui.AddText(textX, r.y + 4 + static_cast<float>(k) * kGlyphLineHeight, lines[k], unlocked ? kit::Text() : kit::Dim(), 1);
+                ui.AddText(tx, nameY + static_cast<float>(k) * 9.0f, lines[k], unlocked ? kit::Text() : kit::Dim(), 1);
 
             if (unlocked) {
-                ui.AddText(textX, r.Bottom() - 11.0f, FormatExact(cost), canBuy ? kit::Text() : kit::Red(), 1);
+                const std::string price = FormatExact(cost);
+                const float pw = kit::TextW(price) + 10.0f;
+                const UiRect chip = kit::Rect(tx, r.Bottom() - 17.0f, pw, 13);
+                kit::Card(ui, chip, canBuy ? kit::GoDark() : UiColor::Bytes(16, 22, 33), canBuy ? kit::Go().WithAlpha(0.9f) : UiColor{0, 0, 0, 0});
+                ui.AddText(chip.x + 5, chip.y + 3, price, canBuy ? kit::Text() : kit::Warn(), 1);
                 const std::string rate = "+" + FormatRate(game.OutputOfNext(d.id));
-                ui.AddText(r.Right() - 5.0f - kit::TextW(rate), r.Bottom() - 11.0f, rate, kit::Dim(), 1);
+                ui.AddText(r.Right() - 6.0f - kit::TextW(rate), r.Bottom() - 14.0f, rate, kit::Dim(), 1);
             } else {
                 const TechDef* need = tree.Find(d.unlockedBy);
                 // Solo el nombre de la tecnologia: "NEEDS" ya no cabia con nombres largos.
                 const std::string msg = "> " + (need ? need->name : d.unlockedBy);
-                ui.AddText(textX, r.Bottom() - 11.0f, WrapText(msg, static_cast<int>(r.width - 32.0f), 1).front(), kit::Red().WithAlpha(0.75f), 1);
+                ui.AddText(tx, r.Bottom() - 14.0f, WrapText(msg, static_cast<int>(tw), 1).front(), kit::Warn().WithAlpha(0.8f), 1);
             }
 
             // Comprar.
@@ -192,7 +207,7 @@ public:
             const float frac = list.height / contentH;
             const float pos = state.shopScroll / (contentH - list.height);
             const float th = std::max(12.0f, list.height * frac);
-            ui.AddRect(kit::Rect(shop.Right() - 3.0f, list.y + (list.height - th) * pos, 2, th), kit::Line());
+            ui.AddRect(kit::Rect(shop.Right() - 4.0f, list.y + (list.height - th) * pos, 2, th), kit::Faint());
         }
 
         if (hover && hover->unlocked) DrawCard(ui, vis, shop, *hover->def, hoverY);
@@ -220,8 +235,7 @@ private:
 
         const float x = std::min(shop.Right() + 6.0f, vis.Right() - w - 4.0f);
         const float y = std::clamp(rowY, vis.y + kBarH + 4.0f, vis.Bottom() - kBarH - 4.0f - h);
-        ui.AddRect(kit::Rect(x, y, w, h), UiColor::Bytes(4, 4, 7, 248));
-        ui.AddRectOutline(kit::Rect(x, y, w, h), ColorOf(d.color), 1.0f);
+        kit::Card(ui, kit::Rect(x, y, w, h), UiColor::Bytes(10, 14, 23, 248), ColorOf(d.color, 0.8f));
 
         float ty = y + 6.0f;
         for (std::size_t i = 0; i < lines.size(); ++i, ty += lineH)
@@ -258,8 +272,7 @@ private:
         const float h = 10.0f + static_cast<float>(lines.size()) * static_cast<float>(kGlyphLineHeight);
         const float x = std::min(shop.Right() + 6.0f, vis.Right() - w - 4.0f);
         const float y = std::clamp(rowY, vis.y + kBarH + 4.0f, vis.Bottom() - kBarH - 4.0f - h);
-        ui.AddRect(kit::Rect(x, y, w, h), UiColor::Bytes(4, 4, 7, 248));
-        ui.AddRectOutline(kit::Rect(x, y, w, h), kit::Faint(), 1.0f);
+        kit::Card(ui, kit::Rect(x, y, w, h), UiColor::Bytes(10, 14, 23, 248), kit::Line());
         float ty = y + 5.0f;
         for (const std::string& l : lines) {
             ui.AddText(x + 7, ty, l, kit::Dim(), 1);
