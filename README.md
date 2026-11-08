@@ -4,6 +4,12 @@ wip clicker about humanity getting really good at making energy. it starts with 
 
 you look at earth from space (almost top down, slightly tilted). it spins, it orbits the sun, and you click stuff. clicking the earth gives you research points, you spend them in a tech tree, and techs unlock new things you can click (the sun, a laser pulse button...). not everything is clickable from the start, that's kind of the whole point.
 
+## running it
+
+How to play: [click here :3](https://ucosuc113.itch.io/evergrave)
+
+you can't, sorry. it's built on S.T.R.AC.E, my own engine, and the engine isn't public, so none of this will open anywhere else. the repo is mostly here so the code and the scene are backed up and readable.
+
 ## where it's at
 
 super early. it's a prototype: the earth is two flat colors and the sun is a yellow ball. the tech tree has 14 techs and the balance is basically nonexistent, you can finish the whole thing in under two minutes. i know.
@@ -19,12 +25,6 @@ what works:
 - saves by itself every 30 s and when you close the game (windows only); no save or load keys. starting a new game keeps the old save as save.previous.txt
 - pixel art look, same idea as AN∅MALY but 360p instead of 180p
 - music: a slow piano remix that plays from the title screen on; the accompaniment fades in when you start playing (see credits)
-
-## running it
-
-you can't, sorry. it's built on S.T.R.AC.E, my own engine, and the engine isn't public, so none of this will open anywhere else. the repo is mostly here so the code and the scene are backed up and readable.
-
-if you just want to read code: `Assets/Scripts/Core` is the game logic and it's plain c++ with no engine in it. everything else is glue for the engine.
 
 ## layout, roughly
 
